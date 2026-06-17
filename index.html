@@ -1,110 +1,819 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to seoknguyenz-ai/app</title>
+    <title>中文词汇测验小工具</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            min-height: 100vh;
+            margin: 0;
         }
-        
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 600px;
+        .quiz-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            max-width: 480px;
+            width: 90%;
             text-align: center;
         }
-        
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        
-        .subtitle {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
-        
-        .content {
-            color: #555;
-            line-height: 1.6;
-            text-align: left;
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .content p {
+        .question {
+            font-size: 26px;
+            font-weight: bold;
             margin-bottom: 15px;
+            color: #2c3e50;
+            word-break: break-all;
         }
-        
-        .links {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            background: #667eea;
+        .audio-btn {
+            background-color: #3498db;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-bottom: 25px;
+            transition: background 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
-        
-        a:hover {
-            background: #764ba2;
+        .audio-btn:hover {
+            background-color: #2980b9;
         }
-        
-        .footer {
-            margin-top: 30px;
-            padding-top: 20px;
+        .audio-btn:active {
+            transform: scale(0.95);
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .option {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid #e9ecef;
+            transition: all 0.2s;
+            font-size: 16px;
+            text-align: left;
+        }
+        .option:hover {
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+        .option.correct {
+            background-color: #2ecc71;
+            color: white;
+            border-color: #27ae60;
+        }
+        .option.incorrect {
+            background-color: #e74c3c;
+            color: white;
+            border-color: #c0392b;
+        }
+        .option.disabled {
+            pointer-events: none;
+        }
+        .next-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .next-btn:hover {
+            background-color: #27ae60;
+        }
+        .score {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
             border-top: 1px solid #eee;
-            color: #999;
-            font-size: 0.9em;
+            padding-top: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to seoknguyenz-ai/app</h1>
-        <p class="subtitle">Your application starts here</p>
-        
-        <div class="content">
-            <p>This is a sample HTML page created for your GitHub repository. You can customize this page to suit your project's needs.</p>
-            <p>Edit this file to add your own content, links, and styling. Replace this placeholder text with information about your application.</p>
-        </div>
-        
-        <div class="links">
-            <a href="https://github.com/seoknguyenz-ai/app">View Repository</a>
-            <a href="https://github.com/seoknguyenz-ai">View Profile</a>
-        </div>
-        
-        <div class="footer">
-            <p>Created on June 17, 2026</p>
-        </div>
-    </div>
+
+<div class="quiz-container">
+    <div class="question" id="question-text">正在加载词汇...</div>
+    <button class="audio-btn" id="audio-btn" onclick="playAudio()">🔊 点击朗读发音</button>
+    
+    <div class="options-container" id="options-container"></div>
+    
+    <button class="next-btn" id="next-btn" onclick="nextQuestion()">下一题 ➔</button>
+    
+    <div class="score" id="score-text">正确: 0 | 总计: 0</div>
+</div>
+
+<script>
+// 你的 CSV 数据：hanzi（列1），pinyin（列2），english（列3）
+const vocabData = [
+    { hanzi: "报警复位", pinyin: "报警复位-bàojǐng fùwèi", english: "Alarm reset" },
+{ hanzi: "已从权限组", pinyin: "已从权限组-yǐ cóng quánxiàn zǔ", english: "has been moved from the permissions group to" },
+{ hanzi: "已解锁", pinyin: "已解锁-yǐ jiěsuǒ", english: "Unlocked" },
+{ hanzi: "未被锁定", pinyin: "未被锁定-wèi bèi suǒdìng", english: "is not Locked" },
+{ hanzi: "的密码", pinyin: "的密码-de mìmǎ", english: "s password" },
+{ hanzi: "的密码已重置", pinyin: "的密码已重置-de mìmǎ yǐ chóngzhì", english: "s password has been reset" },
+{ hanzi: "移动到", pinyin: "移动到-yídòng dào", english: "Move to" },
+{ hanzi: "中部振动器占空比", pinyin: "中部振动器占空比-zhōngbù zhèndòngqì zhànkōngbǐ", english: "Middle vibrator duty cycle" },
+{ hanzi: "中部振动器频率", pinyin: "中部振动器频率-zhōngbù zhèndòngqì pínlǜ", english: "Middle vibrator frequency" },
+{ hanzi: "中部振动器频率减少", pinyin: "中部振动器频率减少-zhōngbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Middle vibrator frequency reduce" },
+{ hanzi: "中部振动器频率增加", pinyin: "中部振动器频率增加-zhōngbù zhèndòngqì pínlǜ zēngjiā", english: "Middle vibrator frequency increase" },
+{ hanzi: "前部振动器占空比", pinyin: "前部振动器占空比-qiánbù zhèndòngqì zhànkōngbǐ", english: "Front vibrator duty cycle" },
+{ hanzi: "前部振动器频率", pinyin: "前部振动器频率-qiánbù zhèndòngqì pínlǜ", english: "Front vibrator frequency" },
+{ hanzi: "前部振动器频率减少", pinyin: "前部振动器频率减少-qiánbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Front vibrator frequency reduce" },
+{ hanzi: "前部振动器频率增加", pinyin: "前部振动器频率增加-qiánbù zhèndòngqì pínlǜ zēngjiā", english: "Front vibrator frequency increase" },
+{ hanzi: "剔除升降电磁阀", pinyin: "剔除升降电磁阀-tīchú shēngjiàng diàncífá", english: "Lifting solenoid valve for rejecting" },
+{ hanzi: "右总料门", pinyin: "右总料门-yòu zǒngliào mén", english: "Right filling gate" },
+{ hanzi: "吹气功能关闭", pinyin: "吹气功能关闭-chuīqì gōngnéng guānbì", english: "Blowing function is disabled" },
+{ hanzi: "吹气功能启用", pinyin: "吹气功能启用-chuīqì gōngnéng qǐyòng", english: "Blowing function is enabled" },
+{ hanzi: "吹气电磁阀", pinyin: "吹气电磁阀-chuīqì diàncífá", english: "Blowing solenoid valve" },
+{ hanzi: "小料门08", pinyin: "小料门08-xiǎoliào mén língbā", english: "Counting gate 08" },
+{ hanzi: "小料门08关闭", pinyin: "小料门08关闭-xiǎoliào mén língbā guānbì", english: "Counting gate 08 close" },
+{ hanzi: "小料门08打开", pinyin: "小料门08打开-xiǎoliào mén língbā dǎkāi", english: "Counting gate 08 open" },
+{ hanzi: "左总料门", pinyin: "左总料门-zuǒzǒngliào mén", english: "Left filling gate" },
+{ hanzi: "总料门关闭", pinyin: "总料门关闭-zǒngliào mén guānbì", english: "Filling gate close" },
+{ hanzi: "总料门功能关闭", pinyin: "总料门功能关闭-zǒngliào mén gōngnéng guānbì", english: "Filling gate function is disabled" },
+{ hanzi: "总料门功能启用", pinyin: "总料门功能启用-zǒngliào mén gōngnéng qǐyòng", english: "Filling gate function is enabled" },
+{ hanzi: "总料门打开", pinyin: "总料门打开-zǒngliào mén dǎkāi", english: "Filling gate open" },
+{ hanzi: "振动器功能关闭", pinyin: "振动器功能关闭-zhèndòngqì gōngnéng guānbì", english: "Vibrator function is disabled" },
+{ hanzi: "振动器功能启用", pinyin: "振动器功能启用-zhèndòngqì gōngnéng qǐyòng", english: "Vibrator function is enabled" },
+{ hanzi: "振动器启动关闭", pinyin: "振动器启动关闭-zhèndòngqì qǐdòng guānbì", english: "Vibrator start close" },
+{ hanzi: "振动器启动打开", pinyin: "振动器启动打开-zhèndòngqì qǐdòng dǎkāi", english: "Vibrator start open" },
+{ hanzi: "振动盘解锁关闭", pinyin: "振动盘解锁关闭-zhèndòngpán jiěsuǒ guānbì", english: "Vibrating plate unlock close" },
+{ hanzi: "振动盘解锁打开", pinyin: "振动盘解锁打开-zhèndòngpán jiěsuǒ dǎkāi", english: "Vibrating plate unlock open" },
+{ hanzi: "推杆电磁阀关闭", pinyin: "推杆电磁阀关闭-tuīgān diàncífá guānbì", english: "Pushing rod solenoid valve close" },
+{ hanzi: "推杆电磁阀打开", pinyin: "推杆电磁阀打开-tuīgān diàncífá dǎkāi", english: "Pushing rod solenoid valve open" },
+{ hanzi: "摄像剔除确认检测关闭", pinyin: "摄像剔除确认检测关闭-shèxiàng tīchú quèrèn jiǎncè guānbì", english: "Camera rejection confirm detection is disabled" },
+{ hanzi: "摄像剔除确认检测启用", pinyin: "摄像剔除确认检测启用-shèxiàng tīchú quèrèn jiǎncè qǐyòng", english: "Camera rejection confirm detection is enabled" },
+{ hanzi: "摄像功能关闭", pinyin: "摄像功能关闭-shèxiàng gōngnéng guānbì", english: "Camera function is disabled" },
+{ hanzi: "摄像功能启用", pinyin: "摄像功能启用-shèxiàng gōngnéng qǐyòng", english: "Camera function is enabled" },
+{ hanzi: "料仓振动器占空比", pinyin: "料仓振动器占空比-liàocāng zhèndòngqì zhànkōngbǐ", english: "Hopper vibrator duty cycle" },
+{ hanzi: "料仓振动器频率", pinyin: "料仓振动器频率-liàocāng zhèndòngqì pínlǜ", english: "Hopper vibrator frequency" },
+{ hanzi: "料仓振动器频率减少", pinyin: "料仓振动器频率减少-liàocāng zhèndòngqì pínlǜ jiǎnshǎo", english: "Hopper vibrator frequency reduce" },
+{ hanzi: "料仓振动器频率增加", pinyin: "料仓振动器频率增加-liàocāng zhèndòngqì pínlǜ zēngjiā", english: "Hopper vibrator frequency increase" },
+{ hanzi: "料仓清料关闭", pinyin: "料仓清料关闭-liàocāng qīngliào guānbì", english: "Disable hopper clearing" },
+{ hanzi: "料仓清料打开", pinyin: "料仓清料打开-liàocāng qīngliào dǎkāi", english: "Enable hopper clearing" },
+{ hanzi: "料嘴振动功能关闭", pinyin: "料嘴振动功能关闭-liàozuǐ zhèndòng gōngnéng guānbì", english: "Nozzle vibrating function is disabled" },
+{ hanzi: "料嘴振动功能启用", pinyin: "料嘴振动功能启用-liàozuǐ zhèndòng gōngnéng qǐyòng", english: "Nozzle vibrating function is enabled" },
+{ hanzi: "料嘴振动电磁阀", pinyin: "料嘴振动电磁阀-liàozuǐ zhèndòng diàncífá", english: "Nozzle vibration solenoid valve" },
+{ hanzi: "料门吹气功能关闭", pinyin: "料门吹气功能关闭-liàomén chuīqì gōngnéng guānbì", english: "Filling gate blowing function is disabled" },
+{ hanzi: "料门吹气功能启用", pinyin: "料门吹气功能启用-liàomén chuīqì gōngnéng qǐyòng", english: "Filling gate blowing function is enabled" },
+{ hanzi: "模块功能关闭", pinyin: "模块功能关闭-mókuài gōngnéng guānbì", english: "Module function is disabled" },
+{ hanzi: "模块功能启用", pinyin: "模块功能启用-mókuài gōngnéng qǐyòng", english: "Module function is enabled" },
+{ hanzi: "气动振动器电磁阀", pinyin: "气动振动器电磁阀-qìdòng zhèndòngqì diàncífá", english: "Solenoid valve of pneumatic vibrator" },
+{ hanzi: "监视清零", pinyin: "监视清零-jiānshì qīnglíng", english: "Monitor reset" },
+{ hanzi: "中部振动器频率减少", pinyin: "中部振动器频率减少-zhōngbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Middle vibrator frequency reduce" },
+{ hanzi: "中部振动器频率增加", pinyin: "中部振动器频率增加-zhōngbù zhèndòngqì pínlǜ zēngjiā", english: "Middle vibrator frequency increase" },
+{ hanzi: "前部振动器频率减少", pinyin: "前部振动器频率减少-qiánbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Front vibrator frequency reduce" },
+{ hanzi: "前部振动器频率增加", pinyin: "前部振动器频率增加-qiánbù zhèndòngqì pínlǜ zēngjiā", english: "Front vibrator frequency increase" },
+{ hanzi: "剔除升降电磁阀", pinyin: "剔除升降电磁阀-tīchú shēngjiàng diàncífá", english: "Lifting solenoid valve for rejecting" },
+{ hanzi: "右总料门", pinyin: "右总料门-yòu zǒngliào mén", english: "Right filling gate" },
+{ hanzi: "吹气功能关闭", pinyin: "吹气功能关闭-chuīqì gōngnéng guānbì", english: "Blowing function is disabled" },
+{ hanzi: "吹气功能启用", pinyin: "吹气功能启用-chuīqì gōngnéng qǐyòng", english: "Blowing function is enabled" },
+{ hanzi: "吹气电磁阀", pinyin: "吹气电磁阀-chuīqì diàncífá", english: "Blowing solenoid valve" },
+{ hanzi: "小料门08", pinyin: "小料门08-xiǎoliào mén língbā", english: "Counting gate 08" },
+{ hanzi: "小料门08关闭", pinyin: "小料门08关闭-xiǎoliào mén língbā guānbì", english: "Counting gate 08 close" },
+{ hanzi: "小料门08打开", pinyin: "小料门08打开-xiǎoliào mén língbā dǎkāi", english: "Counting gate 08 open" },
+{ hanzi: "左总料门", pinyin: "左总料门-zuǒzǒngliào mén", english: "Left filling gate" },
+{ hanzi: "总料门关闭", pinyin: "总料门关闭-zǒngliào mén guānbì", english: "Filling gate close" },
+{ hanzi: "总料门功能关闭", pinyin: "总料门功能关闭-zǒngliào mén gōngnéng guānbì", english: "Filling gate function is disabled" },
+{ hanzi: "总料门功能启用", pinyin: "总料门功能启用-zǒngliào mén gōngnéng qǐyòng", english: "Filling gate function is enabled" },
+{ hanzi: "总料门打开", pinyin: "总料门打开-zǒngliào mén dǎkāi", english: "Filling gate open" },
+{ hanzi: "振动器功能关闭", pinyin: "振动器功能关闭-zhèndòngqì gōngnéng guānbì", english: "Vibrator function is disabled" },
+{ hanzi: "振动器功能启用", pinyin: "振动器功能启用-zhèndòngqì gōngnéng qǐyòng", english: "Vibrator function is enabled" },
+{ hanzi: "振动器启动关闭", pinyin: "振动器启动关闭-zhèndòngqì qǐdòng guānbì", english: "Vibrator start close" },
+{ hanzi: "振动器启动打开", pinyin: "振动器启动打开-zhèndòngqì qǐdòng dǎkāi", english: "Vibrator start open" },
+{ hanzi: "振动盘解锁关闭", pinyin: "振动盘解锁关闭-zhèndòngpán jiěsuǒ guānbì", english: "Vibrating plate unlock close" },
+{ hanzi: "振动盘解锁打开", pinyin: "振动盘解锁打开-zhèndòngpán jiěsuǒ dǎkāi", english: "Vibrating plate unlock open" },
+{ hanzi: "推杆电磁阀关闭", pinyin: "推杆电磁阀关闭-tuīgān diàncífá guānbì", english: "Pushing rod solenoid valve close" },
+{ hanzi: "推杆电磁阀打开", pinyin: "推杆电磁阀打开-tuīgān diàncífá dǎkāi", english: "Pushing rod solenoid valve open" },
+{ hanzi: "摄像剔除确认检测关闭", pinyin: "摄像剔除确认检测关闭-shèxiàng tīchú quèrèn jiǎncè guānbì", english: "Camera rejection confirm detection is disabled" },
+{ hanzi: "摄像剔除确认检测启用", pinyin: "摄像剔除确认检测启用-shèxiàng tīchú quèrèn jiǎncè qǐyòng", english: "Camera rejection confirm detection is enabled" },
+{ hanzi: "摄像功能关闭", pinyin: "摄像功能关闭-shèxiàng gōngnéng guānbì", english: "Camera function is disabled" },
+{ hanzi: "摄像功能启用", pinyin: "摄像功能启用-shèxiàng gōngnéng qǐyòng", english: "Camera function is enabled" },
+{ hanzi: "料仓振动器频率减少", pinyin: "料仓振动器频率减少-liàocāng zhèndòngqì pínlǜ jiǎnshǎo", english: "Hopper vibrator frequency reduce" },
+{ hanzi: "料仓振动器频率增加", pinyin: "料仓振动器频率增加-liàocāng zhèndòngqì pínlǜ zēngjiā", english: "Hopper vibrator frequency increase" },
+{ hanzi: "料仓清料关闭", pinyin: "料仓清料关闭-liàocāng qīngliào guānbì", english: "Disable hopper clearing" },
+{ hanzi: "料仓清料打开", pinyin: "料仓清料打开-liàocāng qīngliào dǎkāi", english: "Enable hopper clearing" },
+{ hanzi: "料嘴振动功能关闭", pinyin: "料嘴振动功能关闭-liàozuǐ zhèndòng gōngnéng guānbì", english: "Nozzle vibrating function is disabled" },
+{ hanzi: "料嘴振动功能启用", pinyin: "料嘴振动功能启用-liàozuǐ zhèndòng gōngnéng qǐyòng", english: "Nozzle vibrating function is enabled" },
+{ hanzi: "料嘴振动电磁阀", pinyin: "料嘴振动电磁阀-liàozuǐ zhèndòng diàncífá", english: "Nozzle vibration solenoid valve" },
+{ hanzi: "料门吹气功能关闭", pinyin: "料门吹气功能关闭-liàomén chuīqì gōngnéng guānbì", english: "Filling gate blowing function is disabled" },
+{ hanzi: "料门吹气功能启用", pinyin: "料门吹气功能启用-liàomén chuīqì gōngnéng qǐyòng", english: "Filling gate blowing function is enabled" },
+{ hanzi: "模块功能关闭", pinyin: "模块功能关闭-mókuài gōngnéng guānbì", english: "Module function is disabled" },
+{ hanzi: "模块功能启用", pinyin: "模块功能启用-mókuài gōngnéng qǐyòng", english: "Module function is enabled" },
+{ hanzi: "气动振动器电磁阀", pinyin: "气动振动器电磁阀-qìdòng zhèndòngqì diàncífá", english: "Solenoid valve of pneumatic vibrator" },
+{ hanzi: "监视清零", pinyin: "监视清零-jiānshì qīnglíng", english: "Monitor reset" },
+{ hanzi: "中部振动器频率减少", pinyin: "中部振动器频率减少-zhōngbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Middle vibrator frequency reduce" },
+{ hanzi: "中部振动器频率增加", pinyin: "中部振动器频率增加-zhōngbù zhèndòngqì pínlǜ zēngjiā", english: "Middle vibrator frequency increase" },
+{ hanzi: "前部振动器频率减少", pinyin: "前部振动器频率减少-qiánbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Front vibrator frequency reduce" },
+{ hanzi: "前部振动器频率增加", pinyin: "前部振动器频率增加-qiánbù zhèndòngqì pínlǜ zēngjiā", english: "Front vibrator frequency increase" },
+{ hanzi: "剔除升降电磁阀", pinyin: "剔除升降电磁阀-tīchú shēngjiàng diàncífá", english: "Lifting solenoid valve for rejecting" },
+{ hanzi: "右总料门", pinyin: "右总料门-yòu zǒngliào mén", english: "Right filling gate" },
+{ hanzi: "吹气功能关闭", pinyin: "吹气功能关闭-chuīqì gōngnéng guānbì", english: "Blowing function is disabled" },
+{ hanzi: "吹气功能启用", pinyin: "吹气功能启用-chuīqì gōngnéng qǐyòng", english: "Blowing function is enabled" },
+{ hanzi: "吹气电磁阀", pinyin: "吹气电磁阀-chuīqì diàncífá", english: "Blowing solenoid valve" },
+{ hanzi: "小料门08关闭", pinyin: "小料门08关闭-xiǎoliào mén língbā guānbì", english: "Counting gate 08 close" },
+{ hanzi: "小料门08打开", pinyin: "小料门08打开-xiǎoliào mén língbā dǎkāi", english: "Counting gate 08 open" },
+{ hanzi: "左总料门", pinyin: "左总料门-zuǒzǒngliào mén", english: "Left filling gate" },
+{ hanzi: "总料门关闭", pinyin: "总料门关闭-zǒngliào mén guānbì", english: "Filling gate close" },
+{ hanzi: "总料门功能关闭", pinyin: "总料门功能关闭-zǒngliào mén gōngnéng guānbì", english: "Filling gate function is disabled" },
+{ hanzi: "总料门功能启用", pinyin: "总料门功能启用-zǒngliào mén gōngnéng qǐyòng", english: "Filling gate function is enabled" },
+{ hanzi: "总料门打开", pinyin: "总料门打开-zǒngliào mén dǎkāi", english: "Filling gate open" },
+{ hanzi: "振动器功能关闭", pinyin: "振动器功能关闭-zhèndòngqì gōngnéng guānbì", english: "Vibrator function is disabled" },
+{ hanzi: "振动器功能启用", pinyin: "振动器功能启用-zhèndòngqì gōngnéng qǐyòng", english: "Vibrator function is enabled" },
+{ hanzi: "振动器启动关闭", pinyin: "振动器启动关闭-zhèndòngqì qǐdòng guānbì", english: "Vibrator start close" },
+{ hanzi: "振动器启动打开", pinyin: "振动器启动打开-zhèndòngqì qǐdòng dǎkāi", english: "Vibrator start open" },
+{ hanzi: "振动盘解锁关闭", pinyin: "振动盘解锁关闭-zhèndòngpán jiěsuǒ guānbì", english: "Vibrating plate unlock close" },
+{ hanzi: "振动盘解锁打开", pinyin: "振动盘解锁打开-zhèndòngpán jiěsuǒ dǎkāi", english: "Vibrating plate unlock open" },
+{ hanzi: "推杆电磁阀关闭", pinyin: "推杆电磁阀关闭-tuīgān diàncífá guānbì", english: "Pushing rod solenoid valve close" },
+{ hanzi: "推杆电磁阀打开", pinyin: "推杆电磁阀打开-tuīgān diàncífá dǎkāi", english: "Pushing rod solenoid valve open" },
+{ hanzi: "摄像剔除确认检测关闭", pinyin: "摄像剔除确认检测关闭-shèxiàng tīchú quèrèn jiǎncè guānbì", english: "Camera rejection confirm detection is disabled" },
+{ hanzi: "摄像剔除确认检测启用", pinyin: "摄像剔除确认检测启用-shèxiàng tīchú quèrèn jiǎncè qǐyòng", english: "Camera rejection confirm detection is enabled" },
+{ hanzi: "摄像功能关闭", pinyin: "摄像功能关闭-shèxiàng gōngnéng guānbì", english: "Camera function is disabled" },
+{ hanzi: "摄像功能启用", pinyin: "摄像功能启用-shèxiàng gōngnéng qǐyòng", english: "Camera function is enabled" },
+{ hanzi: "料仓振动器频率减少", pinyin: "料仓振动器频率减少-liàocāng zhèndòngqì pínlǜ jiǎnshǎo", english: "Hopper vibrator frequency reduce" },
+{ hanzi: "料仓振动器频率增加", pinyin: "料仓振动器频率增加-liàocāng zhèndòngqì pínlǜ zēngjiā", english: "Hopper vibrator frequency increase" },
+{ hanzi: "料仓清料关闭", pinyin: "料仓清料关闭-liàocāng qīngliào guānbì", english: "Disable hopper clearing" },
+{ hanzi: "料仓清料打开", pinyin: "料仓清料打开-liàocāng qīngliào dǎkāi", english: "Enable hopper clearing" },
+{ hanzi: "料嘴振动功能关闭", pinyin: "料嘴振动功能关闭-liàozuǐ zhèndòng gōngnéng guānbì", english: "Nozzle vibrating function is disabled" },
+{ hanzi: "料嘴振动功能启用", pinyin: "料嘴振动功能启用-liàozuǐ zhèndòng gōngnéng qǐyòng", english: "Nozzle vibrating function is enabled" },
+{ hanzi: "料嘴振动电磁阀", pinyin: "料嘴振动电磁阀-liàozuǐ zhèndòng diàncífá", english: "Nozzle vibration solenoid valve" },
+{ hanzi: "料门吹气功能关闭", pinyin: "料门吹气功能关闭-liàomén chuīqì gōngnéng guānbì", english: "Filling gate blowing function is disabled" },
+{ hanzi: "料门吹气功能启用", pinyin: "料门吹气功能启用-liàomén chuīqì gōngnéng qǐyòng", english: "Filling gate blowing function is enabled" },
+{ hanzi: "模块功能关闭", pinyin: "模块功能关闭-mókuài gōngnéng guānbì", english: "Module function is disabled" },
+{ hanzi: "模块功能启用", pinyin: "模块功能启用-mókuài gōngnéng qǐyòng", english: "Module function is enabled" },
+{ hanzi: "气动振动器电磁阀", pinyin: "气动振动器电磁阀-qìdòng zhèndòngqì diàncífá", english: "Solenoid valve of pneumatic vibrator" },
+{ hanzi: "监视清零", pinyin: "监视清零-jiānshì qīnglíng", english: "Monitor reset" },
+{ hanzi: "中部振动器频率减少", pinyin: "中部振动器频率减少-zhōngbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Middle vibrator frequency reduce" },
+{ hanzi: "中部振动器频率增加", pinyin: "中部振动器频率增加-zhōngbù zhèndòngqì pínlǜ zēngjiā", english: "Middle vibrator frequency increase" },
+{ hanzi: "前部振动器频率减少", pinyin: "前部振动器频率减少-qiánbù zhèndòngqì pínlǜ jiǎnshǎo", english: "Front vibrator frequency reduce" },
+{ hanzi: "前部振动器频率增加", pinyin: "前部振动器频率增加-qiánbù zhèndòngqì pínlǜ zēngjiā", english: "Front vibrator frequency increase" },
+{ hanzi: "剔除升降电磁阀", pinyin: "剔除升降电磁阀-tīchú shēngjiàng diàncífá", english: "Lifting solenoid valve for rejecting" },
+{ hanzi: "右总料门", pinyin: "右总料门-yòu zǒngliào mén", english: "Right filling gate" },
+{ hanzi: "吹气功能关闭", pinyin: "吹气功能关闭-chuīqì gōngnéng guānbì", english: "Blowing function is disabled" },
+{ hanzi: "吹气功能启用", pinyin: "吹气功能启用-chuīqì gōngnéng qǐyòng", english: "Blowing function is enabled" },
+{ hanzi: "吹气电磁阀", pinyin: "吹气电磁阀-chuīqì diàncífá", english: "Blowing solenoid valve" },
+{ hanzi: "小料门08关闭", pinyin: "小料门08关闭-xiǎoliào mén língbā guānbì", english: "Counting gate 08 close" },
+{ hanzi: "小料门08打开", pinyin: "小料门08打开-xiǎoliào mén língbā dǎkāi", english: "Counting gate 08 open" },
+{ hanzi: "左总料门", pinyin: "左总料门-zuǒzǒngliào mén", english: "Left filling gate" },
+{ hanzi: "总料门关闭", pinyin: "总料门关闭-zǒngliào mén guānbì", english: "Filling gate close" },
+{ hanzi: "总料门功能关闭", pinyin: "总料门功能关闭-zǒngliào mén gōngnéng guānbì", english: "Filling gate function is disabled" },
+{ hanzi: "总料门功能启用", pinyin: "总料门功能启用-zǒngliào mén gōngnéng qǐyòng", english: "Filling gate function is enabled" },
+{ hanzi: "总料门打开", pinyin: "总料门打开-zǒngliào mén dǎkāi", english: "Filling gate open" },
+{ hanzi: "振动器功能关闭", pinyin: "振动器功能关闭-zhèndòngqì gōngnéng guānbì", english: "Vibrator function is disabled" },
+{ hanzi: "振动器功能启用", pinyin: "振动器功能启用-zhèndòngqì gōngnéng qǐyòng", english: "Vibrator function is enabled" },
+{ hanzi: "振动器启动关闭", pinyin: "振动器启动关闭-zhèndòngqì qǐdòng guānbì", english: "Vibrator start close" },
+{ hanzi: "振动器启动打开", pinyin: "振动器启动打开-zhèndòngqì qǐdòng dǎkāi", english: "Vibrator start open" },
+{ hanzi: "振动盘解锁关闭", pinyin: "振动盘解锁关闭-zhèndòngpán jiěsuǒ guānbì", english: "Vibrating plate unlock close" },
+{ hanzi: "振动盘解锁打开", pinyin: "振动盘解锁打开-zhèndòngpán jiěsuǒ dǎkāi", english: "Vibrating plate unlock open" },
+{ hanzi: "推杆电磁阀关闭", pinyin: "推杆电磁阀关闭-tuīgān diàncífá guānbì", english: "Pushing rod solenoid valve close" },
+{ hanzi: "推杆电磁阀打开", pinyin: "推杆电磁阀打开-tuīgān diàncífá dǎkāi", english: "Pushing rod solenoid valve open" },
+{ hanzi: "摄像剔除确认检测关闭", pinyin: "摄像剔除确认检测关闭-shèxiàng tīchú quèrèn jiǎncè guānbì", english: "Camera rejection confirm detection is disabled" },
+{ hanzi: "摄像剔除确认检测启用", pinyin: "摄像剔除确认检测启用-shèxiàng tīchú quèrèn jiǎncè qǐyòng", english: "Camera rejection confirm detection is enabled" },
+{ hanzi: "摄像功能关闭", pinyin: "摄像功能关闭-shèxiàng gōngnéng guānbì", english: "Camera function is disabled" },
+{ hanzi: "摄像功能启用", pinyin: "摄像功能启用-shèxiàng gōngnéng qǐyòng", english: "Camera function is enabled" },
+{ hanzi: "料仓振动器频率减少", pinyin: "料仓振动器频率减少-liàocāng zhèndòngqì pínlǜ jiǎnshǎo", english: "Hopper vibrator frequency reduce" },
+{ hanzi: "料仓振动器频率增加", pinyin: "料仓振动器频率增加-liàocāng zhèndòngqì pínlǜ zēngjiā", english: "Hopper vibrator frequency increase" },
+{ hanzi: "料仓清料关闭", pinyin: "料仓清料关闭-liàocāng qīngliào guānbì", english: "Disable hopper clearing" },
+{ hanzi: "料仓清料打开", pinyin: "料仓清料打开-liàocāng qīngliào dǎkāi", english: "Enable hopper clearing" },
+{ hanzi: "料嘴振动功能关闭", pinyin: "料嘴振动功能关闭-liàozuǐ zhèndòng gōngnéng guānbì", english: "Nozzle vibrating function is disabled" },
+{ hanzi: "料嘴振动功能启用", pinyin: "料嘴振动功能启用-liàozuǐ zhèndòng gōngnéng qǐyòng", english: "Nozzle vibrating function is enabled" },
+{ hanzi: "料嘴振动电磁阀", pinyin: "料嘴振动电磁阀-liàozuǐ zhèndòng diàncífá", english: "Nozzle vibration solenoid valve" },
+{ hanzi: "料门吹气功能关闭", pinyin: "料门吹气功能关闭-liàomén chuīqì gōngnéng guānbì", english: "Filling gate blowing function is disabled" },
+{ hanzi: "料门吹气功能启用", pinyin: "料门吹气功能启用-liàomén chuīqì gōngnéng qǐyòng", english: "Filling gate blowing function is enabled" },
+{ hanzi: "模块功能关闭", pinyin: "模块功能关闭-mókuài gōngnéng guānbì", english: "Module function is disabled" },
+{ hanzi: "模块功能启用", pinyin: "模块功能启用-mókuài gōngnéng qǐyòng", english: "Module function is enabled" },
+{ hanzi: "气动振动器电磁阀", pinyin: "气动振动器电磁阀-qìdòng zhèndòngqì diàncífá", english: "Solenoid valve of pneumatic vibrator" },
+{ hanzi: "监视清零", pinyin: "监视清零-jiānshì qīnglíng", english: "Monitor reset" },
+{ hanzi: "IO测试使能", pinyin: "IO测试使能-io cèshì shǐnéng", english: "IO Test enable" },
+{ hanzi: "M101 螺杆伺服", pinyin: "M101 螺杆伺服-myīlíngyī   luógǎn sìfú", english: "M101 Screw servo" },
+{ hanzi: "M102 随动伺服", pinyin: "M102 随动伺服-myīlíngèr   suídòng sìfú", english: "M102 Following up servo" },
+{ hanzi: "OM201 输送机电机", pinyin: "OM201 输送机电机-omèrlíngyī   shūsòngjī diànjī", english: "OM201 Conveyor motor" },
+{ hanzi: "OM202 过渡输送机电机", pinyin: "OM202 过渡输送机电机-omèrlíngèr   guòdù shūsòngjī diànjī", english: "OM202 Transition conveyor motor" },
+{ hanzi: "OM203 过渡转盘电机", pinyin: "OM203 过渡转盘电机-omèrlíngsān   guòdù zhuànpán diànjī", english: "OM203 Transition turntable motor" },
+{ hanzi: "OM204 分瓶轮电机", pinyin: "OM204 分瓶轮电机-omèrlíng4   fēnpínglún diànjī", english: "OM204 Bottle separating wheel motor" },
+{ hanzi: "OM205 夹带电机", pinyin: "OM205 夹带电机-omèrlíngwǔ   jiādài diànjī", english: "OM205 Camping belt motor" },
+{ hanzi: "OM206 升降电机", pinyin: "OM206 升降电机-omèrlíngliù   shēngjiàng diànjī", english: "OM206 Lifting motor" },
+{ hanzi: "OM207 药粒提升电机", pinyin: "OM207 药粒提升电机-omèrlíng7   yàolì tíshēng diànjī", english: "OM207 Capsules lifter motor" },
+{ hanzi: "料嘴振动电磁阀", pinyin: "料嘴振动电磁阀-liàozuǐ zhèndòng diàncífá", english: "Nozzle vibration solenoid valve" },
+{ hanzi: "料门吹气电磁阀", pinyin: "料门吹气电磁阀-liàomén chuīqì diàncífá", english: "Filling gate blowing solenoid valve" },
+{ hanzi: "挡瓶电磁阀", pinyin: "挡瓶电磁阀-dǎngpíng diàncífá", english: "Blocked bottle solenoid valve" },
+{ hanzi: "剔除电磁阀", pinyin: "剔除电磁阀-tīchú diàncífá", english: "Rejection solenoid valve" },
+{ hanzi: "气动振动器电磁阀", pinyin: "气动振动器电磁阀-qìdòng zhèndòngqì diàncífá", english: "Pneumatic vibrator solenoid valve" },
+{ hanzi: "送料斗翻转电磁阀", pinyin: "送料斗翻转电磁阀-sòngliào dǒu fānzhuǎn diàncífá", english: "Feeding hopper turning solenoid valve" },
+{ hanzi: "分料电磁阀", pinyin: "分料电磁阀-fēnliào diàncífá", english: "Capsules separating solenoid valve" },
+{ hanzi: "振盘静电消除电磁阀1", pinyin: "振盘静电消除电磁阀1-zhènpán jìngdiàn xiāochú diàncífá yī", english: "Vibration plate static elimination solenoid valve 1" },
+{ hanzi: "振盘静电消除电磁阀2", pinyin: "振盘静电消除电磁阀2-zhènpán jìngdiàn xiāochú diàncífá èr", english: "Vibration plate static elimination solenoid valve 2" },
+{ hanzi: "料嘴振动电磁阀", pinyin: "料嘴振动电磁阀-liàozuǐ zhèndòng diàncífá", english: "Nozzle vibration solenoid valve" },
+{ hanzi: "料仓振动电磁阀", pinyin: "料仓振动电磁阀-liàocāng zhèndòng diàncífá", english: "Silo vibration solenoid valve" },
+{ hanzi: "料嘴振动电磁阀", pinyin: "料嘴振动电磁阀-liàozuǐ zhèndòng diàncífá", english: "Nozzle vibration solenoid valve" },
+{ hanzi: "料门吹气电磁阀", pinyin: "料门吹气电磁阀-liàomén chuīqì diàncífá", english: "Filling gate blowing solenoid valve" },
+{ hanzi: "上升", pinyin: "上升-shàngshēng", english: "Up" },
+{ hanzi: "上载成功!", pinyin: "上载成功!-shàngzài chénggōng !", english: "Upload successfully!" },
+{ hanzi: "下载参数配方:", pinyin: "下载参数配方:-xiàzài cānshù pèifāng :", english: "Download the parameter recipe:" },
+{ hanzi: "下载成功!", pinyin: "下载成功!-xiàzài chénggōng !", english: "Download successfully!" },
+{ hanzi: "下降", pinyin: "下降-xiàjiàng", english: "Down" },
+{ hanzi: "不存在该文件", pinyin: "不存在该文件-bù cúnzài gāi wénjiàn", english: "The file does not exist" },
+{ hanzi: "与上下游设备联动运行关闭", pinyin: "与上下游设备联动运行关闭-yǔ shàngxiàyóu shèbèi liándòng yùnxíng guānbì", english: "Coordinate with upstream and downstream equipment is disabled" },
+{ hanzi: "与上下游设备联动运行启用", pinyin: "与上下游设备联动运行启用-yǔ shàngxiàyóu shèbèi liándòng yùnxíng qǐyòng", english: "Coordinate with upstream and downstream equipment is enabled" },
+{ hanzi: "两次输入密码不相同！", pinyin: "两次输入密码不相同！-liǎngcì shūrù mìmǎ bù xiāngtóng ！", english: "It's not the same to enter the password twice!" },
+{ hanzi: "中部振动器占空比", pinyin: "中部振动器占空比-zhōngbù zhèndòngqì zhànkōngbǐ", english: "Middle vibrator duty cycle" },
+{ hanzi: "中部振动器频率", pinyin: "中部振动器频率-zhōngbù zhèndòngqì pínlǜ", english: "Middle vibrator frequency" },
+{ hanzi: "为下次登录需要修改密码", pinyin: "为下次登录需要修改密码-wéi xiàcì dēnglù xūyào xiūgǎi mìmǎ", english: "as the must change password at next logon" },
+{ hanzi: "为取消密码永不过期", pinyin: "为取消密码永不过期-wéi qǔxiāo mìmǎ yǒngbù guòqī", english: "cancels the password and never expires" },
+{ hanzi: "为密码永不过期", pinyin: "为密码永不过期-wéi mìmǎ yǒngbù guòqī", english: "as the password never expires" },
+{ hanzi: "为被禁用", pinyin: "为被禁用-wéi bèi jìnyòng", english: "is disabled" },
+{ hanzi: "为解除禁用", pinyin: "为解除禁用-wéi jiěchú jìnyòng", english: "is unbanned" },
+{ hanzi: "主星轮速度", pinyin: "主星轮速度-zhǔxīng lún sùdù", english: "Main wheel speed" },
+{ hanzi: "主机升降电机", pinyin: "主机升降电机-zhǔjī shēngjiàng diànjī", english: "Base machine lifting motor" },
+{ hanzi: "主机点动功能关闭", pinyin: "主机点动功能关闭-zhǔjī diǎndòng gōngnéng guānbì", english: "Base machine jog function is disabled" },
+{ hanzi: "主机点动功能启用", pinyin: "主机点动功能启用-zhǔjī diǎndòng gōngnéng qǐyòng", english: "Base machine jog function is enabled" },
+{ hanzi: "产品名称不能为空,请重新输入!", pinyin: "产品名称不能为空,请重新输入!-chǎnpǐnmíngchēng bùnéng wéikōng , qǐng chóngxīn shūrù !", english: "The product name cannot be empty, please re-enter it" },
+{ hanzi: "产品批号不能为空,请重新输入!", pinyin: "产品批号不能为空,请重新输入!-chǎnpǐn pīhào bùnéng wéikōng , qǐng chóngxīn shūrù !", english: "Product batch number cannot be empty, please re-enter!" },
+{ hanzi: "产品批号只能包含字母和数字,请重新输入!", pinyin: "产品批号只能包含字母和数字,请重新输入!-chǎnpǐn pīhào zhǐnéng bāohán zìmǔ hé shùzì , qǐng chóngxīn shūrù !", english: "Product batch number can only contain letters and numbers, please re-enter!" },
+{ hanzi: "产品规格不能为空,请重新输入!", pinyin: "产品规格不能为空,请重新输入!-chǎnpǐnguīgé bùnéng wéikōng , qǐng chóngxīn shūrù !", english: "The product specification cannot be empty, please re-enter it" },
+{ hanzi: "伺服使能关闭", pinyin: "伺服使能关闭-sìfú shǐnéng guānbì", english: "Close servo enable" },
+{ hanzi: "伺服使能打开", pinyin: "伺服使能打开-sìfú shǐnéng dǎkāi", english: "Open servo enable" },
+{ hanzi: "伺服停止", pinyin: "伺服停止-sìfú tíngzhǐ", english: "Servo stop" },
+{ hanzi: "伺服到位检测剔除", pinyin: "伺服到位检测剔除-sìfú dàowèi jiǎncè tīchú", english: "Servo in place detection rejection" },
+{ hanzi: "伺服原点设定", pinyin: "伺服原点设定-sìfú yuándiǎn shèdìng", english: "Servo origin setting" },
+{ hanzi: "伺服定位，点动速度", pinyin: "伺服定位，点动速度-sìfú dìngwèi ， diǎndòng sùdù", english: "Servo positioning, jogging speed" },
+{ hanzi: "伺服定位位置", pinyin: "伺服定位位置-sìfú dìngwèi wèizhi", english: "Servo positioning position" },
+{ hanzi: "伺服点动-", pinyin: "伺服点动--sìfú diǎndòng -", english: "Servo jog -" },
+{ hanzi: "伺服点动+", pinyin: "伺服点动+-sìfú diǎndòng +", english: "Servo jog +" },
+{ hanzi: "伺服绝对定位", pinyin: "伺服绝对定位-sìfú juéduì dìngwèi", english: "Servo absolute positioning" },
+{ hanzi: "保存参数配方:", pinyin: "保存参数配方:-bǎocún cānshù pèifāng :", english: "Save the parameter recipe:" },
+{ hanzi: "保存成功!", pinyin: "保存成功!-bǎocún chénggōng !", english: "Save successfully!" },
+{ hanzi: "修改成功！", pinyin: "修改成功！-xiūgǎi chénggōng ！", english: "Modified successfully!" },
+{ hanzi: "修改用户", pinyin: "修改用户-xiūgǎi yònghù", english: "Modify user" },
+{ hanzi: "倒瓶剔除延时", pinyin: "倒瓶剔除延时-dǎopíng tīchú yánshí", english: "Fallen bottle eliminate delay" },
+{ hanzi: "倒瓶剔除检测时间", pinyin: "倒瓶剔除检测时间-dǎopíng tīchú jiǎncèshíjiān", english: "Fallen bottle eliminate time" },
+{ hanzi: "倒瓶检测关闭", pinyin: "倒瓶检测关闭-dǎopíng jiǎncè guānbì", english: "Fallen bottle detection is disabled" },
+{ hanzi: "倒瓶检测启用", pinyin: "倒瓶检测启用-dǎopíng jiǎncè qǐyòng", english: "Fallen bottle detection is enabled" },
+{ hanzi: "入口缺瓶报警延时", pinyin: "入口缺瓶报警延时-rùkǒu quēpíng bàojǐng yánshí", english: "Inlet bottle shortage alarm delay" },
+{ hanzi: "关门间隔", pinyin: "关门间隔-guānmén jiàngé", english: "Gate closing interval" },
+{ hanzi: "关门间隔太小", pinyin: "关门间隔太小-guānmén jiàngé tàixiǎo", english: "Closing interval too short" },
+{ hanzi: "关闭", pinyin: "关闭-guānbì", english: "Close" },
+{ hanzi: "其他电机速度", pinyin: "其他电机速度-qítā diànjī sùdù", english: "Other motor speed" },
+{ hanzi: "分料电磁阀", pinyin: "分料电磁阀-fēnliào diàncífá", english: "Capsules separating solenoid valve" },
+{ hanzi: "分瓶轮电机", pinyin: "分瓶轮电机-fēnpínglún diànjī", english: "Bottle separating wheel motor" },
+{ hanzi: "切刀保持延时", pinyin: "切刀保持延时-qiēdāo bǎochí yánshí", english: "Knife hold delay" },
+{ hanzi: "切刀动作延时", pinyin: "切刀动作延时-qiēdāo dòngzuò yánshí", english: "Knife start delay" },
+{ hanzi: "创建产品名称:", pinyin: "创建产品名称:-chuàngjiàn chǎnpǐnmíngchēng :", english: "Create product name:" },
+{ hanzi: "创建产品批号:", pinyin: "创建产品批号:-chuàngjiàn chǎnpǐn pīhào :", english: "Create product batch number:" },
+{ hanzi: "创建产品规格:", pinyin: "创建产品规格:-chuàngjiàn chǎnpǐnguīgé :", english: "Create product specifications:" },
+{ hanzi: "创建成功!", pinyin: "创建成功!-chuàngjiàn chénggōng !", english: "Create successfully!" },
+{ hanzi: "创建用户：", pinyin: "创建用户：-chuàngjiàn yònghù ：", english: "Create user:" },
+{ hanzi: "删除参数配方:", pinyin: "删除参数配方:-shānchú cānshù pèifāng :", english: "Delete parameter recipe:" },
+{ hanzi: "删除用户", pinyin: "删除用户-shānchú yònghù", english: "Delete user" },
+{ hanzi: "删除账户", pinyin: "删除账户-shānchú zhànghù", english: "Delete account" },
+{ hanzi: "前部振动器占空比", pinyin: "前部振动器占空比-qiánbù zhèndòngqì zhànkōngbǐ", english: "Front vibrator duty cycle" },
+{ hanzi: "前部振动器频率", pinyin: "前部振动器频率-qiánbù zhèndòngqì pínlǜ", english: "Front vibrator frequency" },
+{ hanzi: "剔除保持时间", pinyin: "剔除保持时间-tīchú bǎochí shíjiān", english: "Eliminate valve hold time" },
+{ hanzi: "剔除功能关闭", pinyin: "剔除功能关闭-tīchú gōngnéng guānbì", english: "Rejection function is disabled" },
+{ hanzi: "剔除功能启用", pinyin: "剔除功能启用-tīchú gōngnéng qǐyòng", english: "Rejection function is enabled" },
+{ hanzi: "剔除工位", pinyin: "剔除工位-tīchú gōngwèi", english: "Remove workstations" },
+{ hanzi: "剔除延时时间", pinyin: "剔除延时时间-tīchú yánshí shíjiān", english: "Eliminate valve delay" },
+{ hanzi: "剔除电磁阀", pinyin: "剔除电磁阀-tīchú diàncífá", english: "Rejection solenoid valve" },
+{ hanzi: "剔除确认时间", pinyin: "剔除确认时间-tīchú quèrèn shíjiān", english: "Eliminate confirmation time" },
+{ hanzi: "剔除确认检测关闭", pinyin: "剔除确认检测关闭-tīchú quèrèn jiǎncè guānbì", english: "Rejection confirm detection is disabled" },
+{ hanzi: "剔除确认检测启用", pinyin: "剔除确认检测启用-tīchú quèrèn jiǎncè qǐyòng", english: "Rejection confirm detection is enabled" },
+{ hanzi: "剔除箱满报警延时", pinyin: "剔除箱满报警延时-tīchú xiāngmǎn bàojǐng yánshí", english: "Eliminate box full alarm delay" },
+{ hanzi: "剔除触发角度", pinyin: "剔除触发角度-tīchú chùfā jiǎodù", english: "Remove trigger angle" },
+{ hanzi: "剪切成功", pinyin: "剪切成功-jiǎnqiē chénggōng", english: "Cut successful" },
+{ hanzi: "剪切文件", pinyin: "剪切文件-jiǎnqiē wénjiàn", english: "Cut file" },
+{ hanzi: "剪切文件：", pinyin: "剪切文件：-jiǎnqiē wénjiàn ：", english: "Cut file:" },
+{ hanzi: "参数配方编号只能包含字母和数字,请重新输入!", pinyin: "参数配方编号只能包含字母和数字,请重新输入!-cānshù pèifāng biānhào zhǐnéng bāohán zìmǔ hé shùzì , qǐng chóngxīn shūrù !", english: "Parameter recipe number can only contain letters and numbers, please re-enter!" },
+{ hanzi: "参数配方编号重复!", pinyin: "参数配方编号重复!-cānshù pèifāng biānhào chóngfù !", english: "Parameter recipe number repeated!" },
+{ hanzi: "反瓶剔除延时", pinyin: "反瓶剔除延时-fǎnpíng tīchú yánshí", english: "Reverse bottle eliminate delay" },
+{ hanzi: "反瓶剔除检测时间", pinyin: "反瓶剔除检测时间-fǎnpíng tīchú jiǎncèshíjiān", english: "Reverse bottle eliminate time" },
+{ hanzi: "反转", pinyin: "反转-fǎnzhuǎn", english: "Reverse rotation" },
+{ hanzi: "取消下次登录需要修改密码", pinyin: "取消下次登录需要修改密码-qǔxiāo xiàcì dēnglù xūyào xiūgǎi mìmǎ", english: "cancels the must change password at next logon" },
+{ hanzi: "取消密码永不过期", pinyin: "取消密码永不过期-qǔxiāo mìmǎ yǒngbù guòqī", english: "cancels the password and never expires" },
+{ hanzi: "后堵瓶报警延时", pinyin: "后堵瓶报警延时-hòu dǔpíng bàojǐng yánshí", english: "Back blocked bottle alarm" },
+{ hanzi: "吗？", pinyin: "吗？-ma ？", english: "?" },
+{ hanzi: "在空闲状态下才能切换模式", pinyin: "在空闲状态下才能切换模式-zài kòngxián zhuàngtài xià cáinéng qiēhuàn móshì", english: "Mode can only be switched in the idle state" },
+{ hanzi: "堵瓶检测关闭", pinyin: "堵瓶检测关闭-dǔpíng jiǎncè guānbì", english: "Blocked bottle detection is disabled" },
+{ hanzi: "堵瓶检测启用", pinyin: "堵瓶检测启用-dǔpíng jiǎncè qǐyòng", english: "Blocked bottle detection is enabled" },
+{ hanzi: "复制备份文件", pinyin: "复制备份文件-fùzhì bèifènwénjiàn", english: "Copy backup file" },
+{ hanzi: "复制成功", pinyin: "复制成功-fùzhì chénggōng", english: "Copy successfully" },
+{ hanzi: "复制文件", pinyin: "复制文件-fùzhì wénjiàn", english: "Copy file" },
+{ hanzi: "复制文件：", pinyin: "复制文件：-fùzhì wénjiàn ：", english: "Copy file:" },
+{ hanzi: "复制文件夹", pinyin: "复制文件夹-fùzhì wénjiànjiā", english: "Copy folder" },
+{ hanzi: "多装", pinyin: "多装-duōzhuāng", english: "Overfilled" },
+{ hanzi: "夹带伺服自动速度", pinyin: "夹带伺服自动速度-jiādài sìfú zìdòng sùdù", english: "Entrainment servo automatic speed" },
+{ hanzi: "夹带电机", pinyin: "夹带电机-jiādài diànjī", english: "Clamping belt motor" },
+{ hanzi: "存在相同文件", pinyin: "存在相同文件-cúnzài xiāngtóng wénjiàn", english: "The same file exists" },
+{ hanzi: "安全门关闭", pinyin: "安全门关闭-ānquánmén guānbì", english: "Safety door is disabled" },
+{ hanzi: "安全门启用", pinyin: "安全门启用-ānquánmén qǐyòng", english: "Safety door is enabled" },
+{ hanzi: "定位，点动速度", pinyin: "定位，点动速度-dìngwèi ， diǎndòng sùdù", english: "Positioning, jogging speed" },
+{ hanzi: "密码不能为空！", pinyin: "密码不能为空！-mìmǎ bùnéng wéikōng ！", english: "The password can't be empty!" },
+{ hanzi: "密码永不过期", pinyin: "密码永不过期-mìmǎ yǒngbù guòqī", english: "Password never expires" },
+{ hanzi: "封口机参数", pinyin: "封口机参数-fēngkǒujī cānshù", english: "Sealing machine parameters" },
+{ hanzi: "封口机报警延时", pinyin: "封口机报警延时-fēngkǒujī bàojǐng yánshí", english: "Sealing machine alarm delay" },
+{ hanzi: "将用户", pinyin: "将用户-jiàng yònghù", english: "will be the user" },
+{ hanzi: "工位清零", pinyin: "工位清零-gōngwèi qīnglíng", english: "Station reset" },
+{ hanzi: "工位电眼位置", pinyin: "工位电眼位置-gōngwèi diànyǎn wèizhi", english: "Station electric eye position" },
+{ hanzi: "已存在是否继续?", pinyin: "已存在是否继续?-yǐ cúnzài shìfǒu jìxù ?", english: "Already exists, does it continue?" },
+{ hanzi: "已确认SCADA下发配方", pinyin: "已确认SCADA下发配方-yǐ quèrèn scada xiàfā pèifāng", english: "The SCADA delivery recipe has been confirmed" },
+{ hanzi: "已经结批，无法继续使用！", pinyin: "已经结批，无法继续使用！-yǐjīng jiépī ， wúfǎ jìxù shǐyòng ！", english: "Closed batch, unable to continue" },
+{ hanzi: "已结批,无法继续", pinyin: "已结批,无法继续-yǐ jiépī , wúfǎ jìxù", english: "Closed batch, unable to continue" },
+{ hanzi: "干燥剂机参数", pinyin: "干燥剂机参数-gānzàojì jī cānshù", english: "Feed motor speed" },
+{ hanzi: "干燥剂缺料报警延时", pinyin: "干燥剂缺料报警延时-gānzàojì quēliào bàojǐng yánshí", english: "Desiccant shortage alarm delay" },
+{ hanzi: "干燥剂长度", pinyin: "干燥剂长度-gānzàojì chángdù", english: "Desiccant length" },
+{ hanzi: "开关间隔太小", pinyin: "开关间隔太小-kāiguān jiàngé tàixiǎo", english: "Switching interval too short" },
+{ hanzi: "开始记录:", pinyin: "开始记录:-kāishǐ jìlù :", english: "Begin recording:" },
+{ hanzi: "开机剔除", pinyin: "开机剔除-kāijī tīchú", english: "Rejection of start-up" },
+{ hanzi: "开机剔除数量", pinyin: "开机剔除数量-kāijī tīchú shùliàng", english: "Boot rejection quantity" },
+{ hanzi: "强制测试DO2016关闭", pinyin: "强制测试DO2016关闭-qiángzhì cèshì doèrlíngyīliù guānbì", english: "Force test DO2016 close" },
+{ hanzi: "强制测试DO2016打开", pinyin: "强制测试DO2016打开-qiángzhì cèshì doèrlíngyīliù dǎkāi", english: "Force test DO2016 open" },
+{ hanzi: "当前账户不能修改！", pinyin: "当前账户不能修改！-dāngqián zhànghù bùnéng xiūgǎi ！", english: "The current account cannot be modified!" },
+{ hanzi: "当日生产结束记录:", pinyin: "当日生产结束记录:-dàngrì shēngchǎn jiéshù jìlù :", english: "Production completion record of the day:" },
+{ hanzi: "德 文", pinyin: "德 文-dé   wén", english: "German" },
+{ hanzi: "总料门打开保持时间", pinyin: "总料门打开保持时间-zǒngliào mén dǎkāi bǎochí shíjiān", english: "Total material door opening and holding time" },
+{ hanzi: "总模块功能关闭", pinyin: "总模块功能关闭-zǒng mókuài gōngnéng guānbì", english: "Main module function is disabled" },
+{ hanzi: "总模块功能启用", pinyin: "总模块功能启用-zǒng mókuài gōngnéng qǐyòng", english: "Main module function is enabled" },
+{ hanzi: "截图保存在 D:/PrintScreen 目录下", pinyin: "截图保存在 D:/PrintScreen 目录下-jiétú bǎocún zài   d : / printscreen   mùlù xià", english: "The screenshots are saved in the D:\PrintScn directory" },
+{ hanzi: "所有", pinyin: "所有-suǒyǒu", english: "All" },
+{ hanzi: "手动模式 保持状态", pinyin: "手动模式 保持状态-shǒudòng móshì   bǎochí zhuàngtài", english: "Manual mode Suspended state" },
+{ hanzi: "手动模式 停止中状态", pinyin: "手动模式 停止中状态-shǒudòng móshì   tíngzhǐ zhōng zhuàngtài", english: "Manual mode Stopping state" },
+{ hanzi: "手动模式 停止状态", pinyin: "手动模式 停止状态-shǒudòng móshì   tíngzhǐ zhuàngtài", english: "Manual mode Stopped state" },
+{ hanzi: "手动模式 启动中状态", pinyin: "手动模式 启动中状态-shǒudòng móshì   qǐdòng zhōng zhuàngtài", english: "Manual mode Starting state" },
+{ hanzi: "手动模式 暂停状态", pinyin: "手动模式 暂停状态-shǒudòng móshì   zàntíngzhuàngtài", english: "Manual mode Held state" },
+{ hanzi: "手动模式 空闲状态", pinyin: "手动模式 空闲状态-shǒudòng móshì   kòngxián zhuàngtài", english: "Manual mode Idle state" },
+{ hanzi: "手动模式 运行状态", pinyin: "手动模式 运行状态-shǒudòng móshì   yùnxíng zhuàngtài", english: "Manual mode Execute state" },
+{ hanzi: "打印报表", pinyin: "打印报表-dǎyìn bàobiǎo", english: "Print report" },
+{ hanzi: "打开文件：", pinyin: "打开文件：-dǎkāi wénjiàn ：", english: "Open file:" },
+{ hanzi: "打开文件夹：", pinyin: "打开文件夹：-dǎkāi wénjiànjiā ：", english: "Open a folder:" },
+{ hanzi: "扫瓶电机速度", pinyin: "扫瓶电机速度-sǎopíng diànjī sùdù", english: "Bottle sweeping motor speed" },
+{ hanzi: "批号", pinyin: "批号-pīhào", english: "Batch number" },
+{ hanzi: "批次生产结束记录:", pinyin: "批次生产结束记录:-pīcì shēngchǎn jiéshù jìlù :", english: "Batch production completion record:" },
+{ hanzi: "批次配方清零", pinyin: "批次配方清零-pīcì pèifāng qīnglíng", english: "Clear batch and recipe" },
+{ hanzi: "拉干燥剂延时", pinyin: "拉干燥剂延时-lā gānzàojì yánshí", english: "Start pulling desiccant delay" },
+{ hanzi: "拉干燥剂超时时间", pinyin: "拉干燥剂超时时间-lā gānzàojì chāoshí shíjiān", english: "End pull desiccant delay" },
+{ hanzi: "挡瓶电磁阀", pinyin: "挡瓶电磁阀-dǎngpíng diàncífá", english: "Blocked bottle solenoid valve" },
+{ hanzi: "推杆推料间隔", pinyin: "推杆推料间隔-tuīgān tuīliào jiàngé", english: "The push rod ejection interval" },
+{ hanzi: "描述", pinyin: "描述-miáoshù", english: "description" },
+{ hanzi: "提升机上料关闭", pinyin: "提升机上料关闭-tíshēngjī shàng liào guānbì", english: "Disable elevator infeed" },
+{ hanzi: "提升机上料打开", pinyin: "提升机上料打开-tíshēngjī shàng liào dǎkāi", english: "Enable elevator infeed" },
+{ hanzi: "提升机上瓶超时时间", pinyin: "提升机上瓶超时时间-tíshēngjī shàngpíng chāoshí shíjiān", english: "Lifting up bottle fault alar" },
+{ hanzi: "提升机功能关闭", pinyin: "提升机功能关闭-tíshēngjī gōngnéng guānbì", english: "Lifting function is disabled" },
+{ hanzi: "提升机功能启用", pinyin: "提升机功能启用-tíshēngjī gōngnéng qǐyòng", english: "Lifting function is enabled" },
+{ hanzi: "提升机振动器测试关闭", pinyin: "提升机振动器测试关闭-tíshēngjī zhèndòngqì cèshì guānbì", english: "Elevator vibrator test close" },
+{ hanzi: "提升机振动器测试打开", pinyin: "提升机振动器测试打开-tíshēngjī zhèndòngqì cèshì dǎkāi", english: "Elevator vibrator test open" },
+{ hanzi: "提升机电机", pinyin: "提升机电机-tíshēngjī diànjī", english: "Elevator motor" },
+{ hanzi: "提升电机停止延时", pinyin: "提升电机停止延时-tíshēng diànjī tíngzhǐ yánshí", english: "Lifting motor stop delay" },
+{ hanzi: "提升电机运行延时", pinyin: "提升电机运行延时-tíshēng diànjī yùnxíng yánshí", english: "Lifting motor run delay" },
+{ hanzi: "提升电机速度", pinyin: "提升电机速度-tíshēng diànjī sùdù", english: "Lifting motor speed" },
+{ hanzi: "提示", pinyin: "提示-tíshì", english: "Prompt" },
+{ hanzi: "操作成功！", pinyin: "操作成功！-cāozuò chénggōng ！", english: "Operation successful!" },
+{ hanzi: "放瓶保持时间", pinyin: "放瓶保持时间-fàngpíng bǎochí shíjiān", english: "Bottle hold time" },
+{ hanzi: "放瓶动作延时", pinyin: "放瓶动作延时-fàngpíng dòngzuò yánshí", english: "bottle start delay" },
+{ hanzi: "数据正在记录，请勿修改批号!", pinyin: "数据正在记录，请勿修改批号!-shùjù zhèngzài jìlù ， qǐngwù xiūgǎi pīhào !", english: "Data is being recorded, please do not modify the batch number" },
+{ hanzi: "数粒头工位", pinyin: "数粒头工位-shùlì tóu gōngwèi", english: "Counting head workstation" },
+{ hanzi: "数粒机参数", pinyin: "数粒机参数-shùlì jī cānshù", english: "Particle counting machine parameters" },
+{ hanzi: "数粒板剔除功能关闭", pinyin: "数粒板剔除功能关闭-shùlì bǎn tīchú gōngnéng guānbì", english: "Counting board rejection function is disabled" },
+{ hanzi: "数粒板剔除功能启用", pinyin: "数粒板剔除功能启用-shùlì bǎn tīchú gōngnéng qǐyòng", english: "Counting board rejection function is enabled" },
+{ hanzi: "文件列表:", pinyin: "文件列表:-wénjiàn lièbiǎo :", english: "File list:" },
+{ hanzi: "文件夹", pinyin: "文件夹-wénjiànjiā", english: "folder" },
+{ hanzi: "文件夹创建成功!", pinyin: "文件夹创建成功!-wénjiànjiā chuàngjiàn chénggōng !", english: "Folder created successfully!" },
+{ hanzi: "文件夹路径选择", pinyin: "文件夹路径选择-wénjiànjiā lùjìng xuǎnzé", english: "Folder path selection" },
+{ hanzi: "文件路径选择", pinyin: "文件路径选择-wénjiàn lùjìng xuǎnzé", english: "File path selection" },
+{ hanzi: "料仓振动功能关闭", pinyin: "料仓振动功能关闭-liàocāng zhèndòng gōngnéng guānbì", english: "Silo vibrating function is disabled" },
+{ hanzi: "料仓振动功能启用", pinyin: "料仓振动功能启用-liàocāng zhèndòng gōngnéng qǐyòng", english: "Silo vibrating function is enabled" },
+{ hanzi: "料仓振动器占空比", pinyin: "料仓振动器占空比-liàocāng zhèndòngqì zhànkōngbǐ", english: "Hopper vibrator duty cycle" },
+{ hanzi: "料仓振动器频率", pinyin: "料仓振动器频率-liàocāng zhèndòngqì pínlǜ", english: "Hopper vibrator frequency" },
+{ hanzi: "料仓缺料报警延时", pinyin: "料仓缺料报警延时-liàocāng quēliào bàojǐng yánshí", english: "Silo lack material alarm" },
+{ hanzi: "料嘴抖动时间", pinyin: "料嘴抖动时间-liàozuǐ dǒudòng shíjiān", english: "Material nozzle shaking time" },
+{ hanzi: "料嘴振动测试关闭", pinyin: "料嘴振动测试关闭-liàozuǐ zhèndòng cèshì guānbì", english: "Nozzle vibrating test close" },
+{ hanzi: "料嘴振动测试打开", pinyin: "料嘴振动测试打开-liàozuǐ zhèndòng cèshì dǎkāi", english: "Nozzle vibrating test open" },
+{ hanzi: "料嘴提前抬起角度", pinyin: "料嘴提前抬起角度-liàozuǐ tíqián táiqǐ jiǎodù", english: "Lift the nozzle in advance at an angle" },
+{ hanzi: "料嘴震动上升时间", pinyin: "料嘴震动上升时间-liàozuǐ zhèndòng shàngshēngshíjiān", english: "Material nozzle vibration rise time" },
+{ hanzi: "料嘴震动下降时间", pinyin: "料嘴震动下降时间-liàozuǐ zhèndòng xiàjiàngshíjiān", english: "Drop time of nozzle vibration" },
+{ hanzi: "料门延时", pinyin: "料门延时-liàomén yánshí", english: "Gate delay" },
+{ hanzi: "料门开关间隔", pinyin: "料门开关间隔-liàomén kāiguān jiàngé", english: "Gate switching interval" },
+{ hanzi: "断开链接", pinyin: "断开链接-duànkāi liànjiē", english: "Disconnect" },
+{ hanzi: "新建参数配方", pinyin: "新建参数配方-xīnjiàn cānshù pèifāng", english: "Create new parameter recipe" },
+{ hanzi: "新建文件夹：", pinyin: "新建文件夹：-xīnjiàn wénjiànjiā ：", english: "Create new folder:" },
+{ hanzi: "新建文件夹路径选择", pinyin: "新建文件夹路径选择-xīnjiàn wénjiànjiā lùjìng xuǎnzé", english: "New folder path selection" },
+{ hanzi: "旋盖上下伺服上取盖位置", pinyin: "旋盖上下伺服上取盖位置-xuángài shàngxià sìfú shàngqǔ gài wèizhi", english: "Screw up and down servo up and down cover position" },
+{ hanzi: "旋盖上下伺服下旋盖位置", pinyin: "旋盖上下伺服下旋盖位置-xuángài shàngxià sìfú xiàxuán gài wèizhi", english: "Screw cover up and down servo screw cover position" },
+{ hanzi: "旋盖上下伺服开始上升角度", pinyin: "旋盖上下伺服开始上升角度-xuángài shàngxià sìfú kāishǐ shàngshēng jiǎodù", english: "The upper and lower servo of the screw cover starts to rise in angle" },
+{ hanzi: "旋盖上下伺服开始下降角度", pinyin: "旋盖上下伺服开始下降角度-xuángài shàngxià sìfú kāishǐ xiàjiàng jiǎodù", english: "The upper and lower servo of the screw cover begins to descend at an angle" },
+{ hanzi: "旋盖上下伺服速度", pinyin: "旋盖上下伺服速度-xuángài shàngxià sìfú sùdù", english: "Screw up and down servo speed" },
+{ hanzi: "旋盖伺服开始旋转角度", pinyin: "旋盖伺服开始旋转角度-xuángài sìfú kāishǐ xuánzhuǎn jiǎodù", english: "The rotary cover servo starts to rotate the angle" },
+{ hanzi: "旋盖伺服结束旋转角度", pinyin: "旋盖伺服结束旋转角度-xuángài sìfú jiéshù xuánzhuǎn jiǎodù", english: "End rotation angle of screw cap servo" },
+{ hanzi: "旋盖伺服速度", pinyin: "旋盖伺服速度-xuángài sìfú sùdù", english: "Screw cap motor speed" },
+{ hanzi: "旋盖工位", pinyin: "旋盖工位-xuángài gōngwèi", english: "Capping station" },
+{ hanzi: "旋盖扭力值", pinyin: "旋盖扭力值-xuángài niǔlì zhí", english: "Screw cap torque value" },
+{ hanzi: "旋盖提升电机速度", pinyin: "旋盖提升电机速度-xuángài tíshēng diànjī sùdù", english: "Screw up and down servo speed" },
+{ hanzi: "旋盖旋盖扭力最大限值", pinyin: "旋盖旋盖扭力最大限值-xuángài xuángài niǔlì zuìdà xiànzhí", english: "Maximum limit of torque for screw cap screw cap" },
+{ hanzi: "旋盖机参数", pinyin: "旋盖机参数-xuángàijī cānshù", english: "Parameters of capping machine" },
+{ hanzi: "无剔除", pinyin: "无剔除-wú tīchú", english: "No rejection" },
+{ hanzi: "无盖停止延时时间", pinyin: "无盖停止延时时间-wúgài tíngzhǐ yánshí shíjiān", english: "Stop delay time without cover" },
+{ hanzi: "日期不正确，请重新选择", pinyin: "日期不正确，请重新选择-rìqī bù zhèngquè ， qǐng chóngxīn xuǎnzé", english: "The date is incorrect, please reselect" },
+{ hanzi: "时间清零", pinyin: "时间清零-shíjiān qīnglíng", english: "Time clear" },
+{ hanzi: "是否确认删除", pinyin: "是否确认删除-shìfǒu quèrèn shānchú", english: "Confirm deletion" },
+{ hanzi: "最大伸出时间清零", pinyin: "最大伸出时间清零-zuìdà shēnchū shíjiān qīnglíng", english: "Clearing max stretching time" },
+{ hanzi: "最大实际扭矩清零", pinyin: "最大实际扭矩清零-zuìdà shíjì niǔjǔ qīnglíng", english: "Clearing max actual torque" },
+{ hanzi: "最大长度", pinyin: "最大长度-zuìdà chángdù", english: "Maximum length" },
+{ hanzi: "最小长度", pinyin: "最小长度-zuìxiǎo chángdù", english: "Minimum length" },
+{ hanzi: "最近1个月", pinyin: "最近1个月-zuìjìn yī gè yuè", english: "Latest month" },
+{ hanzi: "最近1年", pinyin: "最近1年-zuìjìn yī nián", english: "Latest year" },
+{ hanzi: "最近1星期", pinyin: "最近1星期-zuìjìn yī xīngqī", english: "Latest week" },
+{ hanzi: "最近3个月", pinyin: "最近3个月-zuìjìn sān gè yuè", english: "Latest 3 months" },
+{ hanzi: "最近3天", pinyin: "最近3天-zuìjìn sān tiān", english: "Latest 3 day" },
+{ hanzi: "最近半年", pinyin: "最近半年-zuìjìn bànnián", english: "Latest half year" },
+{ hanzi: "有盖启动触发时间", pinyin: "有盖启动触发时间-yǒugài qǐdòng chùfā shíjiān", english: "Covered start trigger time" },
+{ hanzi: "未找到路径", pinyin: "未找到路径-wèizhǎodào lùjìng", english: "Path not found" },
+{ hanzi: "权限组", pinyin: "权限组-quánxiàn zǔ", english: "Permission group" },
+{ hanzi: "查询批次报表:", pinyin: "查询批次报表:-cháxún pīcì bàobiǎo :", english: "Querying batch reports:" },
+{ hanzi: "查询时间报表:开始/结束时间:", pinyin: "查询时间报表:开始/结束时间:-cháxún shíjiān bàobiǎo : kāishǐ / jiéshù shíjiān :", english: "Querying time reports: begin/end time:" },
+{ hanzi: "模拟下料功能关闭", pinyin: "模拟下料功能关闭-mónǐ xià liào gōngnéng guānbì", english: "Simulated outfeeding function is disabled" },
+{ hanzi: "模拟下料功能启用", pinyin: "模拟下料功能启用-mónǐ xià liào gōngnéng qǐyòng", english: "Simulated outfeeding function is enabled" },
+{ hanzi: "模拟来料工位", pinyin: "模拟来料工位-mónǐ láiliào gōngwèi", english: "Simulate the incoming material workstation" },
+{ hanzi: "正位延时", pinyin: "正位延时-zhèngwèi yánshí", english: "Position correcting delay" },
+{ hanzi: "正转", pinyin: "正转-zhèngzhuǎn", english: "Forward rotation" },
+{ hanzi: "此配方正在使用，无法删除!", pinyin: "此配方正在使用，无法删除!-cǐ pèifāng zhèngzài shǐyòng ， wúfǎ shānchú !", english: "This recipe is in use and cannot be deleted!" },
+{ hanzi: "气压检测关闭", pinyin: "气压检测关闭-qìyā jiǎncè guānbì", english: "Air pressure detection is disabled" },
+{ hanzi: "气压检测启用", pinyin: "气压检测启用-qìyā jiǎncè qǐyòng", english: "Air pressure detection is enabled" },
+{ hanzi: "气缸关闭", pinyin: "气缸关闭-qìgāng guānbì", english: "Cylinder close" },
+{ hanzi: "气缸打开", pinyin: "气缸打开-qìgāng dǎkāi", english: "Cylinder open" },
+{ hanzi: "消音", pinyin: "消音-xiāoyīn", english: "Silencing" },
+{ hanzi: "添加到权限组", pinyin: "添加到权限组-tiānjiā dào quánxiàn zǔ", english: "Add to permission group" },
+{ hanzi: "清洁教程关闭", pinyin: "清洁教程关闭-qīngjié jiàochéng guānbì", english: "Disable cleaning guidance close" },
+{ hanzi: "清洁教程打开", pinyin: "清洁教程打开-qīngjié jiàochéng dǎkāi", english: "Enable cleaning guidance open" },
+{ hanzi: "清空批次配方", pinyin: "清空批次配方-qīngkōng pīcì pèifāng", english: "Empty batch recipe" },
+{ hanzi: "滑道卡料检测时间", pinyin: "滑道卡料检测时间-huádào kǎliào jiǎncèshíjiān", english: "Time of slide card detection" },
+{ hanzi: "滑道满盖检测延时", pinyin: "滑道满盖检测延时-huádào mǎngài jiǎncè yánshí", english: "Slipway full cover detection delay" },
+{ hanzi: "滑道缺盖检测时间", pinyin: "滑道缺盖检测时间-huádào quēgài jiǎncèshíjiān", english: "Detection time of slipway cover missing" },
+{ hanzi: "灌装位置", pinyin: "灌装位置-guànzhuāng wèizhi", english: "Filling position" },
+{ hanzi: "点击单个确认按钮", pinyin: "点击单个确认按钮-diǎnjī dānge quèrèn ànniǔ", english: "Click individual confirm button" },
+{ hanzi: "点击报警查询按钮", pinyin: "点击报警查询按钮-diǎnjī bàojǐng cháxún ànniǔ", english: "Click alarm query button" },
+{ hanzi: "点击确认所有按钮", pinyin: "点击确认所有按钮-diǎnjī quèrèn suǒyǒu ànniǔ", english: "Click confirm all button" },
+{ hanzi: "理瓶机参数", pinyin: "理瓶机参数-lǐpíngjī cānshù", english: "Bottle sorting machine parameters" },
+{ hanzi: "瓶子检测工位", pinyin: "瓶子检测工位-píngzi jiǎncè gōngwèi", english: "Bottle inspection station" },
+{ hanzi: "生产模式 保持状态", pinyin: "生产模式 保持状态-shēngchǎn móshì   bǎochí zhuàngtài", english: "Production mode Suspended state" },
+{ hanzi: "生产模式 停止中状态", pinyin: "生产模式 停止中状态-shēngchǎn móshì   tíngzhǐ zhōng zhuàngtài", english: "Production mode Stopping state" },
+{ hanzi: "生产模式 停止状态", pinyin: "生产模式 停止状态-shēngchǎn móshì   tíngzhǐ zhuàngtài", english: "Production mode Stopped state" },
+{ hanzi: "生产模式 启动中状态", pinyin: "生产模式 启动中状态-shēngchǎn móshì   qǐdòng zhōng zhuàngtài", english: "Production mode Starting state" },
+{ hanzi: "生产模式 暂停状态", pinyin: "生产模式 暂停状态-shēngchǎn móshì   zàntíngzhuàngtài", english: "Production mode Held state" },
+{ hanzi: "生产模式 空闲状态", pinyin: "生产模式 空闲状态-shēngchǎn móshì   kòngxián zhuàngtài", english: "Production mode Idle state" },
+{ hanzi: "生产模式 运行状态", pinyin: "生产模式 运行状态-shēngchǎn móshì   yùnxíng zhuàngtài", english: "Production mode Execute state" },
+{ hanzi: "用户", pinyin: "用户-yònghù", english: "User" },
+{ hanzi: "用户", pinyin: "用户-yònghù", english: "User" },
+{ hanzi: "用户：", pinyin: "用户：-yònghù ：", english: "User:" },
+{ hanzi: "用户下次登录需要更改密码", pinyin: "用户下次登录需要更改密码-yònghù xiàcì dēnglù xūyào gēnggǎi mìmǎ", english: "User need to change password when logon next time" },
+{ hanzi: "用户不能更改密码", pinyin: "用户不能更改密码-yònghù bùnéng gēnggǎi mìmǎ", english: "Users cannot change passwords" },
+{ hanzi: "用户全名", pinyin: "用户全名-yònghù quánmíng", english: "User full name" },
+{ hanzi: "用户名", pinyin: "用户名-yònghùmíng", english: "User name" },
+{ hanzi: "用户名不能为空！", pinyin: "用户名不能为空！-yònghùmíng bùnéng wéikōng ！", english: "The username can't be empty!" },
+{ hanzi: "用户未登陆，请登陆后再执行", pinyin: "用户未登陆，请登陆后再执行-yònghù wèidēnglù ， qǐng dēnglù hòu zài zhíxíng", english: "The user has not logged on, please log on before executing" },
+{ hanzi: "用户禁用", pinyin: "用户禁用-yònghù jìnyòng", english: "User disable" },
+{ hanzi: "用户管理", pinyin: "用户管理-yònghù guǎnlǐ", english: "User management" },
+{ hanzi: "用户锁定", pinyin: "用户锁定-yònghù suǒdìng", english: "User locking" },
+{ hanzi: "电机关闭", pinyin: "电机关闭-diànjī guānbì", english: "Motor close" },
+{ hanzi: "电机反转", pinyin: "电机反转-diànjī fǎnzhuǎn", english: "Motor reverse rotation" },
+{ hanzi: "电机正转", pinyin: "电机正转-diànjī zhèngzhuǎn", english: "Motor forward rotation" },
+{ hanzi: "的全名", pinyin: "的全名-de quánmíng", english: "s full name" },
+{ hanzi: "的描述", pinyin: "的描述-de miáoshù", english: "s description" },
+{ hanzi: "盖仓缺料报警延时", pinyin: "盖仓缺料报警延时-gàicāng quēliào bàojǐng yánshí", english: "Silo lack material alarm" },
+{ hanzi: "盖组合检测工位", pinyin: "盖组合检测工位-gài zǔhé jiǎncè gōngwèi", english: "Cap inspection station" },
+{ hanzi: "目录不存在！", pinyin: "目录不存在！-mùlù bù cúnzài ！", english: "Directory does not exist!" },
+{ hanzi: "直线伺服伸出", pinyin: "直线伺服伸出-zhíxiàn sìfú shēnchū", english: "Linear servo extend" },
+{ hanzi: "直线伺服原点设定", pinyin: "直线伺服原点设定-zhíxiàn sìfú yuándiǎn shèdìng", english: "Linear servo origin setting" },
+{ hanzi: "直线伺服回原位", pinyin: "直线伺服回原位-zhíxiàn sìfú huí yuánwèi", english: "Linear servo back to origin" },
+{ hanzi: "直线伺服所有轴伸缩测试关闭", pinyin: "直线伺服所有轴伸缩测试关闭-zhíxiàn sìfú suǒyǒu zhóu shēnsuō cèshì guānbì", english: "Linear servo all axis stretch test is disabled" },
+{ hanzi: "直线伺服所有轴伸缩测试打开", pinyin: "直线伺服所有轴伸缩测试打开-zhíxiàn sìfú suǒyǒu zhóu shēnsuō cèshì dǎkāi", english: "Linear servo all axis stretch test is enabled" },
+{ hanzi: "直线伺服所有轴去使能", pinyin: "直线伺服所有轴去使能-zhíxiàn sìfú suǒyǒu zhóu qù shǐ néng", english: "Linear servo all axis de-enable" },
+{ hanzi: "直线伺服所有轴找原点", pinyin: "直线伺服所有轴找原点-zhíxiàn sìfú suǒyǒu zhóu zhǎo yuándiǎn", english: "Linear servo all axis find the origin" },
+{ hanzi: "直线伺服手动模式关闭", pinyin: "直线伺服手动模式关闭-zhíxiàn sìfú shǒudòng móshì guānbì", english: "Linear servo manual mode close" },
+{ hanzi: "直线伺服手动模式打开", pinyin: "直线伺服手动模式打开-zhíxiàn sìfú shǒudòng móshì dǎkāi", english: "Linear servo manual mode open" },
+{ hanzi: "直线伺服点动-", pinyin: "直线伺服点动--zhíxiàn sìfú diǎndòng -", english: "Linear servo jog-" },
+{ hanzi: "直线伺服点动+", pinyin: "直线伺服点动+-zhíxiàn sìfú diǎndòng +", english: "Linear servo jog+" },
+{ hanzi: "直线伺服设定伸出位置", pinyin: "直线伺服设定伸出位置-zhíxiàn sìfú shèdìng shēnchū wèizhi", english: "Linear servo setting extending position" },
+{ hanzi: "直线伺服设定伸出时间", pinyin: "直线伺服设定伸出时间-zhíxiàn sìfú shèdìng shēnchū shíjiān", english: "Linear servo setting extending time" },
+{ hanzi: "直线伺服设定卡料扭矩值", pinyin: "直线伺服设定卡料扭矩值-zhíxiàn sìfú shèdìng kǎliào niǔjǔ zhí", english: "Linear servo setting clamping torque value" },
+{ hanzi: "直线伺服轴复位", pinyin: "直线伺服轴复位-zhíxiàn sìfú zhóu fùwèi", english: "Linear servo axis reset" },
+{ hanzi: "直线电机剔除功能关闭", pinyin: "直线电机剔除功能关闭-zhíxiàn diànjī tīchú gōngnéng guānbì", english: "Linear motor rejection function is disabled" },
+{ hanzi: "直线电机剔除功能启用", pinyin: "直线电机剔除功能启用-zhíxiàn diànjī tīchú gōngnéng qǐyòng", english: "Linear motor rejection function is enabled" },
+{ hanzi: "确定切换成中文吗?", pinyin: "确定切换成中文吗?-quèdìng qiēhuàn chéng zhōngwén ma ?", english: "Sure about the Chinese switch?" },
+{ hanzi: "确定切换成德文吗?", pinyin: "确定切换成德文吗?-quèdìng qiēhuàn chéngdéwén ma ?", english: "Sure about the German switch?" },
+{ hanzi: "确定切换成英文吗?", pinyin: "确定切换成英文吗?-quèdìng qiēhuàn chéng yīngwén ma ?", english: "Sure about the English switch?" },
+{ hanzi: "确定解锁账户", pinyin: "确定解锁账户-quèdìng jiěsuǒ zhànghù", english: "Confirm unlock account" },
+{ hanzi: "碎粒", pinyin: "碎粒-suìlì", english: "Broken tablet" },
+{ hanzi: "空包检测位置", pinyin: "空包检测位置-kōngbāo jiǎncè wèizhi", english: "Empty packet detection position" },
+{ hanzi: "空瓶剔除", pinyin: "空瓶剔除-kōngpíng tīchú", english: "Empty bottle rejection" },
+{ hanzi: "简 体 中 文", pinyin: "简 体 中 文-jiǎn   tǐ   zhōng   wén", english: "Chinese" },
+{ hanzi: "结束记录,是否结批?", pinyin: "结束记录,是否结批?-jiéshù jìlù , shìfǒu jiépī ?", english: "End record, whether to close batch?" },
+{ hanzi: "维护模式 保持状态", pinyin: "维护模式 保持状态-wéihù móshì   bǎochí zhuàngtài", english: "Maintenance mode Suspended state" },
+{ hanzi: "维护模式 停止中状态", pinyin: "维护模式 停止中状态-wéihù móshì   tíngzhǐ zhōng zhuàngtài", english: "Maintenance mode Stopping state" },
+{ hanzi: "维护模式 停止状态", pinyin: "维护模式 停止状态-wéihù móshì   tíngzhǐ zhuàngtài", english: "Maintenance mode Stopped state" },
+{ hanzi: "维护模式 启动中状态", pinyin: "维护模式 启动中状态-wéihù móshì   qǐdòng zhōng zhuàngtài", english: "Maintenance mode Starting state" },
+{ hanzi: "维护模式 暂停状态", pinyin: "维护模式 暂停状态-wéihù móshì   zàntíngzhuàngtài", english: "Maintenance mode Held state" },
+{ hanzi: "维护模式 空闲状态", pinyin: "维护模式 空闲状态-wéihù móshì   kòngxián zhuàngtài", english: "Maintenance mode Idle state" },
+{ hanzi: "维护模式 运行状态", pinyin: "维护模式 运行状态-wéihù móshì   yùnxíng zhuàngtài", english: "Maintenance mode Execute state" },
+{ hanzi: "编辑参数配方:", pinyin: "编辑参数配方:-biānjí cānshù pèifāng :", english: "Edit parameter recipe:" },
+{ hanzi: "缺瓶检测关闭", pinyin: "缺瓶检测关闭-quēpíng jiǎncè guānbì", english: "Bottle absence detection is disabled" },
+{ hanzi: "缺瓶检测启用", pinyin: "缺瓶检测启用-quēpíng jiǎncè qǐyòng", english: "Bottle absence detection is enabled" },
+{ hanzi: "色标偏移距离", pinyin: "色标偏移距离-sèbiāo piānyí jùlí", english: "Color scale offset distance" },
+{ hanzi: "色标检测位置", pinyin: "色标检测位置-sèbiāo jiǎncè wèizhi", english: "Color code detection position" },
+{ hanzi: "英 文", pinyin: "英 文-yīng   wén", english: "English" },
+{ hanzi: "药粒超长", pinyin: "药粒超长-yàolì chāocháng", english: "Extra long tablet" },
+{ hanzi: "药粒透明间隔", pinyin: "药粒透明间隔-yàolì tòumíng jiàngé", english: "Transparent intervals of the pills" },
+{ hanzi: "落料卡包报警延时", pinyin: "落料卡包报警延时-luòliào kǎbāo bàojǐng yánshí", english: "Blanking card bag alarm delay" },
+{ hanzi: "落料检测时间", pinyin: "落料检测时间-luòliào jiǎncèshíjiān", english: "Blanking bag time" },
+{ hanzi: "蜂鸣器关闭", pinyin: "蜂鸣器关闭-fēngmíngqì guānbì", english: "Buzzer is disabled" },
+{ hanzi: "蜂鸣器启用", pinyin: "蜂鸣器启用-fēngmíngqì qǐyòng", english: "Buzzer is enabled" },
+{ hanzi: "螺杆伺服", pinyin: "螺杆伺服-luógǎn sìfú", english: "Screw servo" },
+{ hanzi: "螺杆清料关闭", pinyin: "螺杆清料关闭-luógǎn qīngliào guānbì", english: "Disable screw clearing" },
+{ hanzi: "螺杆清料打开", pinyin: "螺杆清料打开-luógǎn qīngliào dǎkāi", english: "Enable screw clearing" },
+{ hanzi: "被禁用", pinyin: "被禁用-bèi jìnyòng", english: "is disabled" },
+{ hanzi: "装瓶时间", pinyin: "装瓶时间-zhuāngpíng shíjiān", english: "Bottling delay" },
+{ hanzi: "装瓶量", pinyin: "装瓶量-zhuāngpíng liàng", english: "Bottling number" },
+{ hanzi: "规格件更换关闭", pinyin: "规格件更换关闭-guīgé jiàn gēnghuàn guānbì", english: "Disable format parts replacement close" },
+{ hanzi: "规格件更换打开", pinyin: "规格件更换打开-guīgé jiàn gēnghuàn dǎkāi", english: "Enable format parts replacement open" },
+{ hanzi: "解锁用户", pinyin: "解锁用户-jiěsuǒ yònghù", english: "Unlock user" },
+{ hanzi: "解除禁用", pinyin: "解除禁用-jiěchú jìnyòng", english: "is unbanned" },
+{ hanzi: "触发下料角度", pinyin: "触发下料角度-chùfā xià liào jiǎodù", english: "Trigger the cutting angle" },
+{ hanzi: "计数清零", pinyin: "计数清零-jìshù qīnglíng", english: "Count clear" },
+{ hanzi: "设备型号", pinyin: "设备型号-shèbèi xínghào", english: "Equipment model" },
+{ hanzi: "设备编号", pinyin: "设备编号-shèbèi biānhào", english: "Equipment number" },
+{ hanzi: "该文件已存在", pinyin: "该文件已存在-gāi wénjiàn yǐ cúnzài", english: "The file already exists" },
+{ hanzi: "请先查询报表", pinyin: "请先查询报表-qǐng xiān cháxún bàobiǎo", english: "Please query the report first" },
+{ hanzi: "请在停止、空闲、暂停状态下操作", pinyin: "请在停止、空闲、暂停状态下操作-qǐng zài tíngzhǐ  kòngxián  zàntíngzhuàngtài xià cāozuò", english: "Please operate in the Stopped, Idle, or Held state" },
+{ hanzi: "请在停止、空闲状态下操作", pinyin: "请在停止、空闲状态下操作-qǐng zài tíngzhǐ  kòngxián zhuàngtài xià cāozuò", english: "Please operate in the Stopped, or Idle state" },
+{ hanzi: "请在维护模式下操作", pinyin: "请在维护模式下操作-qǐng zài wéihù móshì xià cāozuò", english: "Please operate in the maintenance mode" },
+{ hanzi: "请输入产品名称:", pinyin: "请输入产品名称:-qǐng shūrù chǎnpǐnmíngchēng :", english: "Please enter the production name:" },
+{ hanzi: "请输入产品批号:", pinyin: "请输入产品批号:-qǐng shūrù chǎnpǐn pīhào :", english: "Please enter the production batch number:" },
+{ hanzi: "请输入产品规格:", pinyin: "请输入产品规格:-qǐng shūrù chǎnpǐnguīgé :", english: "Please enter the production specification:" },
+{ hanzi: "请输入文件夹名称：", pinyin: "请输入文件夹名称：-qǐng shūrù wénjiànjiā míngchēng ：", english: "Please enter the folder name:" },
+{ hanzi: "请输入新参数配方描述(可以为空):", pinyin: "请输入新参数配方描述(可以为空):-qǐng shūrù xīn cānshù pèifāng miáoshù ( kěyǐ wéikōng ) :", english: "Please enter the new parameter recipe description (can be empty):" },
+{ hanzi: "请输入新参数配方编号:", pinyin: "请输入新参数配方编号:-qǐng shūrù xīn cānshù pèifāng biānhào :", english: "Please enter the new parameter recipe number:" },
+{ hanzi: "请选择不同的权限组！", pinyin: "请选择不同的权限组！-qǐng xuǎnzé bùtóng de quánxiàn zǔ ！", english: "Please select a different permission group!" },
+{ hanzi: "请选择批次", pinyin: "请选择批次-qǐng xuǎnzé pīcì", english: "Please select the batch" },
+{ hanzi: "请选择配方名称!", pinyin: "请选择配方名称!-qǐng xuǎnzé pèifāng míngchēng !", english: "Please select the recipe name!" },
+{ hanzi: "请选择需要删除的配方名称!", pinyin: "请选择需要删除的配方名称!-qǐng xuǎnzé xūyào shānchú de pèifāng míngchēng !", english: "Please select the name of the recipe to be deleted!" },
+{ hanzi: "调出参数配方:", pinyin: "调出参数配方:-diàochū cānshù pèifāng :", english: "Call out the parameter formula:" },
+{ hanzi: "账户", pinyin: "账户-zhànghù", english: "Account" },
+{ hanzi: "超出范围，请重新输入!", pinyin: "超出范围，请重新输入!-chāochūfànwéi ， qǐng chóngxīn shūrù !", english: "Out of range, please re-enter!" },
+{ hanzi: "转盘瓶位高报警延时", pinyin: "转盘瓶位高报警延时-zhuànpán píngwèi gāo bàojǐng yánshí", english: "Turntable bottle pos high" },
+{ hanzi: "转盘电机速度", pinyin: "转盘电机速度-zhuànpán diànjī sùdù", english: "Turntable motor speed" },
+{ hanzi: "转移备份文件", pinyin: "转移备份文件-zhuǎnyí bèifènwénjiàn", english: "Transfer backup file" },
+{ hanzi: "转移组", pinyin: "转移组-zhuǎnyí zǔ", english: "Transfer groups" },
+{ hanzi: "输入名称", pinyin: "输入名称-shūrù míngchēng", english: "Enter name" },
+{ hanzi: "输入框", pinyin: "输入框-shūrùkuàng", english: "Input box" },
+{ hanzi: "输送带电机速度", pinyin: "输送带电机速度-shūsòngdài diànjī sùdù", english: "Conveyor belt motor speed" },
+{ hanzi: "输送2电机速度", pinyin: "输送2电机速度-shūsòng èr diànjī sùdù", english: "Conveyor 2 motor speed" },
+{ hanzi: "输送3速度", pinyin: "输送3速度-shūsòng sān sùdù", english: "Conveyor 3 speed" },
+{ hanzi: "输送机启动关闭", pinyin: "输送机启动关闭-shūsòngjī qǐdòng guānbì", english: "Disable conveyor start close" },
+{ hanzi: "输送机启动打开", pinyin: "输送机启动打开-shūsòngjī qǐdòng dǎkāi", english: "Enable conveyor start open" },
+{ hanzi: "输送机电机", pinyin: "输送机电机-shūsòngjī diànjī", english: "Conveyor motor" },
+{ hanzi: "过渡转盘电机", pinyin: "过渡转盘电机-guòdù zhuànpán diànjī", english: "Transition turntable motor" },
+{ hanzi: "过渡输送机电机", pinyin: "过渡输送机电机-guòdù shūsòngjī diànjī", english: "Transition conveyor motor" },
+{ hanzi: "运维确认", pinyin: "运维确认-yùnwéi quèrèn", english: "O&M confirm" },
+{ hanzi: "连续异常停机瓶数", pinyin: "连续异常停机瓶数-liánxù yìcháng tíngjī píngshù", english: "Bottle num of NG" },
+{ hanzi: "送卷电机速度", pinyin: "送卷电机速度-sòngjuǎn diànjī sùdù", english: "Feed motor speed" },
+{ hanzi: "送料斗翻转电磁阀", pinyin: "送料斗翻转电磁阀-sòngliào dǒu fānzhuǎn diàncífá", english: "Feeding hopper turning solenoid valve" },
+{ hanzi: "送盖伺服取盖角度位置", pinyin: "送盖伺服取盖角度位置-sònggài sìfú qǔgài jiǎodù wèizhi", english: "Cover delivery servo cover angle position" },
+{ hanzi: "送盖伺服开始送盖角度", pinyin: "送盖伺服开始送盖角度-sònggài sìfú kāishǐ sònggài jiǎodù", english: "Cover delivery servo starts lid delivery angle" },
+{ hanzi: "送盖伺服送盖角度位置", pinyin: "送盖伺服送盖角度位置-sònggài sìfú sònggài jiǎodù wèizhi", english: "Cover delivery servo cover delivery angle position" },
+{ hanzi: "送盖伺服送盖返回角度", pinyin: "送盖伺服送盖返回角度-sònggài sìfú sònggài fǎnhuí jiǎodù", english: "Cover delivery servo cover delivery return angle" },
+{ hanzi: "送盖伺服速度", pinyin: "送盖伺服速度-sònggài sìfú sùdù", english: "Cover delivery servo speed" },
+{ hanzi: "选择手动模式", pinyin: "选择手动模式-xuǎnzé shǒudòng móshì", english: "Select manual mode" },
+{ hanzi: "选择生产模式", pinyin: "选择生产模式-xuǎnzé shēngchǎn móshì", english: "Select production mode" },
+{ hanzi: "选择维护模式", pinyin: "选择维护模式-xuǎnzé wéihù móshì", english: "Select maintenance mode" },
+{ hanzi: "逻辑剔除功能关闭", pinyin: "逻辑剔除功能关闭-luóji tīchú gōngnéng guānbì", english: "Logic rejection function is disabled" },
+{ hanzi: "逻辑剔除功能启用", pinyin: "逻辑剔除功能启用-luóji tīchú gōngnéng qǐyòng", english: "Logic rejection function is enabled" },
+{ hanzi: "配方?", pinyin: "配方?-pèifāng ?", english: "Recipe?" },
+{ hanzi: "配方未下载,请下载配方!", pinyin: "配方未下载,请下载配方!-pèifāng wèi xiàzài , qǐng xiàzài pèifāng !", english: "Recipe not download, please download recipe!" },
+{ hanzi: "配方正在编辑,确定不保存该配方,继续新建配方吗?", pinyin: "配方正在编辑,确定不保存该配方,继续新建配方吗?-pèifāng zhèngzài biānjí , quèdìng bù bǎocún gāi pèifāng , jìxù xīnjiàn pèifāng ma ?", english: "Recipe is being edited, are you sure you don't want to save the recipe and continue to create a new one?" },
+{ hanzi: "重置用户", pinyin: "重置用户-chóngzhì yònghù", english: "Reset the user" },
+{ hanzi: "链接备份", pinyin: "链接备份-liànjiē bèifèn", english: "Connect backup" },
+{ hanzi: "错误信息：", pinyin: "错误信息：-cuòwùxìnxī ：", english: "Error message:" },
+{ hanzi: "随动伺服", pinyin: "随动伺服-suídòng sìfú", english: "Following up servo" },
+{ hanzi: "静电消除功能关闭", pinyin: "静电消除功能关闭-jìngdiàn xiāochú gōngnéng guānbì", english: "Electric static vacuum function is disabled" },
+{ hanzi: "静电消除功能启用", pinyin: "静电消除功能启用-jìngdiàn xiāochú gōngnéng qǐyòng", english: "Electric static vacuum function is enabled" },
+{ hanzi: "预数粒", pinyin: "预数粒-yù shùlì", english: "Precounting" }
+];
+
+let correctCount = 0;
+let totalCount = 0;
+let currentItem = null;
+let hasAnswered = false;
+
+// 随机打乱数组的辅助函数
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+// 朗读第一列汉字的语音函数
+function playAudio() {
+    if (!currentItem) return;
+    // 使用浏览器自带的文本转语音(TTS)引擎
+    const utterance = new SpeechSynthesisUtterance(currentItem.hanzi);
+    utterance.lang = 'zh-CN'; // 设置为中文普通话发音
+    utterance.rate = 0.9;     // 控制语速，略微放慢方便听清
+    window.speechSynthesis.cancel(); // 停止当前正在播放的声音
+    window.speechSynthesis.speak(utterance);
+}
+
+// 加载新题目
+function loadQuestion() {
+    hasAnswered = false;
+    document.getElementById('next-btn').style.display = 'none';
+    
+    // 随机抽取一个词汇
+    const randomIndex = Math.floor(Math.random() * vocabData.length);
+    currentItem = vocabData[randomIndex];
+    
+    // UI 展现第二列的 Hanzi 伴随 Pinyin
+    document.getElementById('question-text').innerText = currentItem.pinyin;
+    
+    // 自动触发朗读第一列汉字
+    // 注：由于现代浏览器安全策略，首次加载需要用户点击屏幕任意地方后，后续关卡才会完美自动发音
+    setTimeout(() => { playAudio(); }, 400);
+
+    // 过滤出所有错误的干扰英文选项
+    let incorrectAnswers = vocabData
+        .filter(item => item.english !== currentItem.english)
+        .map(item => item.english);
+    
+    // 随机打乱并挑选3个错误答案
+    incorrectAnswers = shuffle(incorrectAnswers).slice(0, 3);
+    
+    // 组合正确答案与错误答案
+    let options = [currentItem.english, ...incorrectAnswers];
+    // 再次打乱这4个选项的顺序
+    options = shuffle(options);
+    
+    // 渲染生成 DOM 节点
+    const container = document.getElementById('options-container');
+    container.innerHTML = '';
+    
+    options.forEach(option => {
+        const div = document.createElement('div');
+        div.className = 'option';
+        div.innerText = option;
+        div.onclick = () => checkAnswer(div, option);
+        container.appendChild(div);
+    });
+}
+
+// 检查答案逻辑
+function checkAnswer(selectedElement, selectedOption) {
+    if (hasAnswered) return; // 防止重复点击
+    hasAnswered = true;
+    totalCount++;
+    
+    const options = document.querySelectorAll('.option');
+    options.forEach(opt => {
+        opt.classList.add('disabled'); // 锁定所有选项
+        // 无论选对选错，均高亮正确答案
+        if (opt.innerText === currentItem.english) {
+            opt.classList.add('correct');
+        }
+    });
+    
+    // 判断是否答对
+    if (selectedOption === currentItem.english) {
+        correctCount++;
+    } else {
+        // 如果选错，额外将玩家选错的那个选项标红
+        selectedElement.classList.add('incorrect');
+    }
+    
+    // 更新成绩状态栏和显示下一题按钮
+    document.getElementById('score-text').innerText = `正确: ${correctCount} | 总计: ${totalCount}`;
+    document.getElementById('next-btn').style.display = 'block';
+}
+
+function nextQuestion() {
+    loadQuestion();
+}
+
+// 页面加载完成后自动启动第一题
+window.onload = loadQuestion;
+</script>
+
 </body>
 </html>
