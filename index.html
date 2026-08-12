@@ -178,17 +178,35 @@ function parseVocabText(text){
 const AUTO_VOCAB_FILE = 'vocab.jsonl';
 
 async function fetchAutoVocabFile(){
-  // Works when the HTML is served via http(s) (e.g. a local server) and vocab.jsonl
-  // sits in the same folder. On file:// this will usually be blocked by the browser
-  // (CORS on local files) and will simply fail silently, falling back to manual upload.
+  // 1. Thử dùng fetch (hỗ trợ HTTP/HTTPS server hoặc trình duyệt mở file cục bộ)
   try{
     const res = await fetch(AUTO_VOCAB_FILE, { cache: 'no-store' });
-    if(!res.ok) return null;
-    const text = await res.text();
-    return text;
-  }catch(e){
-    return null;
-  }
+    if(res.ok || res.status === 200 || res.status === 0){
+      const text = await res.text();
+      if(text && text.trim()) return text;
+    }
+  }catch(e){}
+
+  // 2. Dự phòng bằng XMLHttpRequest (hỗ trợ đọc file:// trực tiếp không cần backend/server)
+  return new Promise((resolve) => {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', AUTO_VOCAB_FILE, true);
+      xhr.onload = function() {
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 0) {
+          if (xhr.responseText && xhr.responseText.trim()) {
+            resolve(xhr.responseText);
+            return;
+          }
+        }
+        resolve(null);
+      };
+      xhr.onerror = () => resolve(null);
+      xhr.send();
+    } catch(e) {
+      resolve(null);
+    }
+  });
 }
 
 function pinyinOf(hanzi){
