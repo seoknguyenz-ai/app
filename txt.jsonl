@@ -1,0 +1,1890 @@
+{"hanzi": "一般报警", "eng": "General alarm", "type": "vocabulary"}
+{"hanzi": "万向节", "eng": "universal joint", "type": "vocabulary"}
+{"hanzi": "三相异步电机", "eng": "three-phase asynchronous motor", "type": "vocabulary"}
+{"hanzi": "三相断路器", "eng": "Three phase", "type": "vocabulary"}
+{"hanzi": "上位机", "eng": "SCADA", "type": "vocabulary"}
+{"hanzi": "上位机监测控制和数据采集", "eng": "Supervisory Control And Data Acquisition", "type": "vocabulary"}
+{"hanzi": "上位机监视控制及数据采集", "eng": "SCADA Supervisory Control And Data Acquisition", "type": "vocabulary"}
+{"hanzi": "上升沿", "eng": "rising edge", "type": "vocabulary"}
+{"hanzi": "上游设备", "eng": "upstream equipment", "type": "vocabulary"}
+{"hanzi": "上载", "eng": "Upload", "type": "vocabulary"}
+{"hanzi": "上限", "eng": "upper limit", "type": "vocabulary"}
+{"hanzi": "上限报警值", "eng": "upper limit alarm value", "type": "vocabulary"}
+{"hanzi": "下拉菜单", "eng": "drop-down menu", "type": "vocabulary"}
+{"hanzi": "下游设备", "eng": "downstream equipment", "type": "vocabulary"}
+{"hanzi": "下载", "eng": "Download", "type": "vocabulary"}
+{"hanzi": "下限", "eng": "lower limit", "type": "vocabulary"}
+{"hanzi": "下限保护温度", "eng": "lower limit protection temperature", "type": "vocabulary"}
+{"hanzi": "下限停机保护温度", "eng": "Lower limit shutdown protection temperature", "type": "vocabulary"}
+{"hanzi": "不溶性微粒测试", "eng": "Insoluble particle test", "type": "vocabulary"}
+{"hanzi": "不适用", "eng": "N/A Not Applicable", "type": "vocabulary"}
+{"hanzi": "不锈钢单面砂光板", "eng": "stainless steel single-sided sanded plate", "type": "vocabulary"}
+{"hanzi": "不锈钢砂光板", "eng": "stainless steel sanded plate", "type": "vocabulary"}
+{"hanzi": "不间断电源", "eng": "UPS Uninterruptible Power System", "type": "vocabulary"}
+{"hanzi": "与HMI通讯异常", "eng": "PLC and HMI communication abnormal", "type": "vocabulary"}
+{"hanzi": "严重报警", "eng": "Serious alarm", "type": "vocabulary"}
+{"hanzi": "中国药典", "eng": "Chinese Pharmacopoeia", "type": "vocabulary"}
+{"hanzi": "中国药品生产质量管理规范", "eng": "China Good Manufacturing Practice for Pharmaceutical Products", "type": "vocabulary"}
+{"hanzi": "中央处理器", "eng": "Central Processing Unit", "type": "vocabulary"}
+{"hanzi": "中性线", "eng": "neutral line", "type": "vocabulary"}
+{"hanzi": "中止请求", "eng": "abort request", "type": "vocabulary"}
+{"hanzi": "中空内腔", "eng": "hollow inner cavity", "type": "vocabulary"}
+{"hanzi": "中间拨轮单元", "eng": "Intermediate starwheel unit", "type": "vocabulary"}
+{"hanzi": "中间继电器", "eng": "Intermediate relay", "type": "vocabulary"}
+{"hanzi": "中间继电器接点", "eng": "intermediate relay contact", "type": "vocabulary"}
+{"hanzi": "中间继电器接点（干接点）", "eng": "intermediate relay contact (dry contact)", "type": "vocabulary"}
+{"hanzi": "主传动单元", "eng": "Main transmission unit", "type": "vocabulary"}
+{"hanzi": "主传动电机", "eng": "main drive motor", "type": "vocabulary"}
+{"hanzi": "主动回零", "eng": "Active homing", "type": "vocabulary"}
+{"hanzi": "主同步带", "eng": "Main synchronous belt", "type": "vocabulary"}
+{"hanzi": "主同步带单元", "eng": "Main synchronous belt", "type": "vocabulary"}
+{"hanzi": "主回路", "eng": "Main circuit", "type": "vocabulary"}
+{"hanzi": "主机伺服参数", "eng": "General servo parameter", "type": "vocabulary"}
+{"hanzi": "主机单元", "eng": "General unit", "type": "vocabulary"}
+{"hanzi": "主机原点信号", "eng": "origin signal of main motor", "type": "vocabulary"}
+{"hanzi": "主机参数", "eng": "General parameter", "type": "vocabulary"}
+{"hanzi": "主机机罩单元", "eng": "Machine hood unit", "type": "vocabulary"}
+{"hanzi": "主机点动", "eng": "Main motor jog", "type": "vocabulary"}
+{"hanzi": "主机缺瓶", "eng": "Vial absence at the inlet", "type": "vocabulary"}
+{"hanzi": "主机规格件", "eng": "Machine specification part", "type": "vocabulary"}
+{"hanzi": "主电机", "eng": "Main motor", "type": "vocabulary"}
+{"hanzi": "主电机减速一体机", "eng": "Main motor with reducer", "type": "vocabulary"}
+{"hanzi": "主电源", "eng": "Main power supply", "type": "vocabulary"}
+{"hanzi": "主电源开关", "eng": "Main power switch", "type": "vocabulary"}
+{"hanzi": "主管", "eng": "Logon_ Supervisor", "type": "vocabulary"}
+{"hanzi": "主要材质", "eng": "Main material", "type": "vocabulary"}
+{"hanzi": "书本型伺服驱动器", "eng": "book type servo driver", "type": "vocabulary"}
+{"hanzi": "互联网协议", "eng": "Internet Protocol", "type": "vocabulary"}
+{"hanzi": "互锁清单", "eng": "Interlock list", "type": "vocabulary"}
+{"hanzi": "五色报警灯", "eng": "five-color warning lights", "type": "vocabulary"}
+{"hanzi": "交换机", "eng": "Switch", "type": "vocabulary"}
+{"hanzi": "交流接触器", "eng": "AC contactor", "type": "vocabulary"}
+{"hanzi": "亲水性", "eng": "Hydrophilicity", "type": "vocabulary"}
+{"hanzi": "人机交互界面", "eng": "Human-machine Interface", "type": "vocabulary"}
+{"hanzi": "人机界面", "eng": "human-computer interface", "type": "vocabulary"}
+{"hanzi": "以太网通讯", "eng": "Ethernet communication", "type": "vocabulary"}
+{"hanzi": "仪器仪表", "eng": "Instrumentation", "type": "vocabulary"}
+{"hanzi": "优良自动化制造规范", "eng": "GAMP Good Automated Manufacturing Practice", "type": "vocabulary"}
+{"hanzi": "传动比", "eng": "Transmission ratio", "type": "vocabulary"}
+{"hanzi": "传动系统", "eng": "Transmission system", "type": "vocabulary"}
+{"hanzi": "传动系统(凸轮升降)", "eng": "Transmission system(cam lifting)", "type": "vocabulary"}
+{"hanzi": "传动链轮", "eng": "drive sprocket", "type": "vocabulary"}
+{"hanzi": "传送网带", "eng": "conveyor belt", "type": "vocabulary"}
+{"hanzi": "伺服参数", "eng": "Servo parameter", "type": "vocabulary"}
+{"hanzi": "伺服扭矩", "eng": "servo torque", "type": "vocabulary"}
+{"hanzi": "伺服电机", "eng": "Servo motor", "type": "vocabulary"}
+{"hanzi": "伺服编码器", "eng": "servo encoder", "type": "vocabulary"}
+{"hanzi": "伺服调试", "eng": "servo debugging", "type": "vocabulary"}
+{"hanzi": "伺服驱动器", "eng": "Servo drive", "type": "vocabulary"}
+{"hanzi": "位置偏移", "eng": "Position offset", "type": "vocabulary"}
+{"hanzi": "位置碱液冲洗时间", "eng": "CIPSIP position lye flushing time", "type": "vocabulary"}
+{"hanzi": "位置碱液浸泡时间", "eng": "CIPSIP position lye immersion time", "type": "vocabulary"}
+{"hanzi": "低压指令", "eng": "Low Voltage Directive", "type": "vocabulary"}
+{"hanzi": "低料位", "eng": "low level", "type": "vocabulary"}
+{"hanzi": "低料位信号", "eng": "low level signal", "type": "vocabulary"}
+{"hanzi": "使能信号", "eng": "enabling signal", "type": "vocabulary"}
+{"hanzi": "保压测试时间", "eng": "Pressure maintaining test time", "type": "vocabulary"}
+{"hanzi": "保存", "eng": "Save", "type": "vocabulary"}
+{"hanzi": "保护接地", "eng": "protecting earthing line", "type": "vocabulary"}
+{"hanzi": "保温棉", "eng": "insulation cotton", "type": "vocabulary"}
+{"hanzi": "信号交互", "eng": "signal interaction", "type": "vocabulary"}
+{"hanzi": "修改", "eng": "Modify", "type": "vocabulary"}
+{"hanzi": "倒瓶率", "eng": "Vial overturning rate", "type": "vocabulary"}
+{"hanzi": "停止", "eng": "Stop", "type": "vocabulary"}
+{"hanzi": "停电保护", "eng": "Power failure protection", "type": "vocabulary"}
+{"hanzi": "偶工位", "eng": "Even station", "type": "vocabulary"}
+{"hanzi": "储塞斗", "eng": "Stopper storing hopper", "type": "vocabulary"}
+{"hanzi": "储塞斗底座", "eng": "Storage hopper base", "type": "vocabulary"}
+{"hanzi": "储气罐", "eng": "gas storage tank", "type": "vocabulary"}
+{"hanzi": "元数据", "eng": "metadata", "type": "vocabulary"}
+{"hanzi": "充氮", "eng": "Nitrogen charging", "type": "vocabulary"}
+{"hanzi": "充氮单元", "eng": "Nitrogen charging unit", "type": "vocabulary"}
+{"hanzi": "充氮控制", "eng": "Nitrogen charging control", "type": "vocabulary"}
+{"hanzi": "充氮气幕", "eng": "air curtain", "type": "vocabulary"}
+{"hanzi": "充氮系统", "eng": "nitrogen charging system", "type": "vocabulary"}
+{"hanzi": "入口来瓶信号", "eng": "signal of vial feeding at the inlet", "type": "vocabulary"}
+{"hanzi": "全不加塞", "eng": "All not stoppering", "type": "vocabulary"}
+{"hanzi": "全加塞", "eng": "full stoppering", "type": "vocabulary"}
+{"hanzi": "关机", "eng": "Shut down", "type": "vocabulary"}
+{"hanzi": "内存", "eng": "RAM", "type": "vocabulary"}
+{"hanzi": "内循环", "eng": "internal circulation", "type": "vocabulary"}
+{"hanzi": "内部参数设置", "eng": "internal parameters setting", "type": "vocabulary"}
+{"hanzi": "冲注射水异常", "eng": "WFI flushing error", "type": "vocabulary"}
+{"hanzi": "冷冻水", "eng": "chilled water", "type": "vocabulary"}
+{"hanzi": "冷冻水控制温度", "eng": "Chilled water control temperature", "type": "vocabulary"}
+{"hanzi": "冷凝水", "eng": "condensation water", "type": "vocabulary"}
+{"hanzi": "冷却区一温度过高", "eng": "1# cooling zone temperature too high", "type": "vocabulary"}
+{"hanzi": "冷却区与洗瓶间压差过低", "eng": "D/P between cooling zone and washing room too low", "type": "vocabulary"}
+{"hanzi": "冷却区单元", "eng": "Cooling zone unit", "type": "vocabulary"}
+{"hanzi": "冷却箱体", "eng": "Cooling chamber", "type": "vocabulary"}
+{"hanzi": "冷却系统", "eng": "Cooling system", "type": "vocabulary"}
+{"hanzi": "冷却风压平衡排风系统", "eng": "cooling air pressure balance exhaust system", "type": "vocabulary"}
+{"hanzi": "冷却风机一变频器故障", "eng": "1# cooling fan inverter fault", "type": "vocabulary"}
+{"hanzi": "冻干产品", "eng": "lyophilized products", "type": "vocabulary"}
+{"hanzi": "减压阀", "eng": "pressure reducing valve", "type": "vocabulary"}
+{"hanzi": "减速机", "eng": "reducer", "type": "vocabulary"}
+{"hanzi": "减速比", "eng": "Reduction ratio", "type": "vocabulary"}
+{"hanzi": "出口挤瓶检测传感器", "eng": "sensor for vials jamming detection at the outlet", "type": "vocabulary"}
+{"hanzi": "出口计数", "eng": "outfeed counting", "type": "vocabulary"}
+{"hanzi": "出瓶单元", "eng": "Vial outfeed unit", "type": "vocabulary"}
+{"hanzi": "出瓶拨轮", "eng": "outfeed starwheel", "type": "vocabulary"}
+{"hanzi": "出瓶拨轮伺服扭矩报警", "eng": "Outfeed wheel servo torque alarm", "type": "vocabulary"}
+{"hanzi": "出瓶拨轮伺服故障", "eng": "Outfeed wheel servo fault", "type": "vocabulary"}
+{"hanzi": "出瓶拨轮单元", "eng": "Outfeed starwheel unit", "type": "vocabulary"}
+{"hanzi": "出瓶控制", "eng": "Outfeed control", "type": "vocabulary"}
+{"hanzi": "出瓶温度", "eng": "Outfeed temperature", "type": "vocabulary"}
+{"hanzi": "出瓶系统", "eng": "Outfeed system", "type": "vocabulary"}
+{"hanzi": "出瓶网带", "eng": "Outfeed belt", "type": "vocabulary"}
+{"hanzi": "出瓶网带电机", "eng": "Motor for outfeed belt", "type": "vocabulary"}
+{"hanzi": "出瓶计数", "eng": "Outfeed counting", "type": "vocabulary"}
+{"hanzi": "出瓶连线网带", "eng": "Outfeed linkage belt", "type": "vocabulary"}
+{"hanzi": "分层气流", "eng": "Laminar Flow", "type": "vocabulary"}
+{"hanzi": "分气阀体", "eng": "Vacuum divider", "type": "vocabulary"}
+{"hanzi": "分液器", "eng": "Dispenser", "type": "vocabulary"}
+{"hanzi": "分液器体积", "eng": "Dispenser volume", "type": "vocabulary"}
+{"hanzi": "分瓶", "eng": "vial Separation", "type": "vocabulary"}
+{"hanzi": "分配器工位", "eng": "Distributor station", "type": "vocabulary"}
+{"hanzi": "划伤率", "eng": "vial scratch rate", "type": "vocabulary"}
+{"hanzi": "初始化", "eng": "initialize", "type": "vocabulary"}
+{"hanzi": "初级过滤网", "eng": "primary filter screen", "type": "vocabulary"}
+{"hanzi": "利用率", "eng": "utilization", "type": "vocabulary"}
+{"hanzi": "刷新参数", "eng": "parameters refresh", "type": "vocabulary"}
+{"hanzi": "前充氮", "eng": "front nitrogen charging", "type": "vocabulary"}
+{"hanzi": "前剔废阀", "eng": "front rejection solenoid valve", "type": "vocabulary"}
+{"hanzi": "前挡瓶留空检测偏移", "eng": "vials", "type": "vocabulary"}
+{"hanzi": "前氮气压力输入故障", "eng": "Front nitrogen pressure input malfunction", "type": "vocabulary"}
+{"hanzi": "剔废/取样拨轮", "eng": "Rejection/ sampling starwheel", "type": "vocabulary"}
+{"hanzi": "剔废/取样控制", "eng": "Rejection/sampling control", "type": "vocabulary"}
+{"hanzi": "剔废失败", "eng": "rejection error", "type": "vocabulary"}
+{"hanzi": "剔废工位", "eng": "rejection station", "type": "vocabulary"}
+{"hanzi": "剔废拨轮", "eng": "rejection starwheel", "type": "vocabulary"}
+{"hanzi": "剔废控制", "eng": "Rejection Control", "type": "vocabulary"}
+{"hanzi": "剔废检测传感器", "eng": "rejection detection sensor", "type": "vocabulary"}
+{"hanzi": "剔废电磁阀", "eng": "Rejection solenoid valve", "type": "vocabulary"}
+{"hanzi": "剔废真空泵", "eng": "Rejection vacuum pump", "type": "vocabulary"}
+{"hanzi": "剔废系统", "eng": "rejection system", "type": "vocabulary"}
+{"hanzi": "剔废网带", "eng": "Rejection belt", "type": "vocabulary"}
+{"hanzi": "剔废网带挤瓶传感器", "eng": "sensor for vials jamming on the rejection belt", "type": "vocabulary"}
+{"hanzi": "剔废轨道", "eng": "rejection rail", "type": "vocabulary"}
+{"hanzi": "剩余空间", "eng": "remaining space", "type": "vocabulary"}
+{"hanzi": "功率", "eng": "Power", "type": "vocabulary"}
+{"hanzi": "功能安全", "eng": "Functional safety", "type": "vocabulary"}
+{"hanzi": "功能描述", "eng": "Function Specification", "type": "vocabulary"}
+{"hanzi": "功能描述文件", "eng": "functional description", "type": "vocabulary"}
+{"hanzi": "功能组号", "eng": "Functional groups", "type": "vocabulary"}
+{"hanzi": "功能要求", "eng": "Function Requirement", "type": "vocabulary"}
+{"hanzi": "功能说明", "eng": "Functional Specification", "type": "vocabulary"}
+{"hanzi": "功能选择", "eng": "Function selection", "type": "vocabulary"}
+{"hanzi": "加塞单元", "eng": "Stoppering unit", "type": "vocabulary"}
+{"hanzi": "加塞成功率", "eng": "Qualified stoppering rate", "type": "vocabulary"}
+{"hanzi": "加塞拨轮伺服电机", "eng": "servo motor for the stoppering starwheel", "type": "vocabulary"}
+{"hanzi": "加塞控制", "eng": "Stoppering control", "type": "vocabulary"}
+{"hanzi": "加密控制", "eng": "encryption controls", "type": "vocabulary"}
+{"hanzi": "加热区", "eng": "heating zone", "type": "vocabulary"}
+{"hanzi": "加热区 过滤器调试模式", "eng": "Heating zone filter debugging mode", "type": "vocabulary"}
+{"hanzi": "加热区单元", "eng": "Heating zone unit", "type": "vocabulary"}
+{"hanzi": "加热区补风口温度", "eng": "Air make up temperature of heating zone", "type": "vocabulary"}
+{"hanzi": "加热器四温度输入故障", "eng": "4#heater temperature input malfunction", "type": "vocabulary"}
+{"hanzi": "加热器温度", "eng": "Heater temperature", "type": "vocabulary"}
+{"hanzi": "加热箱体", "eng": "Heating chamber", "type": "vocabulary"}
+{"hanzi": "加热风机水冷压力过低", "eng": "Heating fan water cooling pressure too low", "type": "vocabulary"}
+{"hanzi": "加盖准确率", "eng": "Cap feeding accuracy", "type": "vocabulary"}
+{"hanzi": "加盖控制", "eng": "Cap feeding control", "type": "vocabulary"}
+{"hanzi": "包装机械语言", "eng": "Packaging Machine Language", "type": "vocabulary"}
+{"hanzi": "升降伺服", "eng": "lifting servo", "type": "vocabulary"}
+{"hanzi": "升降伺服电机", "eng": "Lifting servo motor", "type": "vocabulary"}
+{"hanzi": "升降曲线", "eng": "Up-down curve", "type": "vocabulary"}
+{"hanzi": "升降行程设定", "eng": "Needle lift distance", "type": "vocabulary"}
+{"hanzi": "半加塞", "eng": "semi-stoppering", "type": "vocabulary"}
+{"hanzi": "单元", "eng": "O-RABS unit", "type": "vocabulary"}
+{"hanzi": "单刀旁置随动轧盖结构", "eng": "side single knife capping structure", "type": "vocabulary"}
+{"hanzi": "单向层流", "eng": "unidirectional laminar flow", "type": "vocabulary"}
+{"hanzi": "单向阀", "eng": "check valve", "type": "vocabulary"}
+{"hanzi": "单班产量", "eng": "Batch count", "type": "vocabulary"}
+{"hanzi": "单相", "eng": "Single phase", "type": "vocabulary"}
+{"hanzi": "单选框", "eng": "Radio box", "type": "vocabulary"}
+{"hanzi": "卡瓶率", "eng": "Vial jamming rate", "type": "vocabulary"}
+{"hanzi": "危险区域", "eng": "Hazardous Area", "type": "vocabulary"}
+{"hanzi": "厂家", "eng": "Supplier", "type": "vocabulary"}
+{"hanzi": "历史报警", "eng": "History alarm", "type": "vocabulary"}
+{"hanzi": "历史数据", "eng": "historical data", "type": "vocabulary"}
+{"hanzi": "压力变送器", "eng": "Pressure transmitter", "type": "vocabulary"}
+{"hanzi": "压力开关", "eng": "Pressure switch", "type": "vocabulary"}
+{"hanzi": "压力系统安全条例", "eng": "Pressure Systems Safety Regulations", "type": "vocabulary"}
+{"hanzi": "压力范围", "eng": "Pressure scope", "type": "vocabulary"}
+{"hanzi": "压塞单元", "eng": "Stopper pressing unitt", "type": "vocabulary"}
+{"hanzi": "压差", "eng": "D/P (Differential Pressure)", "type": "vocabulary"}
+{"hanzi": "压差上下限值", "eng": "upper and lower limit value for differential pressure", "type": "vocabulary"}
+{"hanzi": "压差表", "eng": "Differential pressure gauge", "type": "vocabulary"}
+{"hanzi": "压差过低", "eng": "D/P too low", "type": "vocabulary"}
+{"hanzi": "压差过高", "eng": "D/P too high", "type": "vocabulary"}
+{"hanzi": "压缩空气", "eng": "compressed air", "type": "vocabulary"}
+{"hanzi": "压缩空气单元", "eng": "Compressed air unit", "type": "vocabulary"}
+{"hanzi": "压缩空气压力", "eng": "Compressed air pressure", "type": "vocabulary"}
+{"hanzi": "压缩空气压力开关", "eng": "compressed air pressure switch", "type": "vocabulary"}
+{"hanzi": "压缩空气压力过高", "eng": "Compressed air pressure too high", "type": "vocabulary"}
+{"hanzi": "压缩空气手动隔膜阀", "eng": "compressed air manual diaphragm valve", "type": "vocabulary"}
+{"hanzi": "压缩空气系统", "eng": "Compressed air system", "type": "vocabulary"}
+{"hanzi": "原料不足", "eng": "short of raw materials", "type": "vocabulary"}
+{"hanzi": "原料缺省", "eng": "default in raw material", "type": "vocabulary"}
+{"hanzi": "原点偏移参数", "eng": "origin offset parameter", "type": "vocabulary"}
+{"hanzi": "原点接近开关", "eng": "origin switch", "type": "vocabulary"}
+{"hanzi": "去热原", "eng": "Depyrogenation", "type": "vocabulary"}
+{"hanzi": "参数", "eng": "Parameters", "type": "vocabulary"}
+{"hanzi": "参数名称", "eng": "Parameter Name", "type": "vocabulary"}
+{"hanzi": "参数设置", "eng": "Parameter setting", "type": "vocabulary"}
+{"hanzi": "参数赋值", "eng": "parameter assignment", "type": "vocabulary"}
+{"hanzi": "双电控阀门", "eng": "Double acting valve", "type": "vocabulary"}
+{"hanzi": "发生过载", "eng": "is overloaded", "type": "vocabulary"}
+{"hanzi": "取样真空通道", "eng": "sampling vacuum channel", "type": "vocabulary"}
+{"hanzi": "取样阀", "eng": "Sampling valve", "type": "vocabulary"}
+{"hanzi": "取消", "eng": "Cancel", "type": "vocabulary"}
+{"hanzi": "取瓶失败报警", "eng": "vial fetch failure alarm", "type": "vocabulary"}
+{"hanzi": "变压器", "eng": "Transformer", "type": "vocabulary"}
+{"hanzi": "变频器", "eng": "variable-frequency drive", "type": "vocabulary"}
+{"hanzi": "变频器故障", "eng": "inverter fault", "type": "vocabulary"}
+{"hanzi": "可接受偏差", "eng": "acceptable deviation", "type": "vocabulary"}
+{"hanzi": "可编程逻辑控制器", "eng": "Programmable Logic Controller", "type": "vocabulary"}
+{"hanzi": "可见异物合格率", "eng": "Test of visible particles", "type": "vocabulary"}
+{"hanzi": "可见金属部件", "eng": "Visible metal part", "type": "vocabulary"}
+{"hanzi": "右旋", "eng": "right-hand turn", "type": "vocabulary"}
+{"hanzi": "号", "eng": "TAG number", "type": "vocabulary"}
+{"hanzi": "合格品通道", "eng": "qualified product channel", "type": "vocabulary"}
+{"hanzi": "名称", "eng": "Name", "type": "vocabulary"}
+{"hanzi": "后充氮", "eng": "rear nitrogen charging", "type": "vocabulary"}
+{"hanzi": "后出瓶拨轮", "eng": "Rear outfeed starwheel", "type": "vocabulary"}
+{"hanzi": "后剔废阀", "eng": "back rejection solenoid valve", "type": "vocabulary"}
+{"hanzi": "启停回路", "eng": "start and stop circuit", "type": "vocabulary"}
+{"hanzi": "启动", "eng": "Start", "type": "vocabulary"}
+{"hanzi": "启动批次", "eng": "Start batch", "type": "vocabulary"}
+{"hanzi": "吸塞盘", "eng": "stopper suction tray", "type": "vocabulary"}
+{"hanzi": "吸尘器", "eng": "Vacuum cleaner", "type": "vocabulary"}
+{"hanzi": "吸尘器故障", "eng": "Vacuum cleaner fault", "type": "vocabulary"}
+{"hanzi": "吹气排空", "eng": "Emptying", "type": "vocabulary"}
+{"hanzi": "吹气排空一键启动", "eng": "Air blowing for emptying start", "type": "vocabulary"}
+{"hanzi": "吹气排空使能", "eng": "Air blowing for emptying enable", "type": "vocabulary"}
+{"hanzi": "周期配方数据传递", "eng": "cycle recipe data transmission", "type": "vocabulary"}
+{"hanzi": "命令", "eng": "Command", "type": "vocabulary"}
+{"hanzi": "品牌", "eng": "Brand", "type": "vocabulary"}
+{"hanzi": "喷塑覆盖", "eng": "Plastic coating", "type": "vocabulary"}
+{"hanzi": "喷淋机构", "eng": "Spray structure", "type": "vocabulary"}
+{"hanzi": "喷淋槽移开", "eng": "Spraying tank detection moved away", "type": "vocabulary"}
+{"hanzi": "喷针", "eng": "Spray needles", "type": "vocabulary"}
+{"hanzi": "噪声值", "eng": "Noise value", "type": "vocabulary"}
+{"hanzi": "回吸功能", "eng": "back suction", "type": "vocabulary"}
+{"hanzi": "固态继电器", "eng": "Solid relay", "type": "vocabulary"}
+{"hanzi": "国家药品监督管理局", "eng": "National Medical Products Administration", "type": "vocabulary"}
+{"hanzi": "国标", "eng": "Chinese standard", "type": "vocabulary"}
+{"hanzi": "国际制药工程协会", "eng": "International Society For Pharmaceutical Engineering", "type": "vocabulary"}
+{"hanzi": "圆柱锁", "eng": "Cylindrical lock", "type": "vocabulary"}
+{"hanzi": "圆罩", "eng": "Round cover", "type": "vocabulary"}
+{"hanzi": "在位清洗", "eng": "WIP Wash in Place", "type": "vocabulary"}
+{"hanzi": "在位清洗模式", "eng": "in place cleaning mode", "type": "vocabulary"}
+{"hanzi": "在线清洗", "eng": "CIP Clean in place", "type": "vocabulary"}
+{"hanzi": "在线灭菌", "eng": "SIP Sterilize in Place", "type": "vocabulary"}
+{"hanzi": "在线灭菌模式", "eng": "online sterilization mode", "type": "vocabulary"}
+{"hanzi": "在线称重", "eng": "online weighing", "type": "vocabulary"}
+{"hanzi": "在线称重单元", "eng": "online weighing unit", "type": "vocabulary"}
+{"hanzi": "地方环境", "eng": "Local Environment", "type": "vocabulary"}
+{"hanzi": "均流结构", "eng": "uniform flow structure", "type": "vocabulary"}
+{"hanzi": "均流膜", "eng": "uniform flow membrane", "type": "vocabulary"}
+{"hanzi": "型号", "eng": "Model", "type": "vocabulary"}
+{"hanzi": "塑壳断路器", "eng": "Moulded case Breaker", "type": "vocabulary"}
+{"hanzi": "增量位移", "eng": "incremental displacement", "type": "vocabulary"}
+{"hanzi": "处理方法", "eng": "processing method", "type": "vocabulary"}
+{"hanzi": "备份容量", "eng": "backup capacity", "type": "vocabulary"}
+{"hanzi": "备用容量", "eng": "spare capacity", "type": "vocabulary"}
+{"hanzi": "复位", "eng": "Reset", "type": "vocabulary"}
+{"hanzi": "复制文件", "eng": "archive file)", "type": "vocabulary"}
+{"hanzi": "复制文件夹", "eng": "Copy folder", "type": "vocabulary"}
+{"hanzi": "复选框", "eng": "Check box", "type": "vocabulary"}
+{"hanzi": "外喷", "eng": "External spraying", "type": "vocabulary"}
+{"hanzi": "外喷喷嘴", "eng": "external spraying nozzles", "type": "vocabulary"}
+{"hanzi": "多塞报警", "eng": "Stoppers alarm", "type": "vocabulary"}
+{"hanzi": "夜间模式", "eng": "Night mode", "type": "vocabulary"}
+{"hanzi": "夜间模式风机运行频率", "eng": "Night mode fan operating frequency", "type": "vocabulary"}
+{"hanzi": "大头加热管", "eng": "Heating tube", "type": "vocabulary"}
+{"hanzi": "失活", "eng": "Deactivation", "type": "vocabulary"}
+{"hanzi": "失重指示", "eng": "weight loss indication", "type": "vocabulary"}
+{"hanzi": "夹头", "eng": "gripper", "type": "vocabulary"}
+{"hanzi": "奇工位", "eng": "Odd station", "type": "vocabulary"}
+{"hanzi": "子网掩码", "eng": "Subnet mask", "type": "vocabulary"}
+{"hanzi": "存储路径", "eng": "storage path", "type": "vocabulary"}
+{"hanzi": "安全措施", "eng": "Safety measures", "type": "vocabulary"}
+{"hanzi": "安全继电器", "eng": "Safety relay", "type": "vocabulary"}
+{"hanzi": "安全门", "eng": "Safety door", "type": "vocabulary"}
+{"hanzi": "安全防护互锁", "eng": "safety protection interlock", "type": "vocabulary"}
+{"hanzi": "安装确认", "eng": "Installation Qualification", "type": "vocabulary"}
+{"hanzi": "安装验证", "eng": "Installation Qualification", "type": "vocabulary"}
+{"hanzi": "定时取样", "eng": "Timing sampling", "type": "vocabulary"}
+{"hanzi": "定量灌装", "eng": "quantitative filling", "type": "vocabulary"}
+{"hanzi": "实时报警", "eng": "Real time alarm", "type": "vocabulary"}
+{"hanzi": "实时曲线", "eng": "real-time trend", "type": "vocabulary"}
+{"hanzi": "实时重量", "eng": "real-time weight", "type": "vocabulary"}
+{"hanzi": "审计追踪", "eng": "audit trail", "type": "vocabulary"}
+{"hanzi": "审计追踪数据", "eng": "audit trail data", "type": "vocabulary"}
+{"hanzi": "审计追踪显示", "eng": "Audit trail display", "type": "vocabulary"}
+{"hanzi": "审计追踪条目", "eng": "audit trail entries", "type": "vocabulary"}
+{"hanzi": "客户名称：", "eng": "Customer Name:", "type": "vocabulary"}
+{"hanzi": "客户需求", "eng": "User Requirements Specifications", "type": "vocabulary"}
+{"hanzi": "密度设定", "eng": "Density", "type": "vocabulary"}
+{"hanzi": "密码复杂度策略", "eng": "password complexity policy", "type": "vocabulary"}
+{"hanzi": "密码生命周期", "eng": "password life cycle", "type": "vocabulary"}
+{"hanzi": "尘埃粒子传感器", "eng": "dust particle sensor", "type": "vocabulary"}
+{"hanzi": "尘埃粒子控制盒", "eng": "Dust particle control box", "type": "vocabulary"}
+{"hanzi": "尘埃粒子检测", "eng": "Dust particle detection", "type": "vocabulary"}
+{"hanzi": "尘埃粒子检测仪", "eng": "dust particle detector", "type": "vocabulary"}
+{"hanzi": "尾瓶排空", "eng": "Empty the tail bottle", "type": "vocabulary"}
+{"hanzi": "层流", "eng": "laminar flow", "type": "vocabulary"}
+{"hanzi": "层流区域", "eng": "laminar flow area", "type": "vocabulary"}
+{"hanzi": "层流框架", "eng": "Laminar flow frame", "type": "vocabulary"}
+{"hanzi": "层流自净", "eng": "Laminar flow self-purification", "type": "vocabulary"}
+{"hanzi": "层流装置", "eng": "laminar flow device", "type": "vocabulary"}
+{"hanzi": "层流风机", "eng": "laminar flow fan", "type": "vocabulary"}
+{"hanzi": "层流风机通讯故障", "eng": "LAF Communication fault", "type": "vocabulary"}
+{"hanzi": "屏幕校准", "eng": "Screen calibration", "type": "vocabulary"}
+{"hanzi": "屏蔽总线", "eng": "shield bus", "type": "vocabulary"}
+{"hanzi": "工业标准结构", "eng": "Industry Standard Architecture", "type": "vocabulary"}
+{"hanzi": "工作区域", "eng": "Working area", "type": "vocabulary"}
+{"hanzi": "工作电压", "eng": "Working voltage", "type": "vocabulary"}
+{"hanzi": "工作面高度", "eng": "Working surface height", "type": "vocabulary"}
+{"hanzi": "工厂验收测试", "eng": "Factory Acceptance Test", "type": "vocabulary"}
+{"hanzi": "工控机", "eng": "industrial computer", "type": "vocabulary"}
+{"hanzi": "工艺参数", "eng": "process parameters", "type": "vocabulary"}
+{"hanzi": "工艺周期", "eng": "process cycles", "type": "vocabulary"}
+{"hanzi": "工艺配方", "eng": "process recipes", "type": "vocabulary"}
+{"hanzi": "左旋", "eng": "left-hand turn", "type": "vocabulary"}
+{"hanzi": "差压上下限", "eng": "upper and lower limit value for differential pressure", "type": "vocabulary"}
+{"hanzi": "差压表", "eng": "differential pressure gauge", "type": "vocabulary"}
+{"hanzi": "已确认", "eng": "acknowledged", "type": "vocabulary"}
+{"hanzi": "已离开", "eng": "went out", "type": "vocabulary"}
+{"hanzi": "已终止", "eng": "Aborted", "type": "vocabulary"}
+{"hanzi": "已进入", "eng": "came in", "type": "vocabulary"}
+{"hanzi": "市电断开", "eng": "Mains disconnect", "type": "vocabulary"}
+{"hanzi": "布线面板", "eng": "wiring panel", "type": "vocabulary"}
+{"hanzi": "带有屏蔽层的电缆", "eng": "Shielded cable", "type": "vocabulary"}
+{"hanzi": "常亮", "eng": "Always on", "type": "vocabulary"}
+{"hanzi": "常开", "eng": "normally-open", "type": "vocabulary"}
+{"hanzi": "常闭", "eng": "normally-closed", "type": "vocabulary"}
+{"hanzi": "干接点", "eng": "dry contact", "type": "vocabulary"}
+{"hanzi": "干燥机", "eng": "dryer", "type": "vocabulary"}
+{"hanzi": "废品盒", "eng": "Waste product box", "type": "vocabulary"}
+{"hanzi": "开关电源", "eng": "Switching power supply", "type": "vocabulary"}
+{"hanzi": "异步电机", "eng": "asynchronous motor", "type": "vocabulary"}
+{"hanzi": "弹框按钮", "eng": "Pop box button", "type": "vocabulary"}
+{"hanzi": "强制密码历史设置", "eng": "Forced password history setting", "type": "vocabulary"}
+{"hanzi": "归档组态", "eng": "archiving configuration", "type": "vocabulary"}
+{"hanzi": "当前配方", "eng": "Current recipe", "type": "vocabulary"}
+{"hanzi": "待机状态", "eng": "standby state", "type": "vocabulary"}
+{"hanzi": "循环水", "eng": "Circulation water", "type": "vocabulary"}
+{"hanzi": "循环水加热", "eng": "Circulating water heating", "type": "vocabulary"}
+{"hanzi": "循环水单元", "eng": "Circulation water unit", "type": "vocabulary"}
+{"hanzi": "循环水压力", "eng": "recirculation water pressure", "type": "vocabulary"}
+{"hanzi": "循环水压力变送器", "eng": "circulation water pressure transmitter", "type": "vocabulary"}
+{"hanzi": "循环水压力过低", "eng": "Recirculation water pressure too low", "type": "vocabulary"}
+{"hanzi": "循环水泵", "eng": "Circulation water pump", "type": "vocabulary"}
+{"hanzi": "循环水温度", "eng": "recirculation water temperature", "type": "vocabulary"}
+{"hanzi": "循环水温度参数设置错误", "eng": "Recirculation water temperature parameter setting error", "type": "vocabulary"}
+{"hanzi": "循环水温度输入故障", "eng": "Recirculation water temperature analog input malfunction", "type": "vocabulary"}
+{"hanzi": "循环水箱", "eng": "Circulation water tank", "type": "vocabulary"}
+{"hanzi": "循环水箱水位过低", "eng": "Recirculation water level too low", "type": "vocabulary"}
+{"hanzi": "循环水系统", "eng": "Circulation water system", "type": "vocabulary"}
+{"hanzi": "微型断路器", "eng": "Micro breaker", "type": "vocabulary"}
+{"hanzi": "微调设定", "eng": "fine regulation", "type": "vocabulary"}
+{"hanzi": "快卡软管", "eng": "Clamp hose", "type": "vocabulary"}
+{"hanzi": "急停开关", "eng": "emergency stop switch", "type": "vocabulary"}
+{"hanzi": "急停按钮", "eng": "emergency stop button", "type": "vocabulary"}
+{"hanzi": "急停故障", "eng": "Emergency stop failure", "type": "vocabulary"}
+{"hanzi": "性能确认", "eng": "Performance Qualification", "type": "vocabulary"}
+{"hanzi": "总电源开关", "eng": "Master power switch", "type": "vocabulary"}
+{"hanzi": "总览", "eng": "Overview", "type": "vocabulary"}
+{"hanzi": "总重", "eng": "Gross weight", "type": "vocabulary"}
+{"hanzi": "总重卡瓶过载", "eng": "Gross weighing fetch vial overload", "type": "vocabulary"}
+{"hanzi": "总重天平", "eng": "gross weight scale", "type": "vocabulary"}
+{"hanzi": "总重工位", "eng": "gross weight station", "type": "vocabulary"}
+{"hanzi": "总重拨轮伺服扭矩报警", "eng": "Gross weighing wheel servo torque alarm", "type": "vocabulary"}
+{"hanzi": "总重称重传感器", "eng": "weighing sensor of the gross weight", "type": "vocabulary"}
+{"hanzi": "总重称重拨轮", "eng": "weighing starwheel for the gross weight", "type": "vocabulary"}
+{"hanzi": "恒温阶段", "eng": "constant temperature stage", "type": "vocabulary"}
+{"hanzi": "悬臂梁式称重传感器", "eng": "cantilever load cell", "type": "vocabulary"}
+{"hanzi": "感应装置", "eng": "induction devices", "type": "vocabulary"}
+{"hanzi": "截图", "eng": "Screenshot", "type": "vocabulary"}
+{"hanzi": "截图文件", "eng": "Screenshot file", "type": "vocabulary"}
+{"hanzi": "手动取样", "eng": "Manual sampling", "type": "vocabulary"}
+{"hanzi": "手动控制模式", "eng": "manual control mode", "type": "vocabulary"}
+{"hanzi": "手动操作", "eng": "Manual operation", "type": "vocabulary"}
+{"hanzi": "手动模式", "eng": "Manual mode", "type": "vocabulary"}
+{"hanzi": "手动隔膜阀", "eng": "Manual diaphragm valve", "type": "vocabulary"}
+{"hanzi": "批次", "eng": "batch", "type": "vocabulary"}
+{"hanzi": "批次数据", "eng": "batch data", "type": "vocabulary"}
+{"hanzi": "抛光", "eng": "Polishing", "type": "vocabulary"}
+{"hanzi": "报表", "eng": "Report", "type": "vocabulary"}
+{"hanzi": "报表画面", "eng": "Report screen", "type": "vocabulary"}
+{"hanzi": "报警", "eng": "Alarm", "type": "vocabulary"}
+{"hanzi": "报警一览表", "eng": "Alarm summary", "type": "vocabulary"}
+{"hanzi": "报警上限", "eng": "alarm upper limit", "type": "vocabulary"}
+{"hanzi": "报警上限值设定", "eng": "Alarm upper limit", "type": "vocabulary"}
+{"hanzi": "报警下限", "eng": "lower alarm limit", "type": "vocabulary"}
+{"hanzi": "报警位被锁存", "eng": "the alarm bit is locked", "type": "vocabulary"}
+{"hanzi": "报警值", "eng": "alarm values", "type": "vocabulary"}
+{"hanzi": "报警复位按钮", "eng": "alarm reset button", "type": "vocabulary"}
+{"hanzi": "报警延时", "eng": "alarm delay", "type": "vocabulary"}
+{"hanzi": "报警延时时间", "eng": "Alarm delay", "type": "vocabulary"}
+{"hanzi": "报警数据库", "eng": "alarm database", "type": "vocabulary"}
+{"hanzi": "报警显示", "eng": "Alarm display", "type": "vocabulary"}
+{"hanzi": "报警检测", "eng": "alarm detection", "type": "vocabulary"}
+{"hanzi": "报警清单", "eng": "alarm list", "type": "vocabulary"}
+{"hanzi": "报警灯", "eng": "Alarm light", "type": "vocabulary"}
+{"hanzi": "报警画面", "eng": "Alarm screen", "type": "vocabulary"}
+{"hanzi": "报警等级", "eng": "Alarm level", "type": "vocabulary"}
+{"hanzi": "报警编号", "eng": "Alarm number", "type": "vocabulary"}
+{"hanzi": "抽湿风机", "eng": "Dehumidify fan", "type": "vocabulary"}
+{"hanzi": "抽湿风机过载", "eng": "Dehumidify fan overload", "type": "vocabulary"}
+{"hanzi": "抽湿风门未打开", "eng": "Dehumidifier air shutter not open", "type": "vocabulary"}
+{"hanzi": "抽药位置", "eng": "Liquid drawing position", "type": "vocabulary"}
+{"hanzi": "抽药加速度", "eng": "Drawing acceleration", "type": "vocabulary"}
+{"hanzi": "抽药速度", "eng": "Pumping speed", "type": "vocabulary"}
+{"hanzi": "拨轮", "eng": "Starwheel", "type": "vocabulary"}
+{"hanzi": "持续时间", "eng": "Duration time", "type": "vocabulary"}
+{"hanzi": "挂盖拨轮", "eng": "cap feeding starwheel", "type": "vocabulary"}
+{"hanzi": "挂盖轧盖单元", "eng": "Cap feeding and capping unit", "type": "vocabulary"}
+{"hanzi": "指示灯", "eng": "Indicator", "type": "vocabulary"}
+{"hanzi": "挡塞气缸", "eng": "Stopper retaining cylinder", "type": "vocabulary"}
+{"hanzi": "挡瓶", "eng": "vial block", "type": "vocabulary"}
+{"hanzi": "挡瓶块", "eng": "vial retaining block", "type": "vocabulary"}
+{"hanzi": "挡瓶气缸", "eng": "vial block cylinder", "type": "vocabulary"}
+{"hanzi": "挡瓶部件", "eng": "Vial retaining parts", "type": "vocabulary"}
+{"hanzi": "挡瓶链条", "eng": "vial block chain", "type": "vocabulary"}
+{"hanzi": "挤瓶", "eng": "vials crowding", "type": "vocabulary"}
+{"hanzi": "挤瓶检测传感器", "eng": "bottle squeeze detection sensor", "type": "vocabulary"}
+{"hanzi": "振荡底座", "eng": "Oscillating base", "type": "vocabulary"}
+{"hanzi": "授权的操作者", "eng": "authorized operator", "type": "vocabulary"}
+{"hanzi": "排气支路清洗时间", "eng": "CIP exhaust branch cleaning time", "type": "vocabulary"}
+{"hanzi": "排渣抽屉", "eng": "slag discharge drawer", "type": "vocabulary"}
+{"hanzi": "排空参数", "eng": "Empty parameters", "type": "vocabulary"}
+{"hanzi": "排空系统", "eng": "Emptying system", "type": "vocabulary"}
+{"hanzi": "排空阶段", "eng": "Emptying phase", "type": "vocabulary"}
+{"hanzi": "排风扇", "eng": "exhaust fan", "type": "vocabulary"}
+{"hanzi": "排风系统", "eng": "Exhaust system", "type": "vocabulary"}
+{"hanzi": "排风风机过载", "eng": "Exhaust fan overload", "type": "vocabulary"}
+{"hanzi": "接口", "eng": "Interface", "type": "vocabulary"}
+{"hanzi": "接口模块", "eng": "Interface module", "type": "vocabulary"}
+{"hanzi": "接地", "eng": "earthing", "type": "vocabulary"}
+{"hanzi": "接线规定", "eng": "Wiring regulations", "type": "vocabulary"}
+{"hanzi": "接触器", "eng": "Contactor", "type": "vocabulary"}
+{"hanzi": "接近开关", "eng": "proximity switch", "type": "vocabulary"}
+{"hanzi": "控制回路", "eng": "Control circuit", "type": "vocabulary"}
+{"hanzi": "控制接触器", "eng": "control contactor", "type": "vocabulary"}
+{"hanzi": "控制电压", "eng": "DC24V", "type": "vocabulary"}
+{"hanzi": "控制电磁阀", "eng": "solenoid valve", "type": "vocabulary"}
+{"hanzi": "控制系统", "eng": "Control system", "type": "vocabulary"}
+{"hanzi": "推瓶板", "eng": "vial pusher", "type": "vocabulary"}
+{"hanzi": "描述", "eng": "Specifications", "type": "vocabulary"}
+{"hanzi": "提升", "eng": "Lifting", "type": "vocabulary"}
+{"hanzi": "提升高度", "eng": "Lifting height", "type": "vocabulary"}
+{"hanzi": "摆动圆柱凸轮", "eng": "oscillating cylindrical cam", "type": "vocabulary"}
+{"hanzi": "操作", "eng": "Logon_ Operator", "type": "vocabulary"}
+{"hanzi": "操作画面", "eng": "Operation screen", "type": "vocabulary"}
+{"hanzi": "操作系统", "eng": "operating system", "type": "vocabulary"}
+{"hanzi": "操作者", "eng": "Operator", "type": "vocabulary"}
+{"hanzi": "故障清除", "eng": "Error clear", "type": "vocabulary"}
+{"hanzi": "散热风扇", "eng": "cooling fans", "type": "vocabulary"}
+{"hanzi": "数字调频振动送料控制器", "eng": "digital vibration feed controller", "type": "vocabulary"}
+{"hanzi": "数字量和模拟量输入/输出", "eng": "digital and Analog I/O", "type": "vocabulary"}
+{"hanzi": "数字量输入", "eng": "digital inputs", "type": "vocabulary"}
+{"hanzi": "数字量输入模块", "eng": "Digital input module", "type": "vocabulary"}
+{"hanzi": "数字量输入画面", "eng": "Digital input screen", "type": "vocabulary"}
+{"hanzi": "数字量输出", "eng": "Digital output", "type": "vocabulary"}
+{"hanzi": "数字量输出模块", "eng": "Digital output module", "type": "vocabulary"}
+{"hanzi": "数字量输出画面", "eng": "Digital output screen", "type": "vocabulary"}
+{"hanzi": "数据传输率", "eng": "data transfer rate", "type": "vocabulary"}
+{"hanzi": "数据采集与监视控制系统", "eng": "Supervisory Control And Data acquisition", "type": "vocabulary"}
+{"hanzi": "数量", "eng": "Quantity", "type": "vocabulary"}
+{"hanzi": "整机点动", "eng": "Whole machine inching", "type": "vocabulary"}
+{"hanzi": "整机速度设定", "eng": "machine speed", "type": "vocabulary"}
+{"hanzi": "文件列表窗口", "eng": "file list window", "type": "vocabulary"}
+{"hanzi": "文件夹", "eng": "Folder", "type": "vocabulary"}
+{"hanzi": "文件管理规范", "eng": "Good Documentation Practice", "type": "vocabulary"}
+{"hanzi": "文件系统", "eng": "file system", "type": "vocabulary"}
+{"hanzi": "文件）", "eng": "Cut file", "type": "vocabulary"}
+{"hanzi": "文本输入框", "eng": "Text input field", "type": "vocabulary"}
+{"hanzi": "文档编号:", "eng": "Document No.:", "type": "vocabulary"}
+{"hanzi": "文档编号：", "eng": "Document No.:", "type": "vocabulary"}
+{"hanzi": "料位传感器", "eng": "cap level sensor", "type": "vocabulary"}
+{"hanzi": "断电恢复", "eng": "Power-off recovery", "type": "vocabulary"}
+{"hanzi": "新建", "eng": "Create", "type": "vocabulary"}
+{"hanzi": "旋瓶电机", "eng": "Vial rotating motor", "type": "vocabulary"}
+{"hanzi": "无瓶不灌率", "eng": "Rate of no vial no filling", "type": "vocabulary"}
+{"hanzi": "无菌药品", "eng": "Sterile Medicinal Products", "type": "vocabulary"}
+{"hanzi": "日期时间控件", "eng": "Date Time Picker", "type": "vocabulary"}
+{"hanzi": "日间启动", "eng": "daytime start", "type": "vocabulary"}
+{"hanzi": "时效超时", "eng": "timeout", "type": "vocabulary"}
+{"hanzi": "时间戳", "eng": "time stamp", "type": "vocabulary"}
+{"hanzi": "显示精度", "eng": "Accuacy", "type": "vocabulary"}
+{"hanzi": "暂停", "eng": "Hold", "type": "vocabulary"}
+{"hanzi": "曲线", "eng": "Trend", "type": "vocabulary"}
+{"hanzi": "曲线显示", "eng": "Trend display", "type": "vocabulary"}
+{"hanzi": "曲线画面", "eng": "Trend screen", "type": "vocabulary"}
+{"hanzi": "最大开关频率", "eng": "maximum switching frequency", "type": "vocabulary"}
+{"hanzi": "最高水位", "eng": "Highest level", "type": "vocabulary"}
+{"hanzi": "有效容积", "eng": "Effective volume", "type": "vocabulary"}
+{"hanzi": "有效长度", "eng": "Effective length", "type": "vocabulary"}
+{"hanzi": "有权限的用户", "eng": "authorized users", "type": "vocabulary"}
+{"hanzi": "未上电状态", "eng": "powered-off state", "type": "vocabulary"}
+{"hanzi": "术语&缩写", "eng": "Terms & Abbreviations", "type": "vocabulary"}
+{"hanzi": "机抛", "eng": "Mechanical polishing", "type": "vocabulary"}
+{"hanzi": "机架", "eng": "Frame", "type": "vocabulary"}
+{"hanzi": "机架单元", "eng": "Frame unit", "type": "vocabulary"}
+{"hanzi": "机架材质", "eng": "Material of machine frame", "type": "vocabulary"}
+{"hanzi": "机架焊接部件", "eng": "frame welding parts", "type": "vocabulary"}
+{"hanzi": "机架系统", "eng": "Frame System", "type": "vocabulary"}
+{"hanzi": "机架组", "eng": "frame unit", "type": "vocabulary"}
+{"hanzi": "机械", "eng": "Mechanical", "type": "vocabulary"}
+{"hanzi": "机械传动", "eng": "mechanical transmission", "type": "vocabulary"}
+{"hanzi": "机械安全", "eng": "Safety of machinery", "type": "vocabulary"}
+{"hanzi": "机械手", "eng": "Manipulator", "type": "vocabulary"}
+{"hanzi": "机械指令", "eng": "Machinery Directive", "type": "vocabulary"}
+{"hanzi": "机械自动化和控制组织", "eng": "OMAC Organization for Machine Automation and Control", "type": "vocabulary"}
+{"hanzi": "机罩上升", "eng": "Machine hood lifting", "type": "vocabulary"}
+{"hanzi": "机罩下降", "eng": "Machine hood lowering", "type": "vocabulary"}
+{"hanzi": "机罩升降", "eng": "machine hood lifting", "type": "vocabulary"}
+{"hanzi": "权限", "eng": "Authorizations", "type": "vocabulary"}
+{"hanzi": "权限组", "eng": "Permission group", "type": "vocabulary"}
+{"hanzi": "权限配置", "eng": "permission configuration", "type": "vocabulary"}
+{"hanzi": "材料", "eng": "Material", "type": "vocabulary"}
+{"hanzi": "材料清单", "eng": "BOM Bill of Material", "type": "vocabulary"}
+{"hanzi": "材质", "eng": "Material", "type": "vocabulary"}
+{"hanzi": "来瓶检测开关", "eng": "Vial feeding detection switch", "type": "vocabulary"}
+{"hanzi": "查询", "eng": "Query", "type": "vocabulary"}
+{"hanzi": "栏栅", "eng": "Barrier", "type": "vocabulary"}
+{"hanzi": "校准阶段", "eng": "Calibration stage", "type": "vocabulary"}
+{"hanzi": "检塞传感器", "eng": "stopper detection sensor", "type": "vocabulary"}
+{"hanzi": "检测真空泵", "eng": "Detection vacuum pump", "type": "vocabulary"}
+{"hanzi": "检测范围", "eng": "Detection range", "type": "vocabulary"}
+{"hanzi": "概述信息", "eng": "Overview information", "type": "vocabulary"}
+{"hanzi": "槽形光电", "eng": "groove shaped photoelectric sensor", "type": "vocabulary"}
+{"hanzi": "模式", "eng": "Mode", "type": "vocabulary"}
+{"hanzi": "模拟输入", "eng": "Analogue Input", "type": "vocabulary"}
+{"hanzi": "模拟输出", "eng": "Analogue Output", "type": "vocabulary"}
+{"hanzi": "模拟量输入", "eng": "analog inputs", "type": "vocabulary"}
+{"hanzi": "模拟量输入画面", "eng": "Analog input screen", "type": "vocabulary"}
+{"hanzi": "模拟量输出", "eng": "Analog output", "type": "vocabulary"}
+{"hanzi": "模拟量输出模块", "eng": "Analog output module", "type": "vocabulary"}
+{"hanzi": "模拟量输出画面", "eng": "Analog output screen", "type": "vocabulary"}
+{"hanzi": "正压", "eng": "positive pressure", "type": "vocabulary"}
+{"hanzi": "正常状态", "eng": "Normal", "type": "vocabulary"}
+{"hanzi": "正常生产状态", "eng": "normal production", "type": "vocabulary"}
+{"hanzi": "残氧量", "eng": "Residual oxygen", "type": "vocabulary"}
+{"hanzi": "毫米", "eng": "Millimeter", "type": "vocabulary"}
+{"hanzi": "气动元件", "eng": "pneumatic component", "type": "vocabulary"}
+{"hanzi": "气动阀", "eng": "pneumatic valves", "type": "vocabulary"}
+{"hanzi": "气动隔膜阀", "eng": "Pneumatic diaphragm valve", "type": "vocabulary"}
+{"hanzi": "气化过氧化氢", "eng": "VPHP Vapor Phase Hydrogen Peroxide", "type": "vocabulary"}
+{"hanzi": "气源", "eng": "Gas source", "type": "vocabulary"}
+{"hanzi": "气源处理组件", "eng": "Air source assembly", "type": "vocabulary"}
+{"hanzi": "氮气压力", "eng": "nitrogen pressure", "type": "vocabulary"}
+{"hanzi": "水位检测开关", "eng": "water level detection switch", "type": "vocabulary"}
+{"hanzi": "水冷", "eng": "water-cooling", "type": "vocabulary"}
+{"hanzi": "水泵", "eng": "Water pump", "type": "vocabulary"}
+{"hanzi": "水浴温度", "eng": "Temperature of water bath", "type": "vocabulary"}
+{"hanzi": "水箱加热", "eng": "water tank heating", "type": "vocabulary"}
+{"hanzi": "水针产品", "eng": "liquid injection products", "type": "vocabulary"}
+{"hanzi": "沉降菌", "eng": "Settlement microbe", "type": "vocabulary"}
+{"hanzi": "没有冷凝", "eng": "non condensing", "type": "vocabulary"}
+{"hanzi": "油管直径", "eng": "Diameter of oil pipe", "type": "vocabulary"}
+{"hanzi": "泄压时间", "eng": "Pressure relief time", "type": "vocabulary"}
+{"hanzi": "注射水", "eng": "WFI", "type": "vocabulary"}
+{"hanzi": "注射水压力", "eng": "WFI pressure", "type": "vocabulary"}
+{"hanzi": "注射水系统", "eng": "WFI system", "type": "vocabulary"}
+{"hanzi": "注射用水", "eng": "WFI Water for Injection", "type": "vocabulary"}
+{"hanzi": "注射用水单元", "eng": "WFI unit", "type": "vocabulary"}
+{"hanzi": "注射用水手动隔膜阀", "eng": "WFI manual diaphragm valve", "type": "vocabulary"}
+{"hanzi": "注射用水系统", "eng": "WFI system", "type": "vocabulary"}
+{"hanzi": "注水系统", "eng": "Water injection system", "type": "vocabulary"}
+{"hanzi": "泵", "eng": "pump", "type": "vocabulary"}
+{"hanzi": "泵伺服参数", "eng": "Pump servo parameter", "type": "vocabulary"}
+{"hanzi": "泵外径", "eng": "Outer diameter", "type": "vocabulary"}
+{"hanzi": "泵扭矩设定", "eng": "Pump torque", "type": "vocabulary"}
+{"hanzi": "泵排空时间", "eng": "Pump emptying time", "type": "vocabulary"}
+{"hanzi": "泵碱洗排空时间", "eng": "Emptying time of alkali washing pump", "type": "vocabulary"}
+{"hanzi": "泵装量报警", "eng": "Pump filling volume alarm", "type": "vocabulary"}
+{"hanzi": "洁净度", "eng": "cleanliness", "type": "vocabulary"}
+{"hanzi": "流水号", "eng": "Serial number", "type": "vocabulary"}
+{"hanzi": "流量控制阀", "eng": "flow control valve", "type": "vocabulary"}
+{"hanzi": "测试", "eng": "test", "type": "vocabulary"}
+{"hanzi": "测试模式", "eng": "test mode", "type": "vocabulary"}
+{"hanzi": "浮游菌体积设定值", "eng": "Volume setting value of airborne microbe", "type": "vocabulary"}
+{"hanzi": "浮游菌变送器输入故障", "eng": "Planktonic bacteria transmitter input fault", "type": "vocabulary"}
+{"hanzi": "浮游菌检测", "eng": "Airborne microbe detection", "type": "vocabulary"}
+{"hanzi": "浮游菌检测传感器", "eng": "Sensor for airborne microbe detection", "type": "vocabulary"}
+{"hanzi": "浮游菌采样仪", "eng": "airborne microbe sampler", "type": "vocabulary"}
+{"hanzi": "消声器", "eng": "muffler", "type": "vocabulary"}
+{"hanzi": "消息文本", "eng": "Message text", "type": "vocabulary"}
+{"hanzi": "消息状态", "eng": "Message status", "type": "vocabulary"}
+{"hanzi": "消音", "eng": "Silence", "type": "vocabulary"}
+{"hanzi": "涡轮蜗杆减速机", "eng": "Worm gear reducer", "type": "vocabulary"}
+{"hanzi": "润滑系统", "eng": "Lubrication system", "type": "vocabulary"}
+{"hanzi": "液环泵", "eng": "Liquid Ring Pump", "type": "vocabulary"}
+{"hanzi": "清瓶阶段", "eng": "Vial clearing stage", "type": "vocabulary"}
+{"hanzi": "清除", "eng": "Clearing", "type": "vocabulary"}
+{"hanzi": "清除中", "eng": "Clearing", "type": "vocabulary"}
+{"hanzi": "清零", "eng": "Reset", "type": "vocabulary"}
+{"hanzi": "温度参数", "eng": "temperature setting", "type": "vocabulary"}
+{"hanzi": "温度变送器", "eng": "Temperature transmitter", "type": "vocabulary"}
+{"hanzi": "温度检查探头", "eng": "temperature detection probe", "type": "vocabulary"}
+{"hanzi": "温度范围", "eng": "Temperature range", "type": "vocabulary"}
+{"hanzi": "温度过低", "eng": "temperature too low", "type": "vocabulary"}
+{"hanzi": "湿度范围", "eng": "Humidity range", "type": "vocabulary"}
+{"hanzi": "满焊", "eng": "fully welded", "type": "vocabulary"}
+{"hanzi": "滤壳", "eng": "Filter shell", "type": "vocabulary"}
+{"hanzi": "滤芯", "eng": "Filter cartridge", "type": "vocabulary"}
+{"hanzi": "激活", "eng": "Activation", "type": "vocabulary"}
+{"hanzi": "灌装加塞机", "eng": "Filling and stoppering machine", "type": "vocabulary"}
+{"hanzi": "灌装单元", "eng": "Filling system", "type": "vocabulary"}
+{"hanzi": "灌装控制", "eng": "Filling control", "type": "vocabulary"}
+{"hanzi": "灌装方式", "eng": "Filling mode", "type": "vocabulary"}
+{"hanzi": "灌装机", "eng": "filling machine", "type": "vocabulary"}
+{"hanzi": "灌装泵", "eng": "Filling pump", "type": "vocabulary"}
+{"hanzi": "灌装精度", "eng": "Filling accuracy", "type": "vocabulary"}
+{"hanzi": "灌装系统", "eng": "Filling system", "type": "vocabulary"}
+{"hanzi": "灌装量", "eng": "Filling volume", "type": "vocabulary"}
+{"hanzi": "灌针", "eng": "Filling needle", "type": "vocabulary"}
+{"hanzi": "灌针架", "eng": "filling needle holder", "type": "vocabulary"}
+{"hanzi": "灌针跟踪升降单元", "eng": "Needle tracking lifting unit", "type": "vocabulary"}
+{"hanzi": "灭菌真空泵", "eng": "Vacuum pump for sterilization", "type": "vocabulary"}
+{"hanzi": "点动", "eng": "Jog", "type": "vocabulary"}
+{"hanzi": "点动开关", "eng": "Inching switch", "type": "vocabulary"}
+{"hanzi": "点动手柄", "eng": "Inching handle", "type": "vocabulary"}
+{"hanzi": "点动按钮", "eng": "inching button", "type": "vocabulary"}
+{"hanzi": "点动速度", "eng": "Inching speed", "type": "vocabulary"}
+{"hanzi": "烘箱联动", "eng": "Drying oven linkage", "type": "vocabulary"}
+{"hanzi": "热电阻", "eng": "Thermal resistance", "type": "vocabulary"}
+{"hanzi": "爆炸危险区域", "eng": "Explosion hazard area", "type": "vocabulary"}
+{"hanzi": "状态", "eng": "State", "type": "vocabulary"}
+{"hanzi": "状态条", "eng": "Status bar", "type": "vocabulary"}
+{"hanzi": "状态模型", "eng": "state model", "type": "vocabulary"}
+{"hanzi": "环境单元参数", "eng": "Environment parameters", "type": "vocabulary"}
+{"hanzi": "环境检测单元", "eng": "Environmental detection unit", "type": "vocabulary"}
+{"hanzi": "环境监控系统", "eng": "Environment monitoring system", "type": "vocabulary"}
+{"hanzi": "现场工艺参数", "eng": "field process parameters", "type": "vocabulary"}
+{"hanzi": "现场验收测试", "eng": "Site Acceptance Test", "type": "vocabulary"}
+{"hanzi": "现行药品生产管理规范", "eng": "cGMP Current Good Manufacturing Practice", "type": "vocabulary"}
+{"hanzi": "玻璃罩", "eng": "Protective cover", "type": "vocabulary"}
+{"hanzi": "玻璃转子流量计", "eng": "Glass rotor flow-meter", "type": "vocabulary"}
+{"hanzi": "理塞单元", "eng": "Stopper orienting unit", "type": "vocabulary"}
+{"hanzi": "理塞斗", "eng": "Stopper orienting hopper", "type": "vocabulary"}
+{"hanzi": "理塞斗锁紧超时报警", "eng": "Vibrator lock overtime alarm", "type": "vocabulary"}
+{"hanzi": "理瓶单元", "eng": "Vial orienting unit", "type": "vocabulary"}
+{"hanzi": "理瓶栏栅", "eng": "barrier", "type": "vocabulary"}
+{"hanzi": "理瓶盘", "eng": "Turntable", "type": "vocabulary"}
+{"hanzi": "理瓶盘速度设定", "eng": "Turntable speed", "type": "vocabulary"}
+{"hanzi": "理瓶盘部件", "eng": "Turntable parts", "type": "vocabulary"}
+{"hanzi": "理盖控制", "eng": "Cap Orienting Control", "type": "vocabulary"}
+{"hanzi": "理盖斗", "eng": "cap orienting hopper", "type": "vocabulary"}
+{"hanzi": "理盖组", "eng": "cap orienting group", "type": "vocabulary"}
+{"hanzi": "生产厂家", "eng": "Manufacturer", "type": "vocabulary"}
+{"hanzi": "生产周期", "eng": "production cycle", "type": "vocabulary"}
+{"hanzi": "生产批号", "eng": "production batch number", "type": "vocabulary"}
+{"hanzi": "生产操作", "eng": "Product operation", "type": "vocabulary"}
+{"hanzi": "生产模式", "eng": "Prodution mode", "type": "vocabulary"}
+{"hanzi": "生产管路清洗时间", "eng": "CIP production pipeline cleaning time", "type": "vocabulary"}
+{"hanzi": "生产能力", "eng": "Production capacity", "type": "vocabulary"}
+{"hanzi": "生产过程控制", "eng": "production process control", "type": "vocabulary"}
+{"hanzi": "生产运行温度", "eng": "Production operation temperature", "type": "vocabulary"}
+{"hanzi": "生产运行湿度", "eng": "Production operation humidity", "type": "vocabulary"}
+{"hanzi": "生产进瓶暂停长度设定值", "eng": "setting value of production infeed pause length", "type": "vocabulary"}
+{"hanzi": "生产阶段", "eng": "production phase", "type": "vocabulary"}
+{"hanzi": "生物过程设备", "eng": "Bio-Processing Equipment", "type": "vocabulary"}
+{"hanzi": "用户名:", "eng": "Customer Name:", "type": "vocabulary"}
+{"hanzi": "用户禁用", "eng": "user disabling", "type": "vocabulary"}
+{"hanzi": "用户管理", "eng": "Management", "type": "vocabulary"}
+{"hanzi": "用户需求规范", "eng": "User Requirements Specification", "type": "vocabulary"}
+{"hanzi": "电位均衡汇流排", "eng": "busbar for potential equalization", "type": "vocabulary"}
+{"hanzi": "电力供应", "eng": "Power supply", "type": "vocabulary"}
+{"hanzi": "电动机断路器", "eng": "Motor circuit breaker", "type": "vocabulary"}
+{"hanzi": "电动蝶阀", "eng": "Electrically-driven butterfly valve", "type": "vocabulary"}
+{"hanzi": "电动蝶阀未打开", "eng": "Electrical butterfly valve not open", "type": "vocabulary"}
+{"hanzi": "电器柜门", "eng": "electrical cabinet", "type": "vocabulary"}
+{"hanzi": "电子签名", "eng": "Electronic signatures", "type": "vocabulary"}
+{"hanzi": "电子记录", "eng": "Electronic records", "type": "vocabulary"}
+{"hanzi": "电控阀门", "eng": "Electrically operated valve", "type": "vocabulary"}
+{"hanzi": "电机减速机", "eng": "Motor reducer", "type": "vocabulary"}
+{"hanzi": "电气主管", "eng": "Electrical Supervisor", "type": "vocabulary"}
+{"hanzi": "电气原理图", "eng": "electrical circuit diagrams", "type": "vocabulary"}
+{"hanzi": "电气外壳", "eng": "electrical enclose", "type": "vocabulary"}
+{"hanzi": "电气工程师", "eng": "Electrical Engineer", "type": "vocabulary"}
+{"hanzi": "电气控制柜", "eng": "Electrical control cabinet", "type": "vocabulary"}
+{"hanzi": "电气控制系统", "eng": "electrical & control system", "type": "vocabulary"}
+{"hanzi": "电气柜", "eng": "electrical cabinet", "type": "vocabulary"}
+{"hanzi": "电气柜温度过高", "eng": "Electrical cabinet temperature too high", "type": "vocabulary"}
+{"hanzi": "电池电量低", "eng": "battery is low", "type": "vocabulary"}
+{"hanzi": "电流负荷", "eng": "current load", "type": "vocabulary"}
+{"hanzi": "电源", "eng": "Power supply", "type": "vocabulary"}
+{"hanzi": "电源供给", "eng": "Power supply", "type": "vocabulary"}
+{"hanzi": "电源相序错误", "eng": "Power phase sequence error", "type": "vocabulary"}
+{"hanzi": "电源缺相", "eng": "Phase loss", "type": "vocabulary"}
+{"hanzi": "电磁振荡结构", "eng": "electromagnetic oscillation structure", "type": "vocabulary"}
+{"hanzi": "电磁阀", "eng": "solenoid valves", "type": "vocabulary"}
+{"hanzi": "电磁阀或气动阀", "eng": "solenoid valve or pneumatic valve", "type": "vocabulary"}
+{"hanzi": "电阻式触摸屏", "eng": "resistive touch screen", "type": "vocabulary"}
+{"hanzi": "画面名称", "eng": "Screen name", "type": "vocabulary"}
+{"hanzi": "画面设计", "eng": "Screen Design", "type": "vocabulary"}
+{"hanzi": "疏水性", "eng": "Hydrophobicity", "type": "vocabulary"}
+{"hanzi": "百级保护单元", "eng": "100-level protection unit", "type": "vocabulary"}
+{"hanzi": "皮秤失重报警", "eng": "Tare weight loss alarm", "type": "vocabulary"}
+{"hanzi": "皮秤超重报警", "eng": "Tare weight overload alarm", "type": "vocabulary"}
+{"hanzi": "皮重", "eng": "tare weight", "type": "vocabulary"}
+{"hanzi": "皮重卡瓶过载", "eng": "Tare weighing fetch vial overload", "type": "vocabulary"}
+{"hanzi": "皮重取瓶电磁阀", "eng": "Solenoid valve for vial taking of tare weight", "type": "vocabulary"}
+{"hanzi": "皮重天平", "eng": "scale of tare weight", "type": "vocabulary"}
+{"hanzi": "皮重工位", "eng": "station of tare weight", "type": "vocabulary"}
+{"hanzi": "皮重拨轮伺服扭矩报警", "eng": "Tare weighing wheel servo torque alarm", "type": "vocabulary"}
+{"hanzi": "皮重曲线", "eng": "tare weight curve", "type": "vocabulary"}
+{"hanzi": "监控", "eng": "Monitor", "type": "vocabulary"}
+{"hanzi": "盖规格件", "eng": "Cap specification part", "type": "vocabulary"}
+{"hanzi": "盘凸轮", "eng": "plate cam", "type": "vocabulary"}
+{"hanzi": "目的", "eng": "Objectives", "type": "vocabulary"}
+{"hanzi": "直径", "eng": "Diameter", "type": "vocabulary"}
+{"hanzi": "相对定位", "eng": "Relative positioning", "type": "vocabulary"}
+{"hanzi": "相序检测继电器", "eng": "phase sequence detection relay", "type": "vocabulary"}
+{"hanzi": "相序错误", "eng": "phase sequence error", "type": "vocabulary"}
+{"hanzi": "相线", "eng": "phase line", "type": "vocabulary"}
+{"hanzi": "真空分拣", "eng": "vacuum sorting", "type": "vocabulary"}
+{"hanzi": "真空剔废装置", "eng": "Vacuum rejection device", "type": "vocabulary"}
+{"hanzi": "真空压力过低报警", "eng": "Vacuum pressure low alarm", "type": "vocabulary"}
+{"hanzi": "真空泵", "eng": "Vacuum pump", "type": "vocabulary"}
+{"hanzi": "真空泵故障", "eng": "vacuum pump failure", "type": "vocabulary"}
+{"hanzi": "真空泵过载", "eng": "Vacuum pump overload", "type": "vocabulary"}
+{"hanzi": "真空系统", "eng": "Vacuum system", "type": "vocabulary"}
+{"hanzi": "真空铝屑收集系统", "eng": "vacuum aluminum particles collection system", "type": "vocabulary"}
+{"hanzi": "瞬时启动电流", "eng": "instantaneous start current", "type": "vocabulary"}
+{"hanzi": "砂光板", "eng": "Sanded panel", "type": "vocabulary"}
+{"hanzi": "破瓶率", "eng": "Breakage rate", "type": "vocabulary"}
+{"hanzi": "硬件", "eng": "Hardware", "type": "vocabulary"}
+{"hanzi": "硬件互锁", "eng": "hardware interlock", "type": "vocabulary"}
+{"hanzi": "硬件设计描述", "eng": "HDS Hardware Design Specifications", "type": "vocabulary"}
+{"hanzi": "硬件设计说明", "eng": "Hardware Design Specification", "type": "vocabulary"}
+{"hanzi": "硬盘", "eng": "HDD", "type": "vocabulary"}
+{"hanzi": "确认", "eng": "Confirm", "type": "vocabulary"}
+{"hanzi": "碎瓶率", "eng": "Vial breakage rate", "type": "vocabulary"}
+{"hanzi": "碱液排空时间", "eng": "Lye emptying time", "type": "vocabulary"}
+{"hanzi": "碳钢喷塑处理", "eng": "Carbon steel powder spraying treatment", "type": "vocabulary"}
+{"hanzi": "磁盘容量", "eng": "Disk capacity", "type": "vocabulary"}
+{"hanzi": "离线灭菌", "eng": "offline sterilization", "type": "vocabulary"}
+{"hanzi": "秤校准", "eng": "Balance calibration", "type": "vocabulary"}
+{"hanzi": "秤通讯故障", "eng": "Scale communication fault", "type": "vocabulary"}
+{"hanzi": "称重传感器", "eng": "Weighing sensor", "type": "vocabulary"}
+{"hanzi": "称重传模块", "eng": "Weight cell", "type": "vocabulary"}
+{"hanzi": "称重单元", "eng": "Weighing unit", "type": "vocabulary"}
+{"hanzi": "称重单元参数", "eng": "Weighing parameters", "type": "vocabulary"}
+{"hanzi": "称重变送传感器", "eng": "Weighing transmitter", "type": "vocabulary"}
+{"hanzi": "称重序列", "eng": "weighing sequence", "type": "vocabulary"}
+{"hanzi": "称重拨轮", "eng": "Weighing starwheel", "type": "vocabulary"}
+{"hanzi": "称重控制", "eng": "Weighing control", "type": "vocabulary"}
+{"hanzi": "称重精度", "eng": "weighing accuracy", "type": "vocabulary"}
+{"hanzi": "移动式点动手柄", "eng": "Movable inching handle", "type": "vocabulary"}
+{"hanzi": "程序内存", "eng": "Program memory", "type": "vocabulary"}
+{"hanzi": "稳压时间", "eng": "Holding time", "type": "vocabulary"}
+{"hanzi": "稳态清零", "eng": "steady-state reset", "type": "vocabulary"}
+{"hanzi": "空气过滤系统", "eng": "air filtration system", "type": "vocabulary"}
+{"hanzi": "空瓶称重拨轮", "eng": "weighing starwheel for empty vials", "type": "vocabulary"}
+{"hanzi": "空瓶称重拨轮吸气", "eng": "Air suction for empty vial weighing starwheel", "type": "vocabulary"}
+{"hanzi": "空闲状态", "eng": "idle state", "type": "vocabulary"}
+{"hanzi": "立式超声波清洗机", "eng": "vertical ultrasonic washing machine", "type": "vocabulary"}
+{"hanzi": "第一稿", "eng": "First version", "type": "vocabulary"}
+{"hanzi": "管件", "eng": "pipe fittings", "type": "vocabulary"}
+{"hanzi": "管径", "eng": "diameter", "type": "vocabulary"}
+{"hanzi": "管理", "eng": "Logon_ Administrator", "type": "vocabulary"}
+{"hanzi": "管路", "eng": "Piping", "type": "vocabulary"}
+{"hanzi": "管路及仪表布置图", "eng": "Piping and Instruments Diagram", "type": "vocabulary"}
+{"hanzi": "管路坡度", "eng": "Pipe slope", "type": "vocabulary"}
+{"hanzi": "管路排空时间", "eng": "Pipeline emptying time", "type": "vocabulary"}
+{"hanzi": "类型", "eng": "Type", "type": "vocabulary"}
+{"hanzi": "粒子检测", "eng": "Particle detection", "type": "vocabulary"}
+{"hanzi": "精洗系统", "eng": "Fine cleaning system", "type": "vocabulary"}
+{"hanzi": "系统时间同步", "eng": "System time synchronization", "type": "vocabulary"}
+{"hanzi": "系统访问", "eng": "System access", "type": "vocabulary"}
+{"hanzi": "系统配置", "eng": "System configuration", "type": "vocabulary"}
+{"hanzi": "系统配置画面", "eng": "System configuration screen", "type": "vocabulary"}
+{"hanzi": "紧停", "eng": "E-Stop Emergency Stop", "type": "vocabulary"}
+{"hanzi": "紧急停止", "eng": "Emergency Stop", "type": "vocabulary"}
+{"hanzi": "紧急停止按钮", "eng": "emergency stop button", "type": "vocabulary"}
+{"hanzi": "级区域", "eng": "Grade A area", "type": "vocabulary"}
+{"hanzi": "线圈电压", "eng": "Coil voltage", "type": "vocabulary"}
+{"hanzi": "组合凸轮", "eng": "Combination cam", "type": "vocabulary"}
+{"hanzi": "组合框", "eng": "ComboBox", "type": "vocabulary"}
+{"hanzi": "结束时间", "eng": "End time", "type": "vocabulary"}
+{"hanzi": "绝对定位", "eng": "Absolute positioning", "type": "vocabulary"}
+{"hanzi": "绞龙卡瓶", "eng": "Vial stuck at infeed scroll", "type": "vocabulary"}
+{"hanzi": "绞龙错位", "eng": "Auger dislocation", "type": "vocabulary"}
+{"hanzi": "绞龙长度", "eng": "Scroll length", "type": "vocabulary"}
+{"hanzi": "继电器", "eng": "Relay", "type": "vocabulary"}
+{"hanzi": "维护", "eng": "Logon_ Maintenance", "type": "vocabulary"}
+{"hanzi": "维护模式", "eng": "Maintenance mode", "type": "vocabulary"}
+{"hanzi": "缓冲罐冲洗时间", "eng": "Buffer tank flushing time", "type": "vocabulary"}
+{"hanzi": "缓冲罐碱洗时间", "eng": "Alkali washing time of buffer tank", "type": "vocabulary"}
+{"hanzi": "编号", "eng": "S/N Serial Number", "type": "vocabulary"}
+{"hanzi": "编码器", "eng": "encoder", "type": "vocabulary"}
+{"hanzi": "缸径", "eng": "Diameter of cylinder", "type": "vocabulary"}
+{"hanzi": "缺瓶", "eng": "vial absent", "type": "vocabulary"}
+{"hanzi": "缺瓶检测", "eng": "bottle absence detection", "type": "vocabulary"}
+{"hanzi": "缺瓶检测开关", "eng": "Vial absence detection switch", "type": "vocabulary"}
+{"hanzi": "缺盖传感器", "eng": "cap absence sensor", "type": "vocabulary"}
+{"hanzi": "网带", "eng": "Conveyor belt", "type": "vocabulary"}
+{"hanzi": "网带张紧机构", "eng": "tension mechanism of the conveyor belt", "type": "vocabulary"}
+{"hanzi": "网带联动", "eng": "conveyor belt linkage", "type": "vocabulary"}
+{"hanzi": "网带走长系数", "eng": "Conveyor belt moving length coefficient", "type": "vocabulary"}
+{"hanzi": "网带速度", "eng": "Conveyor belt speed", "type": "vocabulary"}
+{"hanzi": "网线", "eng": "Ethernet cable", "type": "vocabulary"}
+{"hanzi": "联动", "eng": "linkage", "type": "vocabulary"}
+{"hanzi": "联动信号", "eng": "linkage signal", "type": "vocabulary"}
+{"hanzi": "联动模式", "eng": "linkage mode", "type": "vocabulary"}
+{"hanzi": "联线出瓶网带", "eng": "Linkage outfeed belt", "type": "vocabulary"}
+{"hanzi": "聚氨酯", "eng": "PU", "type": "vocabulary"}
+{"hanzi": "聚胺脂内衬钢丝", "eng": "PU lining steel wire", "type": "vocabulary"}
+{"hanzi": "胶塞料位报警", "eng": "Rubber stopper level in hopper bowl", "type": "vocabulary"}
+{"hanzi": "自动交叉功能", "eng": "automatic cross function", "type": "vocabulary"}
+{"hanzi": "自动取样", "eng": "Automatic sampling", "type": "vocabulary"}
+{"hanzi": "自动周期", "eng": "automatic cycle", "type": "vocabulary"}
+{"hanzi": "自动回零", "eng": "automatic returning to the origin", "type": "vocabulary"}
+{"hanzi": "自动复位", "eng": "Automatic reset", "type": "vocabulary"}
+{"hanzi": "自动控制模式", "eng": "automatic control mode", "type": "vocabulary"}
+{"hanzi": "自动检测", "eng": "automatic detection", "type": "vocabulary"}
+{"hanzi": "自动清零", "eng": "Auto calibration", "type": "vocabulary"}
+{"hanzi": "自动清零功能", "eng": "automatic zero clearing function", "type": "vocabulary"}
+{"hanzi": "自动生产阶段", "eng": "automatic production phase", "type": "vocabulary"}
+{"hanzi": "航空接口", "eng": "air interface", "type": "vocabulary"}
+{"hanzi": "良好的工程实践", "eng": "Good Engineering Practice", "type": "vocabulary"}
+{"hanzi": "良好自动化生产实践指南 5", "eng": "Good Automated Manufacturing Practice", "type": "vocabulary"}
+{"hanzi": "色水/微生物侵入方法", "eng": "Colour water/microbial invasion method", "type": "vocabulary"}
+{"hanzi": "药品生产质量管理规范", "eng": "GMP Good Manufacturing Practices", "type": "vocabulary"}
+{"hanzi": "药液加料超时报警", "eng": "Liquid medicine feeding overtime alarm", "type": "vocabulary"}
+{"hanzi": "菜单条", "eng": "Menu bar", "type": "vocabulary"}
+{"hanzi": "落盖轨道", "eng": "cap lowering track", "type": "vocabulary"}
+{"hanzi": "薄型气缸", "eng": "Thin cylinder", "type": "vocabulary"}
+{"hanzi": "蘑菇按钮开关", "eng": "emergency mushroom-pushbutton", "type": "vocabulary"}
+{"hanzi": "虚拟打印机", "eng": "Virtual printer", "type": "vocabulary"}
+{"hanzi": "蜂鸣器", "eng": "Buzzer", "type": "vocabulary"}
+{"hanzi": "螺旋轨道", "eng": "spiral rail", "type": "vocabulary"}
+{"hanzi": "行程", "eng": "Stroke", "type": "vocabulary"}
+{"hanzi": "补塞", "eng": "stopper make-up", "type": "vocabulary"}
+{"hanzi": "补风口", "eng": "air make up port", "type": "vocabulary"}
+{"hanzi": "表冷器", "eng": "surface cooler", "type": "vocabulary"}
+{"hanzi": "表面粗糙度", "eng": "Surface roughness", "type": "vocabulary"}
+{"hanzi": "表面防护", "eng": "Surface protection", "type": "vocabulary"}
+{"hanzi": "装量异常", "eng": "abnormal filling volume", "type": "vocabulary"}
+{"hanzi": "装量设定", "eng": "Filling volume", "type": "vocabulary"}
+{"hanzi": "西林瓶", "eng": "vial", "type": "vocabulary"}
+{"hanzi": "西林瓶灌装加塞机", "eng": "vial filling and stoppering machine", "type": "vocabulary"}
+{"hanzi": "西林瓶轧盖机", "eng": "vial capping machine", "type": "vocabulary"}
+{"hanzi": "观察窗", "eng": "observation windows", "type": "vocabulary"}
+{"hanzi": "规格", "eng": "Specifications", "type": "vocabulary"}
+{"hanzi": "规格件", "eng": "specification parts", "type": "vocabulary"}
+{"hanzi": "解锁", "eng": "Unlock", "type": "vocabulary"}
+{"hanzi": "触发报警", "eng": "triggered", "type": "vocabulary"}
+{"hanzi": "触摸屏", "eng": "HMI", "type": "vocabulary"}
+{"hanzi": "计数准确率", "eng": "Counting accuracy", "type": "vocabulary"}
+{"hanzi": "计数接近开关", "eng": "Counting photoelectric switch", "type": "vocabulary"}
+{"hanzi": "计算效率", "eng": "Counting efficiency", "type": "vocabulary"}
+{"hanzi": "计算机", "eng": "Personal computer", "type": "vocabulary"}
+{"hanzi": "计算机系统", "eng": "Computer system", "type": "vocabulary"}
+{"hanzi": "订货号", "eng": "Order No.", "type": "vocabulary"}
+{"hanzi": "设备型号", "eng": "Model", "type": "vocabulary"}
+{"hanzi": "设备暂停中", "eng": "Machine suspended", "type": "vocabulary"}
+{"hanzi": "设备清空", "eng": "equipment emptying", "type": "vocabulary"}
+{"hanzi": "设备配置", "eng": "Equipment configuration", "type": "vocabulary"}
+{"hanzi": "设定", "eng": "Set", "type": "vocabulary"}
+{"hanzi": "设定值", "eng": "set value", "type": "vocabulary"}
+{"hanzi": "设定参数", "eng": "set parameters", "type": "vocabulary"}
+{"hanzi": "设定范围", "eng": "setting scope", "type": "vocabulary"}
+{"hanzi": "设置方式", "eng": "setting mode", "type": "vocabulary"}
+{"hanzi": "设计主管", "eng": "Design Supervisor", "type": "vocabulary"}
+{"hanzi": "设计总监", "eng": "Design Director", "type": "vocabulary"}
+{"hanzi": "设计确认", "eng": "Design Qualification", "type": "vocabulary"}
+{"hanzi": "访问权限", "eng": "access rights", "type": "vocabulary"}
+{"hanzi": "词汇列表", "eng": "glossary", "type": "vocabulary"}
+{"hanzi": "调出", "eng": "Export", "type": "vocabulary"}
+{"hanzi": "调功器", "eng": "power regulator", "type": "vocabulary"}
+{"hanzi": "调节手柄", "eng": "adjusting handle", "type": "vocabulary"}
+{"hanzi": "起始画面", "eng": "Start screen", "type": "vocabulary"}
+{"hanzi": "超声波", "eng": "Ultrasonic", "type": "vocabulary"}
+{"hanzi": "超声波功率", "eng": "ultrasonic power", "type": "vocabulary"}
+{"hanzi": "超声波功率调节旋钮", "eng": "ultrasonic power adjustment knob", "type": "vocabulary"}
+{"hanzi": "超声波功率过低", "eng": "Ultrasonic power too low", "type": "vocabulary"}
+{"hanzi": "超声波发生器", "eng": "Ultrasonic generator", "type": "vocabulary"}
+{"hanzi": "超声波换能器", "eng": "ultrasonic transducer", "type": "vocabulary"}
+{"hanzi": "超声波故障", "eng": "Ultrasonic fault", "type": "vocabulary"}
+{"hanzi": "超声波水位过低", "eng": "Ultrasonic water level too low", "type": "vocabulary"}
+{"hanzi": "超声波空化作用", "eng": "ultrasonic cavitation effect", "type": "vocabulary"}
+{"hanzi": "超声波空化原理", "eng": "ultrasonic cavitation principle", "type": "vocabulary"}
+{"hanzi": "超声波粗洗控制", "eng": "Ultrasonic coarse cleaning control", "type": "vocabulary"}
+{"hanzi": "超载指示", "eng": "overload indication", "type": "vocabulary"}
+{"hanzi": "趋势曲线", "eng": "Trend", "type": "vocabulary"}
+{"hanzi": "跟踪伺服", "eng": "tracking servo", "type": "vocabulary"}
+{"hanzi": "跟踪伺服电机", "eng": "Tracking servo motor", "type": "vocabulary"}
+{"hanzi": "跟踪曲线", "eng": "Follow curve", "type": "vocabulary"}
+{"hanzi": "跟踪灌装", "eng": "tracking filling", "type": "vocabulary"}
+{"hanzi": "轧头数量", "eng": "Capping head quantity", "type": "vocabulary"}
+{"hanzi": "轧盖分度圆直径", "eng": "Reference diameter of the capping", "type": "vocabulary"}
+{"hanzi": "轧盖工位", "eng": "capping station", "type": "vocabulary"}
+{"hanzi": "轧盖控制", "eng": "Capping Control", "type": "vocabulary"}
+{"hanzi": "轧盖机", "eng": "capping machine", "type": "vocabulary"}
+{"hanzi": "轧盖机构", "eng": "capping structure", "type": "vocabulary"}
+{"hanzi": "轨道检塞传感器", "eng": "stopper detection sensor of rail", "type": "vocabulary"}
+{"hanzi": "轨道电机", "eng": "Motor for rail", "type": "vocabulary"}
+{"hanzi": "转子流量计", "eng": "rotor flowmeter", "type": "vocabulary"}
+{"hanzi": "转换控制协议/以太网的网络协议", "eng": "Transmission Control Protocol/Internet Protocol", "type": "vocabulary"}
+{"hanzi": "转盘", "eng": "Rotation drum", "type": "vocabulary"}
+{"hanzi": "转盘电机", "eng": "Motor for rotation drum", "type": "vocabulary"}
+{"hanzi": "转盘系统", "eng": "Rotation drum system", "type": "vocabulary"}
+{"hanzi": "转阀上清洗口清洗时间", "eng": "Cleaning time of cleaning port on CIP rotary valve", "type": "vocabulary"}
+{"hanzi": "转阀伺服扭矩报警", "eng": "Rotary valve servo torque alarm", "type": "vocabulary"}
+{"hanzi": "转阀加速度", "eng": "Rotary acceleration", "type": "vocabulary"}
+{"hanzi": "转阀扭矩设定", "eng": "Rotary valve torque", "type": "vocabulary"}
+{"hanzi": "转阀电机", "eng": "Motor for rotary valve", "type": "vocabulary"}
+{"hanzi": "转阀角度", "eng": "Rotary valve degree", "type": "vocabulary"}
+{"hanzi": "转阀速度", "eng": "Rotary valve speed", "type": "vocabulary"}
+{"hanzi": "转阀陶瓷泵", "eng": "Ceramic pump", "type": "vocabulary"}
+{"hanzi": "软件系列", "eng": "Software Package", "type": "vocabulary"}
+{"hanzi": "软件设计描述", "eng": "SDS Software Design Specifications", "type": "vocabulary"}
+{"hanzi": "软件设计说明", "eng": "Software Design Specification", "type": "vocabulary"}
+{"hanzi": "辅助设备", "eng": "auxiliary devices", "type": "vocabulary"}
+{"hanzi": "输入/ 输出", "eng": "I/O Input / Output", "type": "vocabulary"}
+{"hanzi": "输入/输出", "eng": "Input/Output", "type": "vocabulary"}
+{"hanzi": "输入/输出画面", "eng": "Input/Output screen", "type": "vocabulary"}
+{"hanzi": "输入故障", "eng": "input malfunction", "type": "vocabulary"}
+{"hanzi": "输入数据超限", "eng": "input data out-of-limit", "type": "vocabulary"}
+{"hanzi": "输入输出", "eng": "Input and Output", "type": "vocabulary"}
+{"hanzi": "输出信号", "eng": "output signal", "type": "vocabulary"}
+{"hanzi": "输瓶块", "eng": "Vial conveying block", "type": "vocabulary"}
+{"hanzi": "输瓶电机", "eng": "vial conveying motor", "type": "vocabulary"}
+{"hanzi": "输瓶电机变频器故障", "eng": "Conveyor belt motor inverter fault", "type": "vocabulary"}
+{"hanzi": "输瓶系统", "eng": "Conveying System", "type": "vocabulary"}
+{"hanzi": "输瓶网带", "eng": "conveyor belt", "type": "vocabulary"}
+{"hanzi": "过流保护", "eng": "overcurrent protection", "type": "vocabulary"}
+{"hanzi": "过滤器", "eng": "Filter", "type": "vocabulary"}
+{"hanzi": "过滤器清洗时间", "eng": "CIP filter cleaning time", "type": "vocabulary"}
+{"hanzi": "过滤精度", "eng": "Filtration accuracy", "type": "vocabulary"}
+{"hanzi": "过滤组件", "eng": "Filtration component", "type": "vocabulary"}
+{"hanzi": "过滤网", "eng": "filter", "type": "vocabulary"}
+{"hanzi": "过电流报警", "eng": "over current alarm", "type": "vocabulary"}
+{"hanzi": "过程值快速归档", "eng": "Process value fast archiving", "type": "vocabulary"}
+{"hanzi": "过程值数据库", "eng": "process value database", "type": "vocabulary"}
+{"hanzi": "过程参数", "eng": "procedural parameters", "type": "vocabulary"}
+{"hanzi": "过程数据初始化", "eng": "Process data initialization", "type": "vocabulary"}
+{"hanzi": "过载保护", "eng": "overload protection", "type": "vocabulary"}
+{"hanzi": "运行状态", "eng": "Running status", "type": "vocabulary"}
+{"hanzi": "运行环境", "eng": "Running environment", "type": "vocabulary"}
+{"hanzi": "运行确认", "eng": "Operational Qualification", "type": "vocabulary"}
+{"hanzi": "运行频率", "eng": "running frequency", "type": "vocabulary"}
+{"hanzi": "进料泵", "eng": "feed pump", "type": "vocabulary"}
+{"hanzi": "进液单元", "eng": "Liquid inlet unit", "type": "vocabulary"}
+{"hanzi": "进液控制", "eng": "Liquid inlet control", "type": "vocabulary"}
+{"hanzi": "进液管", "eng": "Inlet pipe", "type": "vocabulary"}
+{"hanzi": "进液系统", "eng": "liquid inlet system", "type": "vocabulary"}
+{"hanzi": "进液阶段", "eng": "Liquid inlet stage", "type": "vocabulary"}
+{"hanzi": "进瓶信号单元", "eng": "Vial infeed signal unit", "type": "vocabulary"}
+{"hanzi": "进瓶单元", "eng": "Infeed unit", "type": "vocabulary"}
+{"hanzi": "进瓶单元参数", "eng": "Infeed parameters", "type": "vocabulary"}
+{"hanzi": "进瓶拨轮", "eng": "Infeed starwheel", "type": "vocabulary"}
+{"hanzi": "进瓶拨轮单元", "eng": "Infeed starwheel unit", "type": "vocabulary"}
+{"hanzi": "进瓶挡瓶阀", "eng": "infeed block valve", "type": "vocabulary"}
+{"hanzi": "进瓶控制", "eng": "Infeed control", "type": "vocabulary"}
+{"hanzi": "进瓶检测传感器", "eng": "sensor of infeed detection", "type": "vocabulary"}
+{"hanzi": "进瓶绞龙", "eng": "Infeed scroll", "type": "vocabulary"}
+{"hanzi": "进瓶网带", "eng": "bottle infeed belt", "type": "vocabulary"}
+{"hanzi": "进瓶网带缺瓶检测", "eng": "Infeed belt vial absent detection", "type": "vocabulary"}
+{"hanzi": "进瓶阀", "eng": "infeed valve", "type": "vocabulary"}
+{"hanzi": "连线网带", "eng": "linkage belt", "type": "vocabulary"}
+{"hanzi": "连续废瓶", "eng": "Continuous waste vial", "type": "vocabulary"}
+{"hanzi": "连续无塞", "eng": "Continuous no stopper", "type": "vocabulary"}
+{"hanzi": "连续无塞检测", "eng": "Consecutive no stopper detection", "type": "vocabulary"}
+{"hanzi": "连续无瓶检测", "eng": "Consecutive no vial detection", "type": "vocabulary"}
+{"hanzi": "连续无盖", "eng": "Continuous no cap", "type": "vocabulary"}
+{"hanzi": "连续胶塞过高", "eng": "Continuous stopper too high", "type": "vocabulary"}
+{"hanzi": "连续胶塞过高检测", "eng": "Consecutive stopper too high detection", "type": "vocabulary"}
+{"hanzi": "追溯矩阵", "eng": "Traceability Matrix", "type": "vocabulary"}
+{"hanzi": "退出", "eng": "Exit", "type": "vocabulary"}
+{"hanzi": "适应规格", "eng": "Applicable size", "type": "vocabulary"}
+{"hanzi": "选配项", "eng": "optional", "type": "vocabulary"}
+{"hanzi": "通径", "eng": "Diameter", "type": "vocabulary"}
+{"hanzi": "通讯", "eng": "Communication", "type": "vocabulary"}
+{"hanzi": "通讯异常", "eng": "Communication error", "type": "vocabulary"}
+{"hanzi": "通讯接口", "eng": "Communication interface", "type": "vocabulary"}
+{"hanzi": "通讯故障", "eng": "communication fault", "type": "vocabulary"}
+{"hanzi": "通讯测试", "eng": "Communication test", "type": "vocabulary"}
+{"hanzi": "配方", "eng": "Recipe", "type": "vocabulary"}
+{"hanzi": "配方/参数", "eng": "Recipe/Parameters", "type": "vocabulary"}
+{"hanzi": "配方/参数画面", "eng": "Recipe/Parameter screen", "type": "vocabulary"}
+{"hanzi": "配方参数", "eng": "recipe parameters", "type": "vocabulary"}
+{"hanzi": "配方名称", "eng": "Recipe Name", "type": "vocabulary"}
+{"hanzi": "配方数据", "eng": "recipe data", "type": "vocabulary"}
+{"hanzi": "配方显示", "eng": "Recipe display", "type": "vocabulary"}
+{"hanzi": "配方版本", "eng": "Recipe version", "type": "vocabulary"}
+{"hanzi": "配方状态", "eng": "Recipe status", "type": "vocabulary"}
+{"hanzi": "配液通讯", "eng": "Liquid preparation communication", "type": "vocabulary"}
+{"hanzi": "配置", "eng": "Configuration", "type": "vocabulary"}
+{"hanzi": "采集参数", "eng": "collected parameters", "type": "vocabulary"}
+{"hanzi": "释放抱闸", "eng": "release holding brake", "type": "vocabulary"}
+{"hanzi": "量程", "eng": "Range", "type": "vocabulary"}
+{"hanzi": "钢化玻璃", "eng": "Tempered glass", "type": "vocabulary"}
+{"hanzi": "错误登录", "eng": "incorrect logon", "type": "vocabulary"}
+{"hanzi": "锥齿轮", "eng": "bevel gear", "type": "vocabulary"}
+{"hanzi": "镀锌安装板", "eng": "Galvanized mounting plate", "type": "vocabulary"}
+{"hanzi": "镜反射传感器", "eng": "mirror reflection sensor", "type": "vocabulary"}
+{"hanzi": "镜抛", "eng": "Mirror Polished", "type": "vocabulary"}
+{"hanzi": "闪烁", "eng": "Flashing", "type": "vocabulary"}
+{"hanzi": "间断运动", "eng": "intermittent motion", "type": "vocabulary"}
+{"hanzi": "间歇式控制", "eng": "intermittent control", "type": "vocabulary"}
+{"hanzi": "阀岛", "eng": "Valve terminal", "type": "vocabulary"}
+{"hanzi": "阀门开度", "eng": "valve opening", "type": "vocabulary"}
+{"hanzi": "防倒灌蝶阀", "eng": "anti-backflow butterfly valve", "type": "vocabulary"}
+{"hanzi": "防护等级", "eng": "Protection class", "type": "vocabulary"}
+{"hanzi": "防护系统", "eng": "Protective system", "type": "vocabulary"}
+{"hanzi": "防误碰装置", "eng": "anti-mis-touch device", "type": "vocabulary"}
+{"hanzi": "防静电", "eng": "anti-static", "type": "vocabulary"}
+{"hanzi": "降低风险", "eng": "Risk reduction", "type": "vocabulary"}
+{"hanzi": "随即存取储存器", "eng": "Random Access Memory", "type": "vocabulary"}
+{"hanzi": "隔离干接点", "eng": "isolation dry contact", "type": "vocabulary"}
+{"hanzi": "隔膜阀", "eng": "Diaphragm valve", "type": "vocabulary"}
+{"hanzi": "隧道式灭菌干燥机", "eng": "Sterilizing &Drying Tunnel", "type": "vocabulary"}
+{"hanzi": "隧道烘箱", "eng": "tunnel oven", "type": "vocabulary"}
+{"hanzi": "零点漂移", "eng": "zero drift", "type": "vocabulary"}
+{"hanzi": "零线", "eng": "neutral line", "type": "vocabulary"}
+{"hanzi": "露点温度", "eng": "dew point temperature", "type": "vocabulary"}
+{"hanzi": "静电消除仪", "eng": "Electrostatic eliminator", "type": "vocabulary"}
+{"hanzi": "非接触式门开关", "eng": "Non-contact door switch", "type": "vocabulary"}
+{"hanzi": "页眉", "eng": "Page header", "type": "vocabulary"}
+{"hanzi": "页脚", "eng": "Page footer", "type": "vocabulary"}
+{"hanzi": "页面导航", "eng": "screen navigation", "type": "vocabulary"}
+{"hanzi": "预洗控制", "eng": "Prewash control", "type": "vocabulary"}
+{"hanzi": "预洗阶段", "eng": "Pre-wash stage", "type": "vocabulary"}
+{"hanzi": "预热区单元", "eng": "Preheating zone unit", "type": "vocabulary"}
+{"hanzi": "预热区温度", "eng": "Preheating zone temperature", "type": "vocabulary"}
+{"hanzi": "预热层流风机", "eng": "preheating laminar flow fan", "type": "vocabulary"}
+{"hanzi": "预热抽湿排风系统", "eng": "preheat dehumidifying & air exhaust system", "type": "vocabulary"}
+{"hanzi": "预热箱体", "eng": "Preheating chamber", "type": "vocabulary"}
+{"hanzi": "预热系统", "eng": "Preheating system", "type": "vocabulary"}
+{"hanzi": "预热风机频率", "eng": "Preheating fan frequency", "type": "vocabulary"}
+{"hanzi": "预过滤器", "eng": "Prefilter", "type": "vocabulary"}
+{"hanzi": "频率控制", "eng": "frequency control", "type": "vocabulary"}
+{"hanzi": "频率转化器", "eng": "frequency converter", "type": "vocabulary"}
+{"hanzi": "额定功率", "eng": "Rated power", "type": "vocabulary"}
+{"hanzi": "额定容量", "eng": "Rated Capacity", "type": "vocabulary"}
+{"hanzi": "额定电压", "eng": "Rated voltage", "type": "vocabulary"}
+{"hanzi": "额定转矩", "eng": "Rated torque", "type": "vocabulary"}
+{"hanzi": "额定转速", "eng": "Rated rotation speed", "type": "vocabulary"}
+{"hanzi": "额定输出转矩", "eng": "Rated output torque", "type": "vocabulary"}
+{"hanzi": "风压平衡功能", "eng": "air pressure balance function", "type": "vocabulary"}
+{"hanzi": "风压自动平衡系统", "eng": "Automatic air pressure balancing system", "type": "vocabulary"}
+{"hanzi": "风机", "eng": "Air fan", "type": "vocabulary"}
+{"hanzi": "风机水冷电磁阀温度", "eng": "Fan water cooling solenoid valve temperature", "type": "vocabulary"}
+{"hanzi": "风机频率", "eng": "fan frequency", "type": "vocabulary"}
+{"hanzi": "风速", "eng": "Air speed", "type": "vocabulary"}
+{"hanzi": "风速仪", "eng": "Anemometer", "type": "vocabulary"}
+{"hanzi": "风速仪输入故障", "eng": "Anemometer input failure", "type": "vocabulary"}
+{"hanzi": "风速检测", "eng": "Air speed detection", "type": "vocabulary"}
+{"hanzi": "风门执行器开度", "eng": "opening of the air shutter actuator", "type": "vocabulary"}
+{"hanzi": "风闸", "eng": "air shutter", "type": "vocabulary"}
+{"hanzi": "风险评估", "eng": "Risk assessment", "type": "vocabulary"}
+{"hanzi": "食品级润滑油", "eng": "Food grade lubricating oil", "type": "vocabulary"}
+{"hanzi": "食品级硅胶管", "eng": "Food grade silicone tube", "type": "vocabulary"}
+{"hanzi": "马达保护器", "eng": "Motor protector", "type": "vocabulary"}
+{"hanzi": "马达断路器", "eng": "motor circuit breaker", "type": "vocabulary"}
+{"hanzi": "马达空开", "eng": "motor air switch", "type": "vocabulary"}
+{"hanzi": "验收标准", "eng": "Acceptance Criteria", "type": "vocabulary"}
+{"hanzi": "高度", "eng": "Height", "type": "vocabulary"}
+{"hanzi": "高度调节", "eng": "Height adjustment", "type": "vocabulary"}
+{"hanzi": "高效空气过滤器", "eng": "HEPA High Efficiency Particulate Air Filter", "type": "vocabulary"}
+{"hanzi": "高效过滤器", "eng": "HEPA filter", "type": "vocabulary"}
+{"hanzi": "高温风机", "eng": "high temperature fan", "type": "vocabulary"}
+{"hanzi": "高温高效", "eng": "high temperature HEPA filter", "type": "vocabulary"}
+{"hanzi": "高温高效过滤器", "eng": "high temperature HEPA filter", "type": "vocabulary"}
+{"hanzi": "高频去辐射", "eng": "High frequency irradiation", "type": "vocabulary"}
+{"hanzi": "黄油泵", "eng": "grease pump", "type": "vocabulary"}
+{"hanzi": "（单选框）", "eng": "Copy file", "type": "vocabulary"}
+{"hanzi": "1#泵 CIPSIP 设定位置", "eng": "1# pump CIPSIP setting position", "type": "phrase"}
+{"hanzi": "一一对应", "eng": "matches ... one by one", "type": "phrase"}
+{"hanzi": "一般要求", "eng": "General Requirement", "type": "phrase"}
+{"hanzi": "上塞控制部件", "eng": "Stopper feeding control parts", "type": "phrase"}
+{"hanzi": "下盖轨道卡盖", "eng": "cap lowering track is cap stuck", "type": "phrase"}
+{"hanzi": "不可修改", "eng": "cannot be modified", "type": "phrase"}
+{"hanzi": "不可被禁用", "eng": "cannot be disabled", "type": "phrase"}
+{"hanzi": "不存在液体渗漏现象", "eng": "there is no liquid leakage phenomenon", "type": "phrase"}
+{"hanzi": "不能重复使用或分享给他人使用", "eng": "cannot be reused or shared to others", "type": "phrase"}
+{"hanzi": "不超过", "eng": "does not exceed", "type": "phrase"}
+{"hanzi": "与 HMI 通讯异常", "eng": "PLC and HMI communication abnormal", "type": "phrase"}
+{"hanzi": "中间拨轮扭矩设定", "eng": "Intermediate starwheel torque", "type": "phrase"}
+{"hanzi": "主同步带扭矩设定", "eng": "Main belt torque", "type": "phrase"}
+{"hanzi": "主机转盘最大扭矩设置", "eng": "Maximum torque setting for base machine rotation drum", "type": "phrase"}
+{"hanzi": "主要电气组件和现场组件", "eng": "Main electrical components and site components", "type": "phrase"}
+{"hanzi": "产能满足", "eng": "Output meets", "type": "phrase"}
+{"hanzi": "人为干预", "eng": "human intervention", "type": "phrase"}
+{"hanzi": "以定义的格式显示", "eng": "in the specified format", "type": "phrase"}
+{"hanzi": "低于设定值", "eng": "lower than set value", "type": "phrase"}
+{"hanzi": "低于设定的下限值", "eng": "lower than the set lower limit", "type": "phrase"}
+{"hanzi": "低压电器元件", "eng": "low-voltage electrical components", "type": "phrase"}
+{"hanzi": "体现授权及唯一", "eng": "reflects authorization and uniqueness", "type": "phrase"}
+{"hanzi": "使能通讯测试", "eng": "communication test is enabled", "type": "phrase"}
+{"hanzi": "保压压力设定", "eng": "Holding pressure setting", "type": "phrase"}
+{"hanzi": "保压时间", "eng": "Pressure holding time", "type": "phrase"}
+{"hanzi": "保压测试压力设定", "eng": "Pressure setting of pressure holding test", "type": "phrase"}
+{"hanzi": "修改用户属性", "eng": "Modify the attributes of user", "type": "phrase"}
+{"hanzi": "修改的前值和后值", "eng": "before and after changes", "type": "phrase"}
+{"hanzi": "偏差稳定判据", "eng": "Deviation stable limit", "type": "phrase"}
+{"hanzi": "偏移设定", "eng": "Offset setting", "type": "phrase"}
+{"hanzi": "停电保护功能", "eng": "power failure protection function", "type": "phrase"}
+{"hanzi": "储液罐温度设定", "eng": "Product Tank temp", "type": "phrase"}
+{"hanzi": "充氮检测", "eng": "Nitrogen charging detection", "type": "phrase"}
+{"hanzi": "充氮阀关闭位置设定", "eng": "Nitrogen valve close position", "type": "phrase"}
+{"hanzi": "充氮阀打开位置设定", "eng": "Nitrogen valve open position", "type": "phrase"}
+{"hanzi": "公共类型的报警", "eng": "public type of alarm", "type": "phrase"}
+{"hanzi": "关键工艺参数", "eng": "Critical Process Parameter", "type": "phrase"}
+{"hanzi": "关键质量属性", "eng": "Critical Quality Attribute", "type": "phrase"}
+{"hanzi": "关闭电脑", "eng": "Shut down", "type": "phrase"}
+{"hanzi": "内毒素下降", "eng": "The endotoxin reduces by", "type": "phrase"}
+{"hanzi": "内表面抛光粗糙度", "eng": "Inner surface polish roughness", "type": "phrase"}
+{"hanzi": "内表面粗糙度", "eng": "Roughness of inner surface", "type": "phrase"}
+{"hanzi": "冲气时间", "eng": "Air flushing time", "type": "phrase"}
+{"hanzi": "冲水冲气停止位置", "eng": "Water & air flushing stop position", "type": "phrase"}
+{"hanzi": "冲水冲气启动位置", "eng": "Water & air flushing start position", "type": "phrase"}
+{"hanzi": "冲水冲气时间", "eng": "Water & air flushing time", "type": "phrase"}
+{"hanzi": "冲水冲气检测", "eng": "Detection of water and air rinsing", "type": "phrase"}
+{"hanzi": "冲水时间", "eng": "Flushing time", "type": "phrase"}
+{"hanzi": "冷却段压差设定", "eng": "D/P setting in cooling zone", "type": "phrase"}
+{"hanzi": "冷却风门开度设定", "eng": "cooling air shutter opening degree setting", "type": "phrase"}
+{"hanzi": "准备阶段", "eng": "Ready stage", "type": "phrase"}
+{"hanzi": "出口挤瓶", "eng": "Vial crowded at the outfeed belt", "type": "phrase"}
+{"hanzi": "出口挤瓶时间设定", "eng": "Outlet vial squeeze time setting", "type": "phrase"}
+{"hanzi": "出液管长度", "eng": "outlet pipe length", "type": "phrase"}
+{"hanzi": "出瓶拨轮扭矩设定", "eng": "Outfeed starwheel torque", "type": "phrase"}
+{"hanzi": "出瓶拨轮最大扭矩设置", "eng": "Outfeed starwheel maximum torque setting", "type": "phrase"}
+{"hanzi": "出瓶检测偏移", "eng": "Outfeed detection offset", "type": "phrase"}
+{"hanzi": "出瓶连线网带速度设定", "eng": "Speed setting for outfeed linkage belt", "type": "phrase"}
+{"hanzi": "分瓶与提升", "eng": "vial separation and lifting", "type": "phrase"}
+{"hanzi": "分瓶与提升系统", "eng": "vial Separation and lifting system", "type": "phrase"}
+{"hanzi": "判断阈值", "eng": "Threshold setting", "type": "phrase"}
+{"hanzi": "前充氮/后充氮", "eng": "front nitrogen charging/rear nitrogen charging", "type": "phrase"}
+{"hanzi": "前剔废偏移量", "eng": "Front rejection offset", "type": "phrase"}
+{"hanzi": "前后剔废错位", "eng": "Front /Rear rejection dislocation", "type": "phrase"}
+{"hanzi": "前面板保护等级", "eng": "Front panel protection rating", "type": "phrase"}
+{"hanzi": "剔废/取样单元", "eng": "Rejection/sampling unit", "type": "phrase"}
+{"hanzi": "剔废偏移设定", "eng": "Setting for rejection offset", "type": "phrase"}
+{"hanzi": "剔废前阀打开位置设定", "eng": "Front rejection valve open position", "type": "phrase"}
+{"hanzi": "剔废单元参数", "eng": "Rejection parameters", "type": "phrase"}
+{"hanzi": "剔废后阀动作位置设定", "eng": "Rear rejection valve action position", "type": "phrase"}
+{"hanzi": "剔废奇偶选择", "eng": "Rejection parity selection", "type": "phrase"}
+{"hanzi": "剔废拨轮扭矩设定", "eng": "Rejection starwheel torque", "type": "phrase"}
+{"hanzi": "剔废检测关闭位置设定", "eng": "Setting for the closing position of rejection detection", "type": "phrase"}
+{"hanzi": "剪切文件", "eng": "Cut file", "type": "phrase"}
+{"hanzi": "加塞偏移设定", "eng": "Setting for stoppering offset", "type": "phrase"}
+{"hanzi": "加塞拨轮扭矩设定", "eng": "Stoppering starwheel torque", "type": "phrase"}
+{"hanzi": "加塞状态序列", "eng": "stoppering state sequence", "type": "phrase"}
+{"hanzi": "加塞阀动作时间", "eng": "stoppering valve action time", "type": "phrase"}
+{"hanzi": "加热区压差是否在合理范围内", "eng": "whether the pressure difference in the heating zone is within a reasonable range", "type": "phrase"}
+{"hanzi": "加热区过滤器调试模式", "eng": "Heating zone Filter debugging mode", "type": "phrase"}
+{"hanzi": "加盖失败", "eng": "failed to feed cap", "type": "phrase"}
+{"hanzi": "勾选此项", "eng": "Check this box", "type": "phrase"}
+{"hanzi": "匀速向前运动", "eng": "moves forward at a uniform speed", "type": "phrase"}
+{"hanzi": "升温、恒温、降温", "eng": "temperature rise, constant temperature and temperature drop", "type": "phrase"}
+{"hanzi": "升温阶段", "eng": "Heating stage", "type": "phrase"}
+{"hanzi": "升降扭矩设定", "eng": "Up-down torque", "type": "phrase"}
+{"hanzi": "半加塞或全加塞", "eng": "semi-stoppering or full stoppering", "type": "phrase"}
+{"hanzi": "单个确认", "eng": "Single confirmation", "type": "phrase"}
+{"hanzi": "单个设备模块", "eng": "single equipment module", "type": "phrase"}
+{"hanzi": "单取样号设定", "eng": "Single sampling number", "type": "phrase"}
+{"hanzi": "单向阀防倒灌", "eng": "one-way valve for anti-backflow", "type": "phrase"}
+{"hanzi": "单或双通道输入", "eng": "Single or double channel input", "type": "phrase"}
+{"hanzi": "单次排空量设定", "eng": "Single emptying volume setting", "type": "phrase"}
+{"hanzi": "单点电阻式触摸屏", "eng": "Single point resistive touch screen", "type": "phrase"}
+{"hanzi": "单班产量清零", "eng": "Zero output per shift", "type": "phrase"}
+{"hanzi": "即时补塞", "eng": "immediate compensating", "type": "phrase"}
+{"hanzi": "历史报警查询", "eng": "historical alarm query", "type": "phrase"}
+{"hanzi": "压力检测", "eng": "Pressure detection", "type": "phrase"}
+{"hanzi": "压塞不合格剔除成功率", "eng": "Rejection success rate for unqualified stopper pressing", "type": "phrase"}
+{"hanzi": "压缩空气压力上限", "eng": "Compressed air pressure upper limit", "type": "phrase"}
+{"hanzi": "压缩空气压力下限", "eng": "Compressed air pressure lower limit", "type": "phrase"}
+{"hanzi": "压缩空气压力报警下限", "eng": "Compressed air pressure alarm lower limit", "type": "phrase"}
+{"hanzi": "压缩空气压力过低", "eng": "Compressed air pressure too low", "type": "phrase"}
+{"hanzi": "压缩空气排空", "eng": "Emptying via compressed air", "type": "phrase"}
+{"hanzi": "压缩空气系统排空设定时间", "eng": "Compressed air system emptying time setting", "type": "phrase"}
+{"hanzi": "原点设置", "eng": "Origin setting", "type": "phrase"}
+{"hanzi": "参数设置上下限值", "eng": "upper and lower limits of parameters", "type": "phrase"}
+{"hanzi": "取样与剔废", "eng": "Sampling and rejection", "type": "phrase"}
+{"hanzi": "取样偏移设定", "eng": "Sampling offset", "type": "phrase"}
+{"hanzi": "取样间隔时间", "eng": "Interval of timing", "type": "phrase"}
+{"hanzi": "取瓶位置", "eng": "vial taking position", "type": "phrase"}
+{"hanzi": "变为失效状态", "eng": "becomes invalid", "type": "phrase"}
+{"hanzi": "可拆卸设计", "eng": "detachable design", "type": "phrase"}
+{"hanzi": "可自由运行状态", "eng": "free running state", "type": "phrase"}
+{"hanzi": "各 1 个", "eng": "One piece respectively", "type": "phrase"}
+{"hanzi": "合格品和不合格品", "eng": "good products and rejected products", "type": "phrase"}
+{"hanzi": "合格品计数", "eng": "count the good products", "type": "phrase"}
+{"hanzi": "后充氮开始位置设定", "eng": "Setting the starting position of rear nitrogen charging", "type": "phrase"}
+{"hanzi": "后充氮结束位置设定", "eng": "Setting the end position of rear nitrogen filling", "type": "phrase"}
+{"hanzi": "后剔废偏移量", "eng": "Rear rejection offset", "type": "phrase"}
+{"hanzi": "后续工艺流程", "eng": "follow-up process", "type": "phrase"}
+{"hanzi": "启用或禁用", "eng": "enabled or disabled", "type": "phrase"}
+{"hanzi": "吹气排空控制", "eng": "Emptying control", "type": "phrase"}
+{"hanzi": "吹气时间设定", "eng": "CIP blowing time setting", "type": "phrase"}
+{"hanzi": "吹气降温时间", "eng": "SIP blowing cooling time", "type": "phrase"}
+{"hanzi": "吹氮气时间", "eng": "SIP nitrogen blowing time", "type": "phrase"}
+{"hanzi": "喷塑或QPQ 处理", "eng": "plastic spraying or QPQ treatment", "type": "phrase"}
+{"hanzi": "喷淋板孔径", "eng": "Aperture of spraying plate", "type": "phrase"}
+{"hanzi": "喷针升降最大扭矩设置", "eng": "Needle lift maximum torque setting", "type": "phrase"}
+{"hanzi": "喷针升降行程", "eng": "Needle lift stroke", "type": "phrase"}
+{"hanzi": "回吸设定", "eng": "back suction setting", "type": "phrase"}
+{"hanzi": "在合理范围内", "eng": "within a reasonable range", "type": "phrase"}
+{"hanzi": "地址设置", "eng": "IP address settings", "type": "phrase"}
+{"hanzi": "备份所有用户归档", "eng": "Backup all user archives", "type": "phrase"}
+{"hanzi": "多塞报警偏移设定", "eng": "Offset setting for stoppers excessive alarm", "type": "phrase"}
+{"hanzi": "多塞检测", "eng": "Stopper excessive detection", "type": "phrase"}
+{"hanzi": "天平内部参数设置", "eng": "Internal parameters setting", "type": "phrase"}
+{"hanzi": "失电状态", "eng": "state of power failure", "type": "phrase"}
+{"hanzi": "如果没有特别说明", "eng": "Under otherwise specified", "type": "phrase"}
+{"hanzi": "安全使用机器和设备", "eng": "Safe use of machinery and equipment", "type": "phrase"}
+{"hanzi": "安全转矩关断", "eng": "Safe Torque Off", "type": "phrase"}
+{"hanzi": "安全门打开", "eng": "Safety door open", "type": "phrase"}
+{"hanzi": "安装在机架上", "eng": "installed on frame", "type": "phrase"}
+{"hanzi": "定量分装", "eng": "quantitative dosing", "type": "phrase"}
+{"hanzi": "导入选定用户归档", "eng": "Import selected user archive", "type": "phrase"}
+{"hanzi": "导出为", "eng": "Export as", "type": "phrase"}
+{"hanzi": "导出为 PDF", "eng": "Export as PDF", "type": "phrase"}
+{"hanzi": "导出为 PDF 格式", "eng": "export to PDF format", "type": "phrase"}
+{"hanzi": "导管或线槽", "eng": "conduit or trunking", "type": "phrase"}
+{"hanzi": "将语言切换为中文", "eng": "switch the language to Chinese", "type": "phrase"}
+{"hanzi": "小数位意味着需求精度", "eng": "decimal places mean required precision", "type": "phrase"}
+{"hanzi": "尾瓶排空模式", "eng": "Empty the tail bottle mode", "type": "phrase"}
+{"hanzi": "层流自净时间", "eng": "Laminar flow self-cleaning time", "type": "phrase"}
+{"hanzi": "层流过滤单元", "eng": "Laminar flow filtration unit", "type": "phrase"}
+{"hanzi": "屏幕画面的布局、功能及变量", "eng": "Layout, function and variables of the specified screen", "type": "phrase"}
+{"hanzi": "工位终点值", "eng": "Station end value", "type": "phrase"}
+{"hanzi": "工位起点值", "eng": "Station start value", "type": "phrase"}
+{"hanzi": "工作场所（健康，安全和福利）条例", "eng": "Workplace (Health, Safety & Welfare) Regulations", "type": "phrase"}
+{"hanzi": "工作直径", "eng": "Working diameter", "type": "phrase"}
+{"hanzi": "工作腔室温度探头", "eng": "temperature probe of the working chamber", "type": "phrase"}
+{"hanzi": "工作设备规定", "eng": "Work Equipment Regulations", "type": "phrase"}
+{"hanzi": "工厂验收检测", "eng": "Factory Acceptance Test", "type": "phrase"}
+{"hanzi": "工艺流程顺序", "eng": "process flow sequence", "type": "phrase"}
+{"hanzi": "带刻度手柄", "eng": "handle with scale", "type": "phrase"}
+{"hanzi": "常开与常闭状态", "eng": "normally open or close states", "type": "phrase"}
+{"hanzi": "开始位置偏移", "eng": "Starting position offset", "type": "phrase"}
+{"hanzi": "开机启动后", "eng": "After booting up", "type": "phrase"}
+{"hanzi": "开机预洗时间", "eng": "Start-up pre-washing time", "type": "phrase"}
+{"hanzi": "弹出提示框", "eng": "a prompt box will pop up", "type": "phrase"}
+{"hanzi": "弹出菜单", "eng": "pop up menu", "type": "phrase"}
+{"hanzi": "弹出键盘", "eng": "pop up keyboard", "type": "phrase"}
+{"hanzi": "弹窗确认按钮", "eng": "pop-up confirmation buttons", "type": "phrase"}
+{"hanzi": "强弱电分离", "eng": "separating the strong current and weak current", "type": "phrase"}
+{"hanzi": "强弱电分类困扎", "eng": "strong current and weak current are and bound separately", "type": "phrase"}
+{"hanzi": "循环水温度实际值", "eng": "actual value of recirculation water temperature", "type": "phrase"}
+{"hanzi": "循环水温度报警下限", "eng": "Cir.water temperature alarm lower limit", "type": "phrase"}
+{"hanzi": "循环水温度设定上限", "eng": "Cir.water temperature set upper limit", "type": "phrase"}
+{"hanzi": "循环水温度设定下限", "eng": "Cir.water temperature set lower limit", "type": "phrase"}
+{"hanzi": "循环水温度设定值", "eng": "set value of recirculation water temperature", "type": "phrase"}
+{"hanzi": "循环水箱液位开关", "eng": "Liquid level of circulation water tank", "type": "phrase"}
+{"hanzi": "循环水系统排空设定时间", "eng": "Circulation water system emptying time setting", "type": "phrase"}
+{"hanzi": "总体布局", "eng": "General Arrangement", "type": "phrase"}
+{"hanzi": "总体要求", "eng": "General requirements", "type": "phrase"}
+{"hanzi": "总重拨轮", "eng": "gross weight weighing starwheel", "type": "phrase"}
+{"hanzi": "总重拨轮原点偏移设定", "eng": "Origin offset setting for gross weight weighing starwheel", "type": "phrase"}
+{"hanzi": "总重拨轮扭矩设定", "eng": "Gross weighing starwheel torque", "type": "phrase"}
+{"hanzi": "总重挡瓶块扭矩设定", "eng": "Gross weighing block torque", "type": "phrase"}
+{"hanzi": "恒温时间", "eng": "SIP constant temperature time", "type": "phrase"}
+{"hanzi": "成品检测区间", "eng": "Finished product testing interval", "type": "phrase"}
+{"hanzi": "手动复位", "eng": "reset manually", "type": "phrase"}
+{"hanzi": "手动控制", "eng": "Manual control", "type": "phrase"}
+{"hanzi": "手动控制和自动控制", "eng": "manual control and automatic control", "type": "phrase"}
+{"hanzi": "手动调试操作", "eng": "manual debugging operation", "type": "phrase"}
+{"hanzi": "打印报表", "eng": "Print report", "type": "phrase"}
+{"hanzi": "打开文件", "eng": "Open file", "type": "phrase"}
+{"hanzi": "执行状态", "eng": "execution state", "type": "phrase"}
+{"hanzi": "技术参数列表如下", "eng": "the technical parameters of this project are as follows", "type": "phrase"}
+{"hanzi": "技术参数汇总", "eng": "Summary Technical & Performance Data", "type": "phrase"}
+{"hanzi": "技术要求", "eng": "technical requirements", "type": "phrase"}
+{"hanzi": "抗氧化和耐腐蚀性好", "eng": "good oxidation resistance and corrosion resistance", "type": "phrase"}
+{"hanzi": "报表列表", "eng": "Report list", "type": "phrase"}
+{"hanzi": "报警产生后", "eng": "After the alarm is generated", "type": "phrase"}
+{"hanzi": "报警归档", "eng": "Alarm archiving", "type": "phrase"}
+{"hanzi": "报警编号表示方法", "eng": "Alarm number representation method", "type": "phrase"}
+{"hanzi": "报警编号，报警名称，报警原因和处理方法", "eng": "alarm number, alarm name, alarm reason and processing method", "type": "phrase"}
+{"hanzi": "报警黄灯亮，蜂鸣器蜂鸣", "eng": "The yellow alarm light is on, the buzzer activation", "type": "phrase"}
+{"hanzi": "抽样时间", "eng": "Sampling time", "type": "phrase"}
+{"hanzi": "抽药次数设置", "eng": "Pump empty times", "type": "phrase"}
+{"hanzi": "拨瓶工位", "eng": "Station of bottle poking", "type": "phrase"}
+{"hanzi": "拨轮啮合偏移", "eng": "starwheel mesh offset", "type": "phrase"}
+{"hanzi": "拨轮齿数", "eng": "Teeth number of starwheel", "type": "phrase"}
+{"hanzi": "持续时间达到", "eng": "lasts for", "type": "phrase"}
+{"hanzi": "按 1 秒频率闪烁", "eng": "flashes at the frequency of 1 second", "type": "phrase"}
+{"hanzi": "按时间或按批号查询", "eng": "query by time or by batch", "type": "phrase"}
+{"hanzi": "按照配方中的设定自动执行", "eng": "automatically execute according to the settings in the recipes", "type": "phrase"}
+{"hanzi": "挡瓶关闭位置设定", "eng": "Setting for the closing position of vial block valve", "type": "phrase"}
+{"hanzi": "挡瓶打开位置设定", "eng": "Setting for the opening position of vial block valve", "type": "phrase"}
+{"hanzi": "挡瓶阀动作时间设定", "eng": "Time setting for vial block valve action", "type": "phrase"}
+{"hanzi": "挤瓶报警延时设定", "eng": "Alarm delay setting of vials jamming", "type": "phrase"}
+{"hanzi": "挤瓶检测延时设定", "eng": "Delay of vials jamming detection", "type": "phrase"}
+{"hanzi": "挤瓶阈值设定", "eng": "Threshold setting for vials jamming", "type": "phrase"}
+{"hanzi": "排冷凝水时间", "eng": "SIP condensate drain time", "type": "phrase"}
+{"hanzi": "排空操作", "eng": "emptying operation", "type": "phrase"}
+{"hanzi": "排空次数补偿", "eng": "emptying times compensation", "type": "phrase"}
+{"hanzi": "排空进瓶偏移", "eng": "Empty infeed offset", "type": "phrase"}
+{"hanzi": "控制柜面板", "eng": "The panel of control cabinet", "type": "phrase"}
+{"hanzi": "控制用压缩空气单元", "eng": "Control-used compressed air unit", "type": "phrase"}
+{"hanzi": "控制用压缩空气系统", "eng": "Control- used compressed air system", "type": "phrase"}
+{"hanzi": "控制系统安全相关部件", "eng": "Safety Related Parts of Control system", "type": "phrase"}
+{"hanzi": "提前启动时间", "eng": "ahead of time", "type": "phrase"}
+{"hanzi": "提升轮体工位", "eng": "Station of lifting wheel body", "type": "phrase"}
+{"hanzi": "提升轮体最大扭矩设置", "eng": "Lifting wheel body maximum torque setting", "type": "phrase"}
+{"hanzi": "提高断路器的整定电流", "eng": "improve the setting current of circuit breaker", "type": "phrase"}
+{"hanzi": "插头，插座，适配器和连接单元", "eng": "Plugs, socket-outlets, adaptors and connection units", "type": "phrase"}
+{"hanzi": "操作权限", "eng": "operation permission", "type": "phrase"}
+{"hanzi": "数据备份还原", "eng": "Data backup and recovery", "type": "phrase"}
+{"hanzi": "数据库维护备份", "eng": "Database maintenance backup", "type": "phrase"}
+{"hanzi": "数据的产生、修改、重新命名、转移", "eng": "Generate, modify, rename, and transfer data", "type": "phrase"}
+{"hanzi": "数据的断电保持", "eng": "Power-off retention of data", "type": "phrase"}
+{"hanzi": "料斗缺盖", "eng": "hopper is cap absent", "type": "phrase"}
+{"hanzi": "新建文件夹", "eng": "Create folder", "type": "phrase"}
+{"hanzi": "无可见异物合格率", "eng": "no visible foreign body qualified rate", "type": "phrase"}
+{"hanzi": "无塞不挂盖", "eng": "no stopper no cap", "type": "phrase"}
+{"hanzi": "无死角", "eng": "without dead angle", "type": "phrase"}
+{"hanzi": "无泵不进瓶偏移设定", "eng": "Offset setting for no pump no vial infeed", "type": "phrase"}
+{"hanzi": "无泵不进瓶奇偶交换", "eng": "No pump no vial parity exchange", "type": "phrase"}
+{"hanzi": "无清洗死角", "eng": "without dead angle of cleaning", "type": "phrase"}
+{"hanzi": "无瓶不加塞", "eng": "no vial no stoppering", "type": "phrase"}
+{"hanzi": "无瓶不加盖率", "eng": "No vial no cap feeding rate", "type": "phrase"}
+{"hanzi": "无瓶不灌", "eng": "no vial no filling", "type": "phrase"}
+{"hanzi": "无瓶不灌序列偏移", "eng": "No vial no filling sequence offset", "type": "phrase"}
+{"hanzi": "无盖止轧率", "eng": "No cap no capping rate", "type": "phrase"}
+{"hanzi": "无级调节", "eng": "variably adjusted", "type": "phrase"}
+{"hanzi": "无级调速", "eng": "adjusted variably", "type": "phrase"}
+{"hanzi": "无线电/感应电频率干扰", "eng": "Radio / Induced electrical frequency interference", "type": "phrase"}
+{"hanzi": "无色透明耐高温聚碳酸酯板", "eng": "Colorless transparent high temperature resistant polycarbonate plate", "type": "phrase"}
+{"hanzi": "无需权限的操作", "eng": "Operations that do not require permission", "type": "phrase"}
+{"hanzi": "日间模式", "eng": "daytime mode", "type": "phrase"}
+{"hanzi": "时间设定", "eng": "Time setting", "type": "phrase"}
+{"hanzi": "易于清洁", "eng": "easy to clean", "type": "phrase"}
+{"hanzi": "暂停状态", "eng": "hold state", "type": "phrase"}
+{"hanzi": "暴露的表面", "eng": "exposed surfaces", "type": "phrase"}
+{"hanzi": "更改密码", "eng": "Reset password", "type": "phrase"}
+{"hanzi": "更改权限组", "eng": "Change permission group", "type": "phrase"}
+{"hanzi": "最终版程序", "eng": "as-built version program", "type": "phrase"}
+{"hanzi": "术语和缩写", "eng": "terms and abbreviations", "type": "phrase"}
+{"hanzi": "机器自动化和控制组织", "eng": "Organization for Machine Automation and Control", "type": "phrase"}
+{"hanzi": "机器集成", "eng": "machine integration", "type": "phrase"}
+{"hanzi": "机架内部", "eng": "inside the rack", "type": "phrase"}
+{"hanzi": "机架和外表", "eng": "Frame and exterior", "type": "phrase"}
+{"hanzi": "机罩检测", "eng": "Machine hood detection", "type": "phrase"}
+{"hanzi": "权限设计描述文件", "eng": "permission design description file", "type": "phrase"}
+{"hanzi": "条件与依据", "eng": "condition and basis", "type": "phrase"}
+{"hanzi": "标准型平行轴减速电机", "eng": "Standard parallel shaft reduction motor", "type": "phrase"}
+{"hanzi": "栏栅规格件", "eng": "Specification parts of barrier", "type": "phrase"}
+{"hanzi": "档", "eng": "Import selected", "type": "phrase"}
+{"hanzi": "检测缓冲区间时间设定", "eng": "Detection buffer time", "type": "phrase"}
+{"hanzi": "楚天自制", "eng": "Made by Truking", "type": "phrase"}
+{"hanzi": "模式介绍", "eng": "Mode introduction", "type": "phrase"}
+{"hanzi": "模式状态", "eng": "Mode state", "type": "phrase"}
+{"hanzi": "模式状态管理", "eng": "Mode and State Control", "type": "phrase"}
+{"hanzi": "模拟量 2 线制输入模块", "eng": "Analog 2-wire input module", "type": "phrase"}
+{"hanzi": "正常与未处于循环状态", "eng": "normal and non-cyclic state", "type": "phrase"}
+{"hanzi": "正常灌装阶段", "eng": "Normal filling phase", "type": "phrase"}
+{"hanzi": "正常结束后", "eng": "after the normal end", "type": "phrase"}
+{"hanzi": "每一个周期开始时", "eng": "when each cycle starts", "type": "phrase"}
+{"hanzi": "气流紊乱", "eng": "airflow is disturbed", "type": "phrase"}
+{"hanzi": "气道数", "eng": "Number of air channel", "type": "phrase"}
+{"hanzi": "氮气压力上限值设定", "eng": "Nitrogen pressure upper limit", "type": "phrase"}
+{"hanzi": "氮气压力下限值设定", "eng": "Nitrogen pressure lower limit", "type": "phrase"}
+{"hanzi": "水冷降温", "eng": "water cooling", "type": "phrase"}
+{"hanzi": "水气精洗控制", "eng": "Fine cleaning control", "type": "phrase"}
+{"hanzi": "水汽排放", "eng": "exhaust the steam", "type": "phrase"}
+{"hanzi": "注射水压力报警上限", "eng": "WFI pressure alarm upper limit", "type": "phrase"}
+{"hanzi": "注射水压力报警下限", "eng": "WFI pressure alarm lower limit", "type": "phrase"}
+{"hanzi": "注射水温度报警下限", "eng": "WFI Temperature alarm lower limit", "type": "phrase"}
+{"hanzi": "注射用水系统排空设定时间", "eng": "WFI system emptying time setting", "type": "phrase"}
+{"hanzi": "注水有效面积", "eng": "Effective area of water injection", "type": "phrase"}
+{"hanzi": "泵内径设定", "eng": "Inner diameter", "type": "phrase"}
+{"hanzi": "泵最大灌装行程", "eng": "maximum filling stroke of pump", "type": "phrase"}
+{"hanzi": "泵直径设定", "eng": "Pump diameter setting", "type": "phrase"}
+{"hanzi": "洁净压缩空气", "eng": "clean compressed air", "type": "phrase"}
+{"hanzi": "洗瓶机来瓶信号", "eng": "vial feeding signal from the washing machine", "type": "phrase"}
+{"hanzi": "测量范围", "eng": "Measuring range", "type": "phrase"}
+{"hanzi": "液位上限", "eng": "Upper limit of liquid level", "type": "phrase"}
+{"hanzi": "液位传感器", "eng": "Liquid level sensor", "type": "phrase"}
+{"hanzi": "液位加料时间设定", "eng": "Time setting for liquid level replenishing", "type": "phrase"}
+{"hanzi": "液位检测报警延时时间设定", "eng": "Liquid level detection alarm delay", "type": "phrase"}
+{"hanzi": "液位检测滤波时间设定", "eng": "Filtration time setting for liquid level detection", "type": "phrase"}
+{"hanzi": "清零与校准", "eng": "Reset and calibration", "type": "phrase"}
+{"hanzi": "温度设定", "eng": "SIP temperature setting", "type": "phrase"}
+{"hanzi": "满载热分布", "eng": "Heat distribution in full load", "type": "phrase"}
+{"hanzi": "激活用户归档管理画面", "eng": "activate the user archive management screen", "type": "phrase"}
+{"hanzi": "灌装减速度设定", "eng": "Filling deceleration", "type": "phrase"}
+{"hanzi": "灌装加速度设定", "eng": "Filling acceleration", "type": "phrase"}
+{"hanzi": "灌装单元参数", "eng": "Filling parameter", "type": "phrase"}
+{"hanzi": "灌装工艺", "eng": "filling process", "type": "phrase"}
+{"hanzi": "灌装机与轧盖机", "eng": "filling machine and capping machine", "type": "phrase"}
+{"hanzi": "灌装状态序列偏移设定", "eng": "Offset setting of filling state sequence", "type": "phrase"}
+{"hanzi": "灌装速度设定", "eng": "Filling speed", "type": "phrase"}
+{"hanzi": "灌装间与洗瓶间压差", "eng": "D/P between filling room and washing room", "type": "phrase"}
+{"hanzi": "灌针滴液", "eng": "filling needle from dripping", "type": "phrase"}
+{"hanzi": "灭菌时间", "eng": "SIP sterilization time", "type": "phrase"}
+{"hanzi": "热量的散失", "eng": "heat loss", "type": "phrase"}
+{"hanzi": "焊缝打磨抛光", "eng": "welds are ground and polished", "type": "phrase"}
+{"hanzi": "版本记录", "eng": "Version history", "type": "phrase"}
+{"hanzi": "状态显示为运行时", "eng": "state is displayed as running", "type": "phrase"}
+{"hanzi": "环境监控单元", "eng": "Environment monitoring unit", "type": "phrase"}
+{"hanzi": "现行药品生产质量管理规范", "eng": "Current Good Manufacturing Practice", "type": "phrase"}
+{"hanzi": "玻璃罩自动升降", "eng": "Protective cover automatic lifting", "type": "phrase"}
+{"hanzi": "理塞斗低料位检测", "eng": "Low stopper level detection in stopper orienting hopper", "type": "phrase"}
+{"hanzi": "理瓶盘检瓶信号输入故障", "eng": "Turntable vial detection signal input malfunction", "type": "phrase"}
+{"hanzi": "理瓶盘电机变频器故障", "eng": "Turntable motor inverter fault", "type": "phrase"}
+{"hanzi": "理瓶盘缺瓶检测", "eng": "Vial absent detection on the turntable", "type": "phrase"}
+{"hanzi": "理瓶盘面板", "eng": "Panel of turntable", "type": "phrase"}
+{"hanzi": "瓶子运送过程", "eng": "vial conveying process", "type": "phrase"}
+{"hanzi": "瓶子高径比", "eng": "height-diameter ratio of the vial", "type": "phrase"}
+{"hanzi": "生产出瓶暂停长度设定", "eng": "Production outfeed pause length setting", "type": "phrase"}
+{"hanzi": "生产抽检", "eng": "production sampling test", "type": "phrase"}
+{"hanzi": "生产能力测试", "eng": "Test of production capacity", "type": "phrase"}
+{"hanzi": "生产过程中的提示信息", "eng": "Prompts during the production process", "type": "phrase"}
+{"hanzi": "生产进瓶暂停长度设定", "eng": "Production infeed pause length setting", "type": "phrase"}
+{"hanzi": "生产速度设定", "eng": "Running speed setting", "type": "phrase"}
+{"hanzi": "用户归档备份与还原", "eng": "user archive backup and restore", "type": "phrase"}
+{"hanzi": "用户归档管理", "eng": "User archive management", "type": "phrase"}
+{"hanzi": "用户管理画面", "eng": "user management screen", "type": "phrase"}
+{"hanzi": "由主电机传动", "eng": "driven by the main motor", "type": "phrase"}
+{"hanzi": "由系统产生", "eng": "generated by the system", "type": "phrase"}
+{"hanzi": "电力供应及安全措施", "eng": "Electrical Supply and Safety Measures", "type": "phrase"}
+{"hanzi": "电导率判断时间", "eng": "Conductivity judgment time", "type": "phrase"}
+{"hanzi": "电导率设定", "eng": "Conductivity setting", "type": "phrase"}
+{"hanzi": "电机减速一体机", "eng": "Motor speed reducer", "type": "phrase"}
+{"hanzi": "电柜安装有散热风扇", "eng": "The electric cabinet is installed with cooling fans", "type": "phrase"}
+{"hanzi": "电气和仪表回路检查", "eng": "Electrical and Instrumentation Loop check", "type": "phrase"}
+{"hanzi": "电气安装", "eng": "Electrical Installation", "type": "phrase"}
+{"hanzi": "电源稳定性", "eng": "power stability", "type": "phrase"}
+{"hanzi": "电路原理图", "eng": "Electrical Circuit Diagrams", "type": "phrase"}
+{"hanzi": "画面内容及按钮功能描述", "eng": "Description of the screen content and button function", "type": "phrase"}
+{"hanzi": "画面切换", "eng": "screen switch", "type": "phrase"}
+{"hanzi": "登录/登出", "eng": "Login/Logout", "type": "phrase"}
+{"hanzi": "登录对话框", "eng": "login dialog", "type": "phrase"}
+{"hanzi": "皮重/总重", "eng": "tare weight/gross weight", "type": "phrase"}
+{"hanzi": "皮重拨轮", "eng": "tare weight weighing starwheel", "type": "phrase"}
+{"hanzi": "皮重拨轮原点偏移设定", "eng": "Origin offset setting for tare weight weighing starwheel", "type": "phrase"}
+{"hanzi": "皮重拨轮扭矩设定", "eng": "Tare weighing starwheel torque", "type": "phrase"}
+{"hanzi": "皮重挡瓶", "eng": "vial retaining for tare weight weighing", "type": "phrase"}
+{"hanzi": "皮重挡瓶块扭矩设定", "eng": "Tare weighing block torque", "type": "phrase"}
+{"hanzi": "监控/介入", "eng": "Monitoring / intervention", "type": "phrase"}
+{"hanzi": "监测控制和数据采集", "eng": "Supervisory Control and Data Acquisition", "type": "phrase"}
+{"hanzi": "真空流量", "eng": "Flow rate of vacuum", "type": "phrase"}
+{"hanzi": "真空负压环境", "eng": "vacuum negative pressure environment", "type": "phrase"}
+{"hanzi": "短接该信号输入点", "eng": "short circuit the signal input", "type": "phrase"}
+{"hanzi": "硬件系统配置", "eng": "Hardware System Configuration", "type": "phrase"}
+{"hanzi": "硬件设计描述文件", "eng": "hardware design description", "type": "phrase"}
+{"hanzi": "确认所有", "eng": "Confirm all", "type": "phrase"}
+{"hanzi": "离心泵速度设定", "eng": "Centrifugal pump speed setting", "type": "phrase"}
+{"hanzi": "秤校准有效时间", "eng": "effective time of scale calibration", "type": "phrase"}
+{"hanzi": "称重位置", "eng": "weighing position", "type": "phrase"}
+{"hanzi": "称重回摆", "eng": "weighing back distance", "type": "phrase"}
+{"hanzi": "称重头数", "eng": "Weighing head number", "type": "phrase"}
+{"hanzi": "称重清零序列", "eng": "weighing clear sequence", "type": "phrase"}
+{"hanzi": "称重过程描述", "eng": "Process description", "type": "phrase"}
+{"hanzi": "空载热分布", "eng": "Heat distribution in empty load", "type": "phrase"}
+{"hanzi": "立即处理", "eng": "Immediate processing", "type": "phrase"}
+{"hanzi": "等待人工确认启动", "eng": "waiting for manual confirmation to start", "type": "phrase"}
+{"hanzi": "管道和仪表控制流程图", "eng": "P&ID Piping and Instrumentation Diagrams", "type": "phrase"}
+{"hanzi": "精度高，运行平稳", "eng": "high precision and smooth operation", "type": "phrase"}
+{"hanzi": "系统上电后", "eng": "after the system is powered on", "type": "phrase"}
+{"hanzi": "系统描述", "eng": "System Description", "type": "phrase"}
+{"hanzi": "紧急停止功能失效", "eng": "emergency stop function fails", "type": "phrase"}
+{"hanzi": "累计运行时间清零", "eng": "Zero accumulated running time", "type": "phrase"}
+{"hanzi": "线路无并线", "eng": "no wire merging in the line", "type": "phrase"}
+{"hanzi": "结束位置偏移", "eng": "Ending position offset", "type": "phrase"}
+{"hanzi": "结束除气时间设定", "eng": "SIP end degassing time setting", "type": "phrase"}
+{"hanzi": "绕组短路", "eng": "winding is short-circuited", "type": "phrase"}
+{"hanzi": "维修、调试设备", "eng": "equipment maintenance and debugging", "type": "phrase"}
+{"hanzi": "维护控制按钮", "eng": "maintenance control button", "type": "phrase"}
+{"hanzi": "编码器设定值", "eng": "Encoder setting value", "type": "phrase"}
+{"hanzi": "编程标准", "eng": "programming standard", "type": "phrase"}
+{"hanzi": "缺塞报警个数设定", "eng": "Number setting for stopper absence alarm", "type": "phrase"}
+{"hanzi": "缺塞检测", "eng": "Stopper absent detection", "type": "phrase"}
+{"hanzi": "缺瓶个数设定", "eng": "Setting for number of vial absent", "type": "phrase"}
+{"hanzi": "缺瓶检测延时设定", "eng": "Delay of vial absent detection", "type": "phrase"}
+{"hanzi": "缺瓶检测装置", "eng": "vial Absence detection device", "type": "phrase"}
+{"hanzi": "缺瓶阈值设定", "eng": "Threshold setting for vial absent", "type": "phrase"}
+{"hanzi": "缺盖检测", "eng": "Cap absence detection", "type": "phrase"}
+{"hanzi": "网带在位清洗", "eng": "washing in place for conveyor belt", "type": "phrase"}
+{"hanzi": "网带张紧装置", "eng": "Conveyor belt tension device", "type": "phrase"}
+{"hanzi": "网带有效宽度", "eng": "Effective width of the conveyor belt", "type": "phrase"}
+{"hanzi": "网带自动张紧功能", "eng": "automatic tensioning function of the conveyor belt", "type": "phrase"}
+{"hanzi": "耐受常用消毒剂、臭氧的腐蚀", "eng": "withstand the corrosion of common disinfectants and ozone", "type": "phrase"}
+{"hanzi": "联动方式", "eng": "Interlock way", "type": "phrase"}
+{"hanzi": "联邦法规", "eng": "Code of Federal Regulations", "type": "phrase"}
+{"hanzi": "胶塞密封性", "eng": "sealing of the bottle mouth rubber stopper", "type": "phrase"}
+{"hanzi": "胶塞补料方式", "eng": "Stopper replenishment method", "type": "phrase"}
+{"hanzi": "胶塞过高检测", "eng": "stopper too high detection", "type": "phrase"}
+{"hanzi": "腔室与房间压差", "eng": "Differential pressure between the preheating zone and the room", "type": "phrase"}
+{"hanzi": "自动切换到运行状态", "eng": "automatically switch to the execute state", "type": "phrase"}
+{"hanzi": "自动加料", "eng": "auto feeding", "type": "phrase"}
+{"hanzi": "自动取样间隔个数设定", "eng": "Auto sampling interval number", "type": "phrase"}
+{"hanzi": "自动校准下限值", "eng": "Automatic calibration lower limit", "type": "phrase"}
+{"hanzi": "自动退出", "eng": "automatically quit", "type": "phrase"}
+{"hanzi": "药液不足", "eng": "liquid product is insufficient", "type": "phrase"}
+{"hanzi": "落盖轨道缺盖时间设定", "eng": "Cap absence time setting in cap lowering track", "type": "phrase"}
+{"hanzi": "蜂鸣器蜂鸣", "eng": "the buzzer activation", "type": "phrase"}
+{"hanzi": "表面抛光方式", "eng": "Surface polishing method", "type": "phrase"}
+{"hanzi": "表面抛光粗糙度", "eng": "Surface roughness of polishing", "type": "phrase"}
+{"hanzi": "装量上限值", "eng": "Upper limit of filling volume", "type": "phrase"}
+{"hanzi": "装量下限值", "eng": "Lower limit of filling volume", "type": "phrase"}
+{"hanzi": "装量自动校准", "eng": "automatic calibration of filling volume", "type": "phrase"}
+{"hanzi": "装量警告上限", "eng": "Upper limit of filling volume warning", "type": "phrase"}
+{"hanzi": "触发报警停机", "eng": "alarm shutdown will be triggered", "type": "phrase"}
+{"hanzi": "警告信息", "eng": "Warning message", "type": "phrase"}
+{"hanzi": "计数检测偏移", "eng": "Count detection offset", "type": "phrase"}
+{"hanzi": "记录间隔时间", "eng": "Recording interval time", "type": "phrase"}
+{"hanzi": "设备停止运行", "eng": "equipment stops running", "type": "phrase"}
+{"hanzi": "设备联动", "eng": "Equipment linkage", "type": "phrase"}
+{"hanzi": "设定位置", "eng": "setting position", "type": "phrase"}
+{"hanzi": "设定装量与实际装量比", "eng": "The ratio of set filling volume to actual filling volume", "type": "phrase"}
+{"hanzi": "设计原理", "eng": "Principle of Design", "type": "phrase"}
+{"hanzi": "详细介绍了", "eng": "are introduced in detail", "type": "phrase"}
+{"hanzi": "请参考", "eng": "please refer to", "type": "phrase"}
+{"hanzi": "调小相对应的阀门开度", "eng": "Reduce the corresponding valve opening", "type": "phrase"}
+{"hanzi": "起缓冲作用", "eng": "as a buffer", "type": "phrase"}
+{"hanzi": "超出上量程范围", "eng": "out of upper range", "type": "phrase"}
+{"hanzi": "超出下量程范围", "eng": "out of range", "type": "phrase"}
+{"hanzi": "超声波功率报警下限", "eng": "Ultrasonic power alarm lower limit", "type": "phrase"}
+{"hanzi": "超声波固定频率", "eng": "Fixed frequency of ultrasonic", "type": "phrase"}
+{"hanzi": "超声波粗洗系统", "eng": "Ultrasonic coarse cleaning system", "type": "phrase"}
+{"hanzi": "超过了设定装量报警上下限范围", "eng": "exceeds the set weight alarm range", "type": "phrase"}
+{"hanzi": "超限报警下限值", "eng": "Minimum limit setting of over-limit alarm", "type": "phrase"}
+{"hanzi": "跟踪扭矩设定", "eng": "Follow torque", "type": "phrase"}
+{"hanzi": "轧盖合格率", "eng": "Capping qualified rate", "type": "phrase"}
+{"hanzi": "轧盖密封性验证", "eng": "Validation for tightness of capping", "type": "phrase"}
+{"hanzi": "轧盖组高度调节范围", "eng": "Capping group height adjusting range", "type": "phrase"}
+{"hanzi": "辅助设备延时停止时间", "eng": "Delay stop time of auxiliary equipment", "type": "phrase"}
+{"hanzi": "辅助设备提前启动时间", "eng": "Advance start time of auxiliary equipment", "type": "phrase"}
+{"hanzi": "输入通道断线", "eng": "input channel is disconnected", "type": "phrase"}
+{"hanzi": "输出电流范围", "eng": "Range of output current", "type": "phrase"}
+{"hanzi": "输瓶电机手动控制", "eng": "Conveyor motor manual control", "type": "phrase"}
+{"hanzi": "输瓶电机速度", "eng": "Conveyor motor speed", "type": "phrase"}
+{"hanzi": "过滤前后", "eng": "Before and after filtration", "type": "phrase"}
+{"hanzi": "过滤器调试操作", "eng": "filter debugging operation", "type": "phrase"}
+{"hanzi": "过滤完整性测试", "eng": "Filter Integrity Test", "type": "phrase"}
+{"hanzi": "过程值归档", "eng": "Process value archiving", "type": "phrase"}
+{"hanzi": "过载、短路、过热、缺相", "eng": "overload, short circuit, overheat, and lack of phase", "type": "phrase"}
+{"hanzi": "过载、短路、过热、缺相保护", "eng": "protections against overload, short circuit, overheating, and phase loss", "type": "phrase"}
+{"hanzi": "运行平稳，速度稳定", "eng": "runs smoothly and the speed is stable", "type": "phrase"}
+{"hanzi": "运行时间清零", "eng": "Zeroing of running time", "type": "phrase"}
+{"hanzi": "返瓶电子凸轮", "eng": "vials returning electronic cam", "type": "phrase"}
+{"hanzi": "进入下一步", "eng": "enters into the next step", "type": "phrase"}
+{"hanzi": "进入生产模式", "eng": "Enter the production mode", "type": "phrase"}
+{"hanzi": "进入生产模式后", "eng": "enter the production mode", "type": "phrase"}
+{"hanzi": "进液管长度", "eng": "inlet pipe length", "type": "phrase"}
+{"hanzi": "进瓶倒缺瓶时间设定", "eng": "Vial infeed overturning/absent time setting", "type": "phrase"}
+{"hanzi": "进瓶拨轮伺服故障", "eng": "Infeed wheel servo fault", "type": "phrase"}
+{"hanzi": "进瓶检测位置", "eng": "infeed detection position", "type": "phrase"}
+{"hanzi": "进瓶检测区间", "eng": "Infeed detection interval", "type": "phrase"}
+{"hanzi": "进瓶绞龙最大扭矩设置", "eng": "Infeed scroll maximum torque setting", "type": "phrase"}
+{"hanzi": "进瓶网带速度设定", "eng": "Speed setting for infeed belt", "type": "phrase"}
+{"hanzi": "进瓶转盘", "eng": "Infeed rotation drum", "type": "phrase"}
+{"hanzi": "进瓶阶段", "eng": "Infeed stage", "type": "phrase"}
+{"hanzi": "连接Windows 用户组和WinCC 用户组", "eng": "link between the Windows user groups and the WinCC user groups", "type": "phrase"}
+{"hanzi": "连续剔废检测报警偏移设定", "eng": "Alarm offset setting for continuous rejection detection", "type": "phrase"}
+{"hanzi": "连续压塞失败个数", "eng": "Number of continuous stoppering failed", "type": "phrase"}
+{"hanzi": "连续无瓶", "eng": "Consecutive no vial", "type": "phrase"}
+{"hanzi": "连续未挂盖偏移", "eng": "Consecutive no cap feeding offset", "type": "phrase"}
+{"hanzi": "连续未挂盖检测", "eng": "Consecutive no cap feeding detection", "type": "phrase"}
+{"hanzi": "追溯到", "eng": "traced back to", "type": "phrase"}
+{"hanzi": "退出系统", "eng": "Exit", "type": "phrase"}
+{"hanzi": "适应不同规格的生产需要", "eng": "applicable for the production requirements of different specifications", "type": "phrase"}
+{"hanzi": "适用规格", "eng": "applicable specifications", "type": "phrase"}
+{"hanzi": "通用接口", "eng": "common interface", "type": "phrase"}
+{"hanzi": "通讯信号丢失", "eng": "Loss of communication signal", "type": "phrase"}
+{"hanzi": "通过输出模块触发剔废电磁阀动作", "eng": "triggers the rejection solenoid valve action through the output module", "type": "phrase"}
+{"hanzi": "速度的自动调节", "eng": "adjusting the speed automatically", "type": "phrase"}
+{"hanzi": "速度设定", "eng": "speed setting", "type": "phrase"}
+{"hanzi": "配安装底座", "eng": "have mounting base", "type": "phrase"}
+{"hanzi": "配方参数进行调出、新建、保存、激活和失活", "eng": "calling, creating, saving, activating and deactivating recipe parameters", "type": "phrase"}
+{"hanzi": "酸洗钝化处理", "eng": "pickling and passivation treatment", "type": "phrase"}
+{"hanzi": "镶块间距", "eng": "Spacing of insert", "type": "phrase"}
+{"hanzi": "门开关类型", "eng": "Door switch type", "type": "phrase"}
+{"hanzi": "间隔取样个数", "eng": "interval sampling number", "type": "phrase"}
+{"hanzi": "防倒瓶挤瓶装置", "eng": "Anti-overturning/jamming device", "type": "phrase"}
+{"hanzi": "防止产品污染", "eng": "prevent the product from being polluted", "type": "phrase"}
+{"hanzi": "防止瓶子在超声波水箱中上浮", "eng": "prevent the vial from floating inside ultrasonic water tank", "type": "phrase"}
+{"hanzi": "降级水压力报警下限", "eng": "Rec.WFI pressure alarm lower limit", "type": "phrase"}
+{"hanzi": "降级水温度报警上限", "eng": "Rec.WFI temperature alarm upper limit", "type": "phrase"}
+{"hanzi": "降级水温度报警下限", "eng": "Rec.WFI temperature alarm lower limit", "type": "phrase"}
+{"hanzi": "降级水箱补水时间", "eng": "Recycled WFI water make up time", "type": "phrase"}
+{"hanzi": "降级水系统排空设定时间", "eng": "Recycled WFI system emptying time setting", "type": "phrase"}
+{"hanzi": "随主机联动", "eng": "realize linkage with the machine", "type": "phrase"}
+{"hanzi": "隔离防护装置", "eng": "Isolation protection device", "type": "phrase"}
+{"hanzi": "隧道区段隔离系统", "eng": "Isolation system between zones", "type": "phrase"}
+{"hanzi": "非正常装量", "eng": "Abnormal volume", "type": "phrase"}
+{"hanzi": "非爆炸危险区域", "eng": "non-explosion hazard areas", "type": "phrase"}
+{"hanzi": "预升温时间", "eng": "SIP pre heating time", "type": "phrase"}
+{"hanzi": "预热区与洗瓶间压差", "eng": "D/P between preheating zone and room", "type": "phrase"}
+{"hanzi": "颜色编码", "eng": "color-coded", "type": "phrase"}
+{"hanzi": "风压平衡控制", "eng": "Air pressure balance control", "type": "phrase"}
+{"hanzi": "风机参数", "eng": "Fan parameters", "type": "phrase"}
+{"hanzi": "风速上限", "eng": "Air speed upper limit", "type": "phrase"}
+{"hanzi": "风速上限值设定", "eng": "Air speed upper limit", "type": "phrase"}
+{"hanzi": "风速下限", "eng": "Air speed lower limit", "type": "phrase"}
+{"hanzi": "风速下限值设定", "eng": "Air speed lower limit", "type": "phrase"}
+{"hanzi": "风速超上限", "eng": "Wind speed over upper limit", "type": "phrase"}
+{"hanzi": "首进瓶偏移", "eng": "Offset for first vial infeed", "type": "phrase"}
+{"hanzi": "首进瓶泵号选择", "eng": "Pump number selection for first vial infeed", "type": "phrase"}
+{"hanzi": "高于设定的上限值", "eng": "higher than the upper limit", "type": "phrase"}
+{"hanzi": "高效过滤器上下压差", "eng": "Differential pressure between up and down of HEPA filter", "type": "phrase"}
+{"hanzi": "高温加热系统", "eng": "High temperature heating system", "type": "phrase"}
+{"hanzi": "黄油泵容积", "eng": "Volume of grease pump", "type": "phrase"}
+{"hanzi": "1 级权限", "eng": "level 1 permission", "type": "collocation"}
+{"hanzi": "与上游设备对接", "eng": "connected with the upstream equipment", "type": "collocation"}
+{"hanzi": "与包材质量有关", "eng": "related to the quality of packaging materials", "type": "collocation"}
+{"hanzi": "主机停止运行", "eng": "main motor stops running", "type": "collocation"}
+{"hanzi": "主电源断电故障", "eng": "main power fails", "type": "collocation"}
+{"hanzi": "事先书面同意", "eng": "prior written consent", "type": "collocation"}
+{"hanzi": "产品名称", "eng": "Product name", "type": "collocation"}
+{"hanzi": "产品批号", "eng": "Product batch number", "type": "collocation"}
+{"hanzi": "产品规格", "eng": "Product specification", "type": "collocation"}
+{"hanzi": "产生吸力", "eng": "generate suction force", "type": "collocation"}
+{"hanzi": "产生真空吸力", "eng": "generate the suction force", "type": "collocation"}
+{"hanzi": "伺服电机驱动", "eng": "driven by servo motor", "type": "collocation"}
+{"hanzi": "低料位检测", "eng": "low level detection", "type": "collocation"}
+{"hanzi": "保存修改的当前配方", "eng": "Save the modified current recipe", "type": "collocation"}
+{"hanzi": "保持当前状态", "eng": "remains current state", "type": "collocation"}
+{"hanzi": "保持恒定", "eng": "remains constant", "type": "collocation"}
+{"hanzi": "保持相对静止", "eng": "remains relatively stationary", "type": "collocation"}
+{"hanzi": "停止运行", "eng": "stop running", "type": "collocation"}
+{"hanzi": "升降偏移设定", "eng": "Up-down offset", "type": "collocation"}
+{"hanzi": "同步运行", "eng": "runs synchronously", "type": "collocation"}
+{"hanzi": "吸附/释放瓶子", "eng": "absorb /release the vial", "type": "collocation"}
+{"hanzi": "响应中止命令", "eng": "response to the abort command", "type": "collocation"}
+{"hanzi": "存储过程数据", "eng": "Store process data", "type": "collocation"}
+{"hanzi": "安装在DIN导轨上", "eng": "installed in DIN rail", "type": "collocation"}
+{"hanzi": "实时记录", "eng": "recorded real time", "type": "collocation"}
+{"hanzi": "实时进行检测与清零", "eng": "real-time detection and zero clearing", "type": "collocation"}
+{"hanzi": "实时频率", "eng": "real-time frequency", "type": "collocation"}
+{"hanzi": "对工艺参数进行修改", "eng": "Modify process parameters", "type": "collocation"}
+{"hanzi": "将当前报警进行消音", "eng": "Silence the current alarm", "type": "collocation"}
+{"hanzi": "层流原理", "eng": "principle of laminar flow", "type": "collocation"}
+{"hanzi": "屏蔽并接地", "eng": "shielded and grounded", "type": "collocation"}
+{"hanzi": "弹窗提示", "eng": "pop up the prompt", "type": "collocation"}
+{"hanzi": "影响产品质量", "eng": "affects product quality", "type": "collocation"}
+{"hanzi": "恢复运行", "eng": "resume operation", "type": "collocation"}
+{"hanzi": "恢复运行周期", "eng": "resume the running cycle", "type": "collocation"}
+{"hanzi": "手动排空", "eng": "emptied manually", "type": "collocation"}
+{"hanzi": "执行停止动作", "eng": "perform a stop action", "type": "collocation"}
+{"hanzi": "执行标准", "eng": "implementation standard", "type": "collocation"}
+{"hanzi": "报警信息在人机界面上显示", "eng": "Alarm information displayed on HMI", "type": "collocation"}
+{"hanzi": "报警停机", "eng": "stop in alarm", "type": "collocation"}
+{"hanzi": "报警复位", "eng": "Alarm reset", "type": "collocation"}
+{"hanzi": "报警灯红灯亮、蜂鸣器响", "eng": "Red alarm lamp on, buzzer on", "type": "collocation"}
+{"hanzi": "报警灯黄灯亮、蜂鸣器响", "eng": "Yellow alarm lamp on, buzzer on", "type": "collocation"}
+{"hanzi": "报警红灯亮，蜂鸣器蜂鸣", "eng": "The red alarm light is on, the buzzer activation", "type": "collocation"}
+{"hanzi": "指定路径", "eng": "specified path", "type": "collocation"}
+{"hanzi": "按日期/时间升序", "eng": "in ascending order of date/time", "type": "collocation"}
+{"hanzi": "排出空气", "eng": "discharge the air", "type": "collocation"}
+{"hanzi": "控制各支流的通断", "eng": "control on/off of each branch", "type": "collocation"}
+{"hanzi": "操作原因", "eng": "operation reason", "type": "collocation"}
+{"hanzi": "操作时间", "eng": "operation time", "type": "collocation"}
+{"hanzi": "操作过程", "eng": "operation process", "type": "collocation"}
+{"hanzi": "收集碎屑", "eng": "collect debris", "type": "collocation"}
+{"hanzi": "故障产生", "eng": "a fault occurs", "type": "collocation"}
+{"hanzi": "数据备份失败", "eng": "data backup failure", "type": "collocation"}
+{"hanzi": "时间戳的精度", "eng": "time stamp accuracy", "type": "collocation"}
+{"hanzi": "有效降低", "eng": "effectively reduce", "type": "collocation"}
+{"hanzi": "未经授权的访问", "eng": "unauthorized access", "type": "collocation"}
+{"hanzi": "权限修改", "eng": "permission modification", "type": "collocation"}
+{"hanzi": "条件满足", "eng": "conditions are met", "type": "collocation"}
+{"hanzi": "查询历史报警", "eng": "query historical alarm", "type": "collocation"}
+{"hanzi": "检查伺服的动力电缆和编码器电缆是否正常", "eng": "Check if the servo power and encode cable is normal", "type": "collocation"}
+{"hanzi": "检查变频器的动力电缆和通讯电缆是否正常", "eng": "Check if the transducer power and communication cable is normal", "type": "collocation"}
+{"hanzi": "检查层流电源", "eng": "Check the laminar power supply", "type": "collocation"}
+{"hanzi": "检查电机扭矩参数是否设置正确", "eng": "Check if the torque setting of the motor is correct", "type": "collocation"}
+{"hanzi": "检查电机是否有卡住的现象", "eng": "Check if the motor is blocked", "type": "collocation"}
+{"hanzi": "检查输瓶电机是否存在绕组短路", "eng": "Check if there is a short circuit in the winding of the vial conveying motor", "type": "collocation"}
+{"hanzi": "检查通讯接头", "eng": "Check the communication connector", "type": "collocation"}
+{"hanzi": "检查通讯电缆", "eng": "Check the communication cable", "type": "collocation"}
+{"hanzi": "水气交替冲洗", "eng": "water and air alternate cleaning", "type": "collocation"}
+{"hanzi": "永久关联", "eng": "Permanent association", "type": "collocation"}
+{"hanzi": "激活系统配置画面", "eng": "activate the system configuration screen", "type": "collocation"}
+{"hanzi": "灌装位置设定", "eng": "Filling position", "type": "collocation"}
+{"hanzi": "灌装偏移设定", "eng": "Filling offset", "type": "collocation"}
+{"hanzi": "用于检测压缩空气压力", "eng": "used to measure compressed air pressure", "type": "collocation"}
+{"hanzi": "用于检测真空压力", "eng": "used to measure vacuum pressure", "type": "collocation"}
+{"hanzi": "用户策略", "eng": "user policy", "type": "collocation"}
+{"hanzi": "电动机断路器跳闸", "eng": "motor circuit breaker trip", "type": "collocation"}
+{"hanzi": "登录密码", "eng": "login password", "type": "collocation"}
+{"hanzi": "登录权限", "eng": "login permission", "type": "collocation"}
+{"hanzi": "碳钢焊接", "eng": "welded with carbon steel", "type": "collocation"}
+{"hanzi": "系统设置", "eng": "system settings", "type": "collocation"}
+{"hanzi": "维护腔体内部压差", "eng": "maintain the differential pressure inside the chamber", "type": "collocation"}
+{"hanzi": "联动运转", "eng": "linked with", "type": "collocation"}
+{"hanzi": "联机运行", "eng": "linked with other machines", "type": "collocation"}
+{"hanzi": "自动化程度高", "eng": "high automation degree", "type": "collocation"}
+{"hanzi": "规格件更换", "eng": "specification replacement", "type": "collocation"}
+{"hanzi": "触发暂停", "eng": "trigger hold", "type": "collocation"}
+{"hanzi": "设定压力的上限和下限", "eng": "set the upper and lower limit of pressure", "type": "collocation"}
+{"hanzi": "负压密封", "eng": "negative pressure sealing", "type": "collocation"}
+{"hanzi": "跟踪偏移设定", "eng": "Follow offset", "type": "collocation"}
+{"hanzi": "输入产品名称", "eng": "Enter the product name", "type": "collocation"}
+{"hanzi": "输出断线", "eng": "output is disconnected", "type": "collocation"}
+{"hanzi": "过滤器除菌", "eng": "sterilized by filter", "type": "collocation"}
+{"hanzi": "运行速度与主同步带同步", "eng": "running speed keeps synchronous with main synchronous belt", "type": "collocation"}
+{"hanzi": "运转顺畅", "eng": "running smoothly", "type": "collocation"}
+{"hanzi": "进行查询操作", "eng": "Makes the query", "type": "collocation"}
+{"hanzi": "速度被置零", "eng": "speed is set to “0” value", "type": "collocation"}
+{"hanzi": "配置系统参数", "eng": "Configure system parameters", "type": "collocation"}
+{"hanzi": "采集数据", "eng": "collect the data", "type": "collocation"}
+{"hanzi": "重置用户密码", "eng": "user password reset", "type": "collocation"}
+{"hanzi": "防止锈蚀", "eng": "prevent rust", "type": "collocation"}
+{"hanzi": "风压平衡", "eng": "air pressure balance", "type": "collocation"}
+{"hanzi": "默认打印机", "eng": "default printer", "type": "collocation"}
+{"hanzi": "1 米处测量", "eng": "measured at 1m", "type": "sentence_pattern"}
+{"hanzi": "不允许为 0", "eng": "not allowed to be 0", "type": "sentence_pattern"}
+{"hanzi": "不勾选则不显示", "eng": "if not checked, it will not display", "type": "sentence_pattern"}
+{"hanzi": "不可在系统中修改", "eng": "cannot be modified in... system", "type": "sentence_pattern"}
+{"hanzi": "不得将本文件任何部分复制、传播或泄露给与合同项目实施无关的第三方", "eng": "any part of this document shall not be copied, transmitted or disclosed to any third party which is unrelated to the implementation of the project", "type": "sentence_pattern"}
+{"hanzi": "不论设备处于什么状态", "eng": "no matter what state the device is in", "type": "sentence_pattern"}
+{"hanzi": "与西林瓶规格有关", "eng": "Related to the specifications of the vials", "type": "sentence_pattern"}
+{"hanzi": "以下章节将进行详细描述", "eng": "The following sections describe in detail", "type": "sentence_pattern"}
+{"hanzi": "以下要求应该贯彻于...", "eng": "The following ... shall be applied throughout ...", "type": "sentence_pattern"}
+{"hanzi": "伺服运行时", "eng": "When the servo is running", "type": "sentence_pattern"}
+{"hanzi": "便于安装与维护", "eng": "facilitate the installation and maintenance", "type": "sentence_pattern"}
+{"hanzi": "保证热风机的使用寿命", "eng": "ensure the service life of the hot fan", "type": "sentence_pattern"}
+{"hanzi": "关闭电源开关后才能打开电器柜门", "eng": "The door of electrical cabinet is permitted to be opened only after the power switch off.", "type": "sentence_pattern"}
+{"hanzi": "其主要部件说明如下", "eng": "the main parts are as follows", "type": "sentence_pattern"}
+{"hanzi": "其它模式下主要包括以下操作。", "eng": "Other mode mainly includes the following operations.", "type": "sentence_pattern"}
+{"hanzi": "其它模式所需要的状态如下：", "eng": "The required states for other modes are as follows:", "type": "sentence_pattern"}
+{"hanzi": "具体设计如下：", "eng": "The specific design is as follows:", "type": "sentence_pattern"}
+{"hanzi": "具体详细描述如下", "eng": "The specific design is as follows", "type": "sentence_pattern"}
+{"hanzi": "凡与包装材料接触的零件均采用不锈钢或无毒工程塑料", "eng": "The components contacting the packaging material adopt stainless steel or non-toxic engineering plastic", "type": "sentence_pattern"}
+{"hanzi": "功能编号和组件编号请参考词汇列表章节。", "eng": "For function numbers and component numbers, please refer to the glossary chapter.", "type": "sentence_pattern"}
+{"hanzi": "加塞正常的瓶子被剔废/取样拨轮俘获", "eng": "The normal stoppering vials are captured by the rejection/sampling starwheel", "type": "sentence_pattern"}
+{"hanzi": "受...控制", "eng": "controlled by", "type": "sentence_pattern"}
+{"hanzi": "只有在该状态下可切换到其它模式", "eng": "only in this state can it be switched to other modes", "type": "sentence_pattern"}
+{"hanzi": "只有得到许可的工作人员才有权进入控制箱内", "eng": "Only Briefed personnel have access to the control cabinet.", "type": "sentence_pattern"}
+{"hanzi": "可以建立配方数量高达 9999 个", "eng": "The number of recipe can be up to 9999", "type": "sentence_pattern"}
+{"hanzi": "各状态的具体作用详见下表", "eng": "The specific functions of each state are shown in the following table", "type": "sentence_pattern"}
+{"hanzi": "吸塞盘高度可调节", "eng": "height of stopper suction tray is adjustable", "type": "sentence_pattern"}
+{"hanzi": "在后述章节中详细介绍", "eng": "described in detail in the following sections", "type": "sentence_pattern"}
+{"hanzi": "处于...设定范围内", "eng": "is within the set range of...", "type": "sentence_pattern"}
+{"hanzi": "如下所示的参数包含在配方中", "eng": "The following parameters are included in the recipe", "type": "sentence_pattern"}
+{"hanzi": "如果不为零值，则点击“稳态清零”按钮", "eng": "If the value is not zero, click the \"steady-state reset\" button", "type": "sentence_pattern"}
+{"hanzi": "如果以下条件满足", "eng": "if the following conditions are met", "type": "sentence_pattern"}
+{"hanzi": "如果以下条件满足，被激活", "eng": "it will be activated if the following conditions are met", "type": "sentence_pattern"}
+{"hanzi": "如果没有特殊说明", "eng": "Unless otherwise specified", "type": "sentence_pattern"}
+{"hanzi": "实时记录打印", "eng": "records and prints ... in real time", "type": "sentence_pattern"}
+{"hanzi": "审计追踪分为三个等级", "eng": "The audit trail is divided into three levels", "type": "sentence_pattern"}
+{"hanzi": "客户需自备", "eng": "Customers need to provide their own", "type": "sentence_pattern"}
+{"hanzi": "将触发报警", "eng": "the alarm will be triggered", "type": "sentence_pattern"}
+{"hanzi": "平面度将做到最小，水平度必须保持在最低限度。", "eng": "the flatness shall be minimized, and the levelness shall be kept at the minimum.", "type": "sentence_pattern"}
+{"hanzi": "应遵循...中提供的指南", "eng": "should be as per guideline provided in", "type": "sentence_pattern"}
+{"hanzi": "开启为蓝色，关闭为白色", "eng": "blue for open and white for close", "type": "sentence_pattern"}
+{"hanzi": "开启加塞工位时必须先将真空系统开启", "eng": "Firstly open the vacuum system and then start the stoppering station", "type": "sentence_pattern"}
+{"hanzi": "当...时，系统将...", "eng": "When ..., the system will ...", "type": "sentence_pattern"}
+{"hanzi": "当传感器检测到压缩空气的压力低于限值时，将触发报警", "eng": "When the sensor detect that the pressure of compressed air exceeds the limit, the alarm will be triggered.", "type": "sentence_pattern"}
+{"hanzi": "当实际压差值比设定值大时，风门执行器开度增大", "eng": "When the actual differential pressure value is more than the set value, the opening of the air shutter actuator increases", "type": "sentence_pattern"}
+{"hanzi": "所属的权限组", "eng": "the permission group to which... belongs", "type": "sentence_pattern"}
+{"hanzi": "报警产生后，网带停止运行", "eng": "After the alarm is generated, the conveyor belt stops running", "type": "sentence_pattern"}
+{"hanzi": "报警产生后，网带停止运行，加热器停止加热", "eng": "After the alarm is generated, the conveyor belt stops running and the heater stops heating", "type": "sentence_pattern"}
+{"hanzi": "报警红灯亮，蜂鸣器蜂鸣，设备停止运行", "eng": "The red alarm light is on, the buzzer activation, the equipment stops running", "type": "sentence_pattern"}
+{"hanzi": "报警红灯亮，蜂鸣器蜂鸣，设备停止运行，报警信息在人机界面上显示", "eng": "The red alarm light is on, the buzzer activation, the equipment stops running, and the alarm information is displayed on the human-computer interface.", "type": "sentence_pattern"}
+{"hanzi": "报警编号由...组成", "eng": "The alarm number is composed of...", "type": "sentence_pattern"}
+{"hanzi": "指示灯应按照机器的状态（状态）进行颜色编码", "eng": "Indicator lights should be colour-coded according to the codition (status) of the machine", "type": "sentence_pattern"}
+{"hanzi": "按 0.5 秒频率闪烁", "eng": "flashes at the frequency of 0.5 second", "type": "sentence_pattern"}
+{"hanzi": "按下紧急停止按钮时，报警将触发", "eng": "When the emergency stop button is pressed, the alarm will be triggered", "type": "sentence_pattern"}
+{"hanzi": "控制系统能够对潜在的机械损伤源进行防护。", "eng": "Control system shall be protected from the potential mechanical damage.", "type": "sentence_pattern"}
+{"hanzi": "断电恢复后", "eng": "When the power is restored", "type": "sentence_pattern"}
+{"hanzi": "未经...同意，不得...", "eng": "No part of this document may be... without the prior written consent of...", "type": "sentence_pattern"}
+{"hanzi": "本台机械的设备配置如下：", "eng": "This machine is configured as follows:", "type": "sentence_pattern"}
+{"hanzi": "本系统将跟踪以下行为：", "eng": "The system will track the following behaviors:", "type": "sentence_pattern"}
+{"hanzi": "根据不同需求调节", "eng": "adjusted according to different requirements", "type": "sentence_pattern"}
+{"hanzi": "根据负载不同选择不同功率的型号", "eng": "different power models are selected according to different loads", "type": "sentence_pattern"}
+{"hanzi": "检查PLC通讯模块是否接线正常", "eng": "Check whether the PLC communication module is wired normally", "type": "sentence_pattern"}
+{"hanzi": "检查信号线连接是否正常", "eng": "Check whether the signal line connection is normal", "type": "sentence_pattern"}
+{"hanzi": "检查风机是否损坏", "eng": "Check whether the fan is damaged", "type": "sentence_pattern"}
+{"hanzi": "水位通过溢流管来维持", "eng": "The water level is maintained via overflow pipe", "type": "sentence_pattern"}
+{"hanzi": "水温通过热电阻监测", "eng": "water temperature is fed back through thermal resistance monitoring", "type": "sentence_pattern"}
+{"hanzi": "点击以弹出键盘", "eng": "Click to pop up keyboard", "type": "sentence_pattern"}
+{"hanzi": "点击以截图画面", "eng": "Click to Screenshot screen", "type": "sentence_pattern"}
+{"hanzi": "点击以激活输入/输出画面", "eng": "Click to activate the input/output screen", "type": "sentence_pattern"}
+{"hanzi": "用于保护电机过流、过压", "eng": "Used to protect the motor over-current, over-voltage", "type": "sentence_pattern"}
+{"hanzi": "用于选择配方版本", "eng": "used to select recipe version", "type": "sentence_pattern"}
+{"hanzi": "用于配方名称显示", "eng": "Used to display the recipe name", "type": "sentence_pattern"}
+{"hanzi": "电源供给的要求如下：", "eng": "Power supply is required as follows:", "type": "sentence_pattern"}
+{"hanzi": "维护模式所需要的状态如下：", "eng": "The required states for maintenance mode are as follows:", "type": "sentence_pattern"}
+{"hanzi": "网络配置图如下", "eng": "The network configuration diagram ... is as follows", "type": "sentence_pattern"}
+{"hanzi": "自动控制包括以下阶段：", "eng": "Automatic control consists of the following phases:", "type": "sentence_pattern"}
+{"hanzi": "被禁用", "eng": "can be disabled", "type": "sentence_pattern"}
+{"hanzi": "设备处于“空闲”状态时", "eng": "When the device is in the \"idle\" state", "type": "sentence_pattern"}
+{"hanzi": "设备贴有统一的铭牌", "eng": "The equipment is affixed with a unified nameplate", "type": "sentence_pattern"}
+{"hanzi": "设置为“1”表示开启自动清零功能", "eng": "setting it as \"1\" means the automatic zero clearing function is enabled", "type": "sentence_pattern"}
+{"hanzi": "该报警可自动复位", "eng": "The alarm can be reset automatically.", "type": "sentence_pattern"}
+{"hanzi": "该报警需手动复位", "eng": "The alarm should be reset manually", "type": "sentence_pattern"}
+{"hanzi": "该报警需要手动复位", "eng": "The alarm should be reset manually", "type": "sentence_pattern"}
+{"hanzi": "该模式下生产阶段同生产模式", "eng": "The production phase in this mode is the same as the production mode", "type": "sentence_pattern"}
+{"hanzi": "该模式用于执行...", "eng": "This mode is used to execute...", "type": "sentence_pattern"}
+{"hanzi": "该模式用于执行配方中的生产工艺", "eng": "This mode is used to execute the production process in the recipe", "type": "sentence_pattern"}
+{"hanzi": "该模式用于执行配方中的轧盖工艺", "eng": "This mode is used to execute the capping process in the recipe", "type": "sentence_pattern"}
+{"hanzi": "该系统配置一块触摸屏", "eng": "The system is equipped with one touch screens", "type": "sentence_pattern"}
+{"hanzi": "请具体归类及排列顺序参照电气原理图", "eng": "Please refer to the electrical schematic for specific classification and arrangement order", "type": "sentence_pattern"}
+{"hanzi": "超声波清洗系统由...组成", "eng": "The ultrasonic washing system consists of...", "type": "sentence_pattern"}
+{"hanzi": "配方包括以下功能和内容", "eng": "Recipes include the following functions / features", "type": "sentence_pattern"}
+{"hanzi": "配置图如下", "eng": "diagram is shown as follows", "type": "sentence_pattern"}
+{"hanzi": "预热区温度高于上限报警设定值时，报警将产生", "eng": "When the Preheating zone temperature exceeds the set upper limit for alarm, the machine will alarm", "type": "sentence_pattern"}
+{"hanzi": "预热箱体采用不锈钢焊接而成", "eng": "The preheating chamber is welded by stainless steel", "type": "sentence_pattern"}
+{"hanzi": "不合格品自动剔除", "eng": "Unqualified products are automatically removed", "type": "short_sentence"}
+{"hanzi": "不查看时可以断开链接", "eng": "Unlink when not viewing", "type": "short_sentence"}
+{"hanzi": "不能在运行系统中编辑信息文本", "eng": "The message text cannot be edited in the running system.", "type": "short_sentence"}
+{"hanzi": "产品批号具有唯一性", "eng": "The product lot number is unique", "type": "short_sentence"}
+{"hanzi": "以符合该操作权限要求的用户登录", "eng": "The user logged in has the corresponding operation permission", "type": "short_sentence"}
+{"hanzi": "保证了灌装时无药液飞溅现象", "eng": "ensuring that there is no splashing of liquid during filling", "type": "short_sentence"}
+{"hanzi": "升降机构由人工手轮驱动", "eng": "The lifting mechanism is driven by hand wheel", "type": "short_sentence"}
+{"hanzi": "单向阀能有效防止气流倒灌", "eng": "The one-way valve can effectively prevent air flow back", "type": "short_sentence"}
+{"hanzi": "及时添加瓶子", "eng": "Add vials in time", "type": "short_sentence"}
+{"hanzi": "在打开柜门前需断电处理。", "eng": "The power must be cut off before the cabinet door is opened.", "type": "short_sentence"}
+{"hanzi": "多个传感器采用串联方式连接", "eng": "Multiple sensors are connected in series", "type": "short_sentence"}
+{"hanzi": "将选择文件剪切至指定路径", "eng": "Cut the selected file to the specified path", "type": "short_sentence"}
+{"hanzi": "将选择文件拷贝到指定路径", "eng": "Copy the selected file to the specified path", "type": "short_sentence"}
+{"hanzi": "尽量避免长时间在高功率状态下使用超声波", "eng": "Do not keep the ultrasonic in high power too long", "type": "short_sentence"}
+{"hanzi": "已确认的激活状态的报警显示为黄色", "eng": "Acknowledged active alarms / messages are in yellow text", "type": "short_sentence"}
+{"hanzi": "开启加塞工位时必须先将真空系统开启。", "eng": "Firstly open the vacuum system and then start the stoppering station.", "type": "short_sentence"}
+{"hanzi": "当控制电源接通，指示灯显示(绿色)", "eng": "When the control power is connected, the indicator will display green.", "type": "short_sentence"}
+{"hanzi": "急停开关未按下", "eng": "The emergency stop switch is not pressed", "type": "short_sentence"}
+{"hanzi": "急停开关没有被按下", "eng": "The emergency stop switch is not pressed", "type": "short_sentence"}
+{"hanzi": "所有操作将失去响应", "eng": "All the operations shall lose response", "type": "short_sentence"}
+{"hanzi": "所有气缸呈现失电状态", "eng": "All cylinders are in the state of power failure", "type": "short_sentence"}
+{"hanzi": "报警产生后，网带停止运行，加热器停止加热，亮红灯，蜂鸣器蜂鸣", "eng": "After the alarm is generated, the conveyor belt stops running and the heater stops heating. Red lamp is on, buzzer beeps.", "type": "short_sentence"}
+{"hanzi": "报警将记录以下信息", "eng": "The alarm will record the following information", "type": "short_sentence"}
+{"hanzi": "报警灯红灯亮、蜂鸣器响、主机停止运行", "eng": "Red alarm lamp on, buzzer on, main motor stops running", "type": "short_sentence"}
+{"hanzi": "报警红灯亮", "eng": "The red alarm light is on", "type": "short_sentence"}
+{"hanzi": "显示当前加载画面的名称", "eng": "Display the name of the currently loaded screen", "type": "short_sentence"}
+{"hanzi": "本台设备的配置如下：", "eng": "This machine is configured as follows:", "type": "short_sentence"}
+{"hanzi": "机架内部维修空间大", "eng": "The internal maintenance space of the frame is large", "type": "short_sentence"}
+{"hanzi": "机械手用于夹瓶持瓶", "eng": "The manipulator is used to clamp and hold the vial", "type": "short_sentence"}
+{"hanzi": "检查传感器安装是否安装正确", "eng": "Check whether the installation of sensor is correct", "type": "short_sentence"}
+{"hanzi": "检查传感器状态", "eng": "Check the sensor status", "type": "short_sentence"}
+{"hanzi": "检查伺服是否有卡住", "eng": "Check whether the servo is stuck", "type": "short_sentence"}
+{"hanzi": "检查加热管是否有损坏", "eng": "Check whether the heating tube is damaged", "type": "short_sentence"}
+{"hanzi": "检查压缩空气设定值是否正确", "eng": "Check if the setting value of compressed air is correct", "type": "short_sentence"}
+{"hanzi": "检查当前伺服最大扭矩设定是否合理", "eng": "Check whether the current servo maximum torque setting is reasonable", "type": "short_sentence"}
+{"hanzi": "检查灌针是否滴液", "eng": "Check whether the syringe drops", "type": "short_sentence"}
+{"hanzi": "检查秤是否通电", "eng": "Check whether the scale is powered on", "type": "short_sentence"}
+{"hanzi": "检查马达空开是否正常", "eng": "Check if motor air switch is normal", "type": "short_sentence"}
+{"hanzi": "每一个报警都有唯一的编号。", "eng": "Each alarm has a unique number.", "type": "short_sentence"}
+{"hanzi": "没有合适的工具便无法打开控制箱的门。", "eng": "The door of the control cabinet cannot be opened without a suitable tool.", "type": "short_sentence"}
+{"hanzi": "清洗过程将终止", "eng": "cleaning process will be terminated", "type": "short_sentence"}
+{"hanzi": "激活的配方才能修改、下载", "eng": "the activated formula can be modified and downloaded", "type": "short_sentence"}
+{"hanzi": "电柜自带限位开关及照明装置。", "eng": "The electric cabinet comes with limit switch and lighting device.", "type": "short_sentence"}
+{"hanzi": "登录用户唯一", "eng": "The logon user is unique", "type": "short_sentence"}
+{"hanzi": "真空泵已经自动开启", "eng": "The vacuum pump is automatically opened", "type": "short_sentence"}
+{"hanzi": "确认预热层流风机转速是否正常", "eng": "Confirm whether the speed of the preheating laminar flow fan is normal", "type": "short_sentence"}
+{"hanzi": "系统可以使用主电源开关在紧急状态下关闭电源。", "eng": "The system is switched off in emergencies using the main power switch.", "type": "short_sentence"}
+{"hanzi": "系统将拒绝无效输入", "eng": "The system shall reject invalid data entries", "type": "short_sentence"}
+{"hanzi": "系统无报警", "eng": "The system has no alarm", "type": "short_sentence"}
+{"hanzi": "网带停止运行", "eng": "the conveyor belt stops running", "type": "short_sentence"}
+{"hanzi": "设备只能在非爆炸危险区域内运行。", "eng": "The equipment can only be operated in non-explosion hazard areas.", "type": "short_sentence"}
+{"hanzi": "设备无报警产生", "eng": "system no alarm generated", "type": "short_sentence"}
+{"hanzi": "设备暂停运行", "eng": "the equipment suspends operation", "type": "short_sentence"}
+{"hanzi": "该报警需手动复位。", "eng": "This alarm should be reset manually.", "type": "short_sentence"}
+{"hanzi": "配置沉降菌托盘", "eng": "It is configured with settlement microbe plate.", "type": "short_sentence"}
+{"hanzi": "验证前确保前称重模块水平安装。", "eng": "Make sure the front weighing module is installed horizontally before verification", "type": "short_sentence"}
