@@ -175,6 +175,22 @@ function parseVocabText(text){
   return out;
 }
 
+const AUTO_VOCAB_FILE = 'vocab.jsonl';
+
+async function fetchAutoVocabFile(){
+  // Works when the HTML is served via http(s) (e.g. a local server) and vocab.jsonl
+  // sits in the same folder. On file:// this will usually be blocked by the browser
+  // (CORS on local files) and will simply fail silently, falling back to manual upload.
+  try{
+    const res = await fetch(AUTO_VOCAB_FILE, { cache: 'no-store' });
+    if(!res.ok) return null;
+    const text = await res.text();
+    return text;
+  }catch(e){
+    return null;
+  }
+}
+
 function pinyinOf(hanzi){
   try{
     if(window.pinyinPro && window.pinyinPro.pinyin){
@@ -182,6 +198,15 @@ function pinyinOf(hanzi){
     }
   }catch(e){}
   return '';
+}
+
+function applyVocabText(text){
+  const rawItems = parseVocabText(text);
+  if(rawItems.length === 0) return 0;
+  state.vocabList = buildVocabList(rawItems);
+  state.mistakeBank = [];
+  saveVocab(); saveMistakes();
+  return state.vocabList.length;
 }
 
 function buildVocabList(rawItems){
@@ -205,7 +230,9 @@ function render(){
   const hasData = state.vocabList.length > 0;
 
   let body = '';
-  if(!hasData || state.screen === 'setup'){
+  if(state.screen === 'loading'){
+    body = screenLoading();
+  } else if(!hasData || state.screen === 'setup'){
     body = screenSetup();
   } else if(state.screen === 'home'){
     body = screenHome();
@@ -281,6 +308,18 @@ function bottomNav(){
   </div>`;
 }
 
+/* ============================= SCREEN: LOADING ============================= */
+function screenLoading(){
+  return `
+  <div class="flex flex-col items-center justify-center py-24 text-center">
+    <div class="w-14 h-14 rounded-2xl bg-[var(--indigo)] text-white flex items-center justify-center text-xl shadow-lg shadow-indigo-200 mb-4">
+      <i class="fa-solid fa-spinner spin"></i>
+    </div>
+    <div class="font-bold text-sm">Đang tìm ${esc(AUTO_VOCAB_FILE)} trong thư mục ứng dụng...</div>
+    <div class="text-xs text-[var(--ink-soft)] mt-1">Vui lòng chờ trong giây lát</div>
+  </div>`;
+}
+
 /* ============================= SCREEN: SETUP ============================= */
 function screenSetup(){
   const hasData = state.vocabList.length > 0;
@@ -292,15 +331,24 @@ function screenSetup(){
         <i class="fa-solid fa-language"></i>
       </div>
       <h1 class="text-xl font-extrabold">Chào mừng đến 词汇通</h1>
-      <p class="text-sm text-[var(--ink-soft)] mt-1">Nạp bộ từ vựng Anh – Trung kỹ thuật/dược phẩm để bắt đầu học.</p>
+      <p class="text-sm text-[var(--ink-soft)] mt-1">Không tìm thấy <code class="bg-black/5 px-1.5 py-0.5 rounded">${esc(AUTO_VOCAB_FILE)}</code> cùng thư mục, hoặc trình duyệt chặn đọc file cục bộ (file://). Bạn có thể nạp dữ liệu thủ công bên dưới.</p>
     </div>` : `
     <div class="mb-5">
       <h1 class="text-lg font-extrabold flex items-center gap-2"><i class="fa-solid fa-gear text-[var(--indigo)]"></i>Cài đặt dữ liệu</h1>
       <p class="text-sm text-[var(--ink-soft)] mt-1">Thư viện hiện có <b>${state.vocabList.length}</b> từ. Tải dữ liệu mới sẽ thay thế toàn bộ và làm mới Sổ từ sai.</p>
     </div>`}
 
+    <div class="card p-5 mb-4">
+      <h2 class="text-sm font-bold mb-2 flex items-center gap-2"><i class="fa-solid fa-folder-open text-[var(--indigo)]"></i>Tự động nạp từ <code class="bg-black/5 px-1.5 py-0.5 rounded text-[13px]">${esc(AUTO_VOCAB_FILE)}</code></h2>
+      <p class="text-xs text-[var(--ink-soft)] mb-3">Đặt file <b>${esc(AUTO_VOCAB_FILE)}</b> cùng thư mục với <code class="bg-black/5 px-1 rounded">index.html</code>, sau đó mở trang qua một local server (ví dụ <code class="bg-black/5 px-1 rounded">npx serve</code>, VS Code Live Server, hoặc <code class="bg-black/5 px-1 rounded">python3 -m http.server</code>). Mở trực tiếp bằng cách nhấp đúp file (file://) thường bị trình duyệt chặn không cho đọc file cạnh nó.</p>
+      <button id="autoLoadBtn" class="w-full bg-[var(--indigo-soft)] hover:brightness-95 text-[var(--indigo)] font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+        <i class="fa-solid fa-rotate"></i> Tải lại từ ${esc(AUTO_VOCAB_FILE)}
+      </button>
+      <div id="autoLoadMsg" class="text-xs text-[var(--ink-soft)] mt-2 text-center"></div>
+    </div>
+
     <div class="card p-5">
-      <label class="text-sm font-bold flex items-center gap-2 mb-2"><i class="fa-solid fa-paste text-[var(--indigo)]"></i>Dán dữ liệu JSONL / JSON</label>
+      <label class="text-sm font-bold flex items-center gap-2 mb-2"><i class="fa-solid fa-paste text-[var(--indigo)]"></i>Hoặc dán dữ liệu JSONL / JSON</label>
       <textarea id="pasteArea" rows="6" placeholder='{"hanzi": "不间断电源", "eng": "Uninterruptible Power Supply", "type": "vocabulary"}'
         class="w-full text-sm rounded-xl border border-black/10 p-3 focus:outline-none focus:ring-2 focus:ring-[var(--indigo)] font-mono scroll-thin"></textarea>
 
@@ -310,7 +358,7 @@ function screenSetup(){
         <div class="h-px bg-black/10 flex-1"></div>
       </div>
 
-      <label class="text-sm font-bold flex items-center gap-2 mb-2"><i class="fa-solid fa-file-arrow-up text-[var(--indigo)]"></i>Tải file .json / .jsonl / .txt</label>
+      <label class="text-sm font-bold flex items-center gap-2 mb-2"><i class="fa-solid fa-file-arrow-up text-[var(--indigo)]"></i>Tải file .json / .jsonl / .txt thủ công</label>
       <input id="fileInput" type="file" accept=".json,.jsonl,.txt" class="w-full text-sm rounded-xl border border-black/10 p-2.5 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-[var(--indigo-soft)] file:text-[var(--indigo)] file:font-semibold" />
 
       <div id="setupMsg" class="text-xs text-[var(--ink-soft)] mt-3"></div>
@@ -755,20 +803,45 @@ function attachScreenListeners(){
       processBtn.innerHTML = '<i class="fa-solid fa-spinner spin"></i> Đang xử lý...';
       msgEl.textContent = 'Đang phân tích dữ liệu và chuyển đổi Pinyin...';
       setTimeout(() => {
-        const rawItems = parseVocabText(text);
-        if(rawItems.length === 0){
+        const count = applyVocabText(text);
+        if(count === 0){
           toast('Không đọc được dữ liệu hợp lệ. Kiểm tra định dạng JSON/JSONL.', 'error');
           processBtn.disabled = false;
           processBtn.innerHTML = '<i class="fa-solid fa-bolt"></i> Xử lý & Lưu thư viện';
           msgEl.textContent = '';
           return;
         }
-        state.vocabList = buildVocabList(rawItems);
-        state.mistakeBank = [];
-        saveVocab(); saveMistakes();
-        toast(`Đã nạp ${state.vocabList.length} từ vựng thành công!`, 'ok');
+        toast(`Đã nạp ${count} từ vựng thành công!`, 'ok');
         go('home');
       }, 50);
+    };
+  }
+
+  const autoLoadBtn = document.getElementById('autoLoadBtn');
+  if(autoLoadBtn){
+    autoLoadBtn.onclick = async () => {
+      const msgEl = document.getElementById('autoLoadMsg');
+      autoLoadBtn.disabled = true;
+      autoLoadBtn.innerHTML = '<i class="fa-solid fa-spinner spin"></i> Đang tải...';
+      msgEl.textContent = '';
+      const text = await fetchAutoVocabFile();
+      if(!text){
+        toast(`Không thể đọc ${AUTO_VOCAB_FILE}. Hãy chạy qua local server hoặc dùng cách nạp thủ công.`, 'error');
+        msgEl.textContent = `Không tìm thấy hoặc không đọc được ${AUTO_VOCAB_FILE}.`;
+        autoLoadBtn.disabled = false;
+        autoLoadBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Tải lại từ ${AUTO_VOCAB_FILE}`;
+        return;
+      }
+      const count = applyVocabText(text);
+      if(count === 0){
+        toast(`${AUTO_VOCAB_FILE} không có dữ liệu hợp lệ.`, 'error');
+        msgEl.textContent = 'Định dạng file không hợp lệ (cần JSONL hoặc mảng JSON).';
+        autoLoadBtn.disabled = false;
+        autoLoadBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Tải lại từ ${AUTO_VOCAB_FILE}`;
+        return;
+      }
+      toast(`Đã nạp ${count} từ vựng từ ${AUTO_VOCAB_FILE}!`, 'ok');
+      go('home');
     };
   }
 
@@ -869,9 +942,30 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ============================= INIT ============================= */
-loadAll();
-state.screen = state.vocabList.length ? 'home' : 'setup';
-render();
+async function init(){
+  loadAll();
+  if(state.vocabList.length){
+    state.screen = 'home';
+    render();
+    return;
+  }
+  // No saved data yet: try to auto-load vocab.jsonl from the same folder.
+  state.screen = 'loading';
+  render();
+  const text = await fetchAutoVocabFile();
+  if(text){
+    const count = applyVocabText(text);
+    if(count > 0){
+      toast(`Đã tự động nạp ${count} từ vựng từ ${AUTO_VOCAB_FILE}!`, 'ok');
+      state.screen = 'home';
+      render();
+      return;
+    }
+  }
+  state.screen = 'setup';
+  render();
+}
+init();
 </script>
 </body>
 </html>
