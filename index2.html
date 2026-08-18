@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>词汇通 · Trắc nghiệm từ vựng Kỹ thuật & Dược phẩm</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/pinyin-pro/dist/index.js"></script>
+
+<style>
+  :root{
+    --bg:#F5F7FC;
+    --card:#FFFFFF;
+    --ink:#1E2233;
+    --ink-soft:#6B7280;
+    --indigo:#5B5FEF;
+    --indigo-soft:#EEF0FF;
+    --blue-pastel:#DCE9FF;
+    --mint:#22C55E;
+    --mint-soft:#E7FBEF;
+    --rose:#F43F5E;
+    --rose-soft:#FFE9EC;
+    --gold:#F59E0B;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    background:
+      radial-gradient(circle at 10% 0%, #E9EEFF 0%, transparent 45%),
+      radial-gradient(circle at 100% 20%, #FDEBF1 0%, transparent 40%),
+      var(--bg);
+    font-family:'Inter', 'Noto Sans SC', system-ui, sans-serif;
+    color:var(--ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hanzi-font{ font-family:'Noto Sans SC', sans-serif; }
+  .kbd{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:22px; height:22px; padding:0 5px;
+    border-radius:6px; font-size:12px; font-weight:700;
+    background:rgba(0,0,0,.06); color:var(--ink-soft); border:1px solid rgba(0,0,0,.08);
+  }
+  .card{ background:var(--card); border-radius:1.25rem; box-shadow:0 2px 10px rgba(30,34,51,.06), 0 10px 30px -10px rgba(30,34,51,.08); }
+  .opt-btn{ transition: all .15s ease; }
+  .opt-btn:active{ transform: scale(.98); }
+  .opt-btn.correct{ background:var(--mint-soft)!important; border-color:var(--mint)!important; color:#0F7A3D; }
+  .opt-btn.wrong{ background:var(--rose-soft)!important; border-color:var(--rose)!important; color:#B0122A; }
+  .opt-btn:disabled{ cursor:default; }
+  .fade-in{ animation: fadeIn .28s ease both; }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+  .pop{ animation: pop .35s cubic-bezier(.34,1.56,.64,1) both; }
+  @keyframes pop{ from{opacity:0; transform:scale(.9);} to{opacity:1; transform:scale(1);} }
+  .scroll-thin::-webkit-scrollbar{ width:6px; height:6px; }
+  .scroll-thin::-webkit-scrollbar-thumb{ background:rgba(0,0,0,.15); border-radius:99px; }
+  .nav-item.active{ color:var(--indigo); }
+  .nav-item.active .nav-dot{ opacity:1; }
+  .progress-bar-fill{ transition: width .3s ease; }
+  .spin{ animation: spin 1s linear infinite; }
+  @keyframes spin{ to{ transform: rotate(360deg);} }
+  input[type=radio]{ accent-color: var(--indigo); }
+  input[type=checkbox]{ accent-color: var(--indigo); }
+  ::selection{ background: var(--indigo-soft); }
+</style>
+</head>
+<body class="min-h-screen pb-24 md:pb-8">
+
+<div id="app" class="max-w-3xl mx-auto px-4 pt-5 md:pt-8"></div>
+
+<!-- Toast -->
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-24 md:bottom-8 z-50 hidden"></div>
+
+<script>
+/* ============================= STORAGE ============================= */
+const LS = {
+  VOCAB: 'vqa_vocabList_v1',
+  MISTAKES: 'vqa_mistakeBank_v1',
+  HISTORY: 'vqa_history_v1',
+  AUTOSPEAK: 'vqa_autoSpeak_v1',
+  LEARNED: 'vqa_learnedWords_v1'
+};
+
+const state = {
+  vocabList: [],
+  mistakeBank: [],
+  history: [],
+  learnedWords: [],
+  autoSpeak: true,
+  screen: 'loading',
+  lesson: null,
+  dictQuery: '',
+  dictTab: 'all'
+};
+
+function loadAll(){
+  try{ state.vocabList = JSON.parse(localStorage.getItem(LS.VOCAB) || '[]'); }catch(e){ state.vocabList = []; }
+  try{ state.mistakeBank = JSON.parse(localStorage.getItem(LS.MISTAKES) || '[]'); }catch(e){ state.mistakeBank = []; }
+  try{ state.history = JSON.parse(localStorage.getItem(LS.HISTORY) || '[]'); }catch(e){ state.history = []; }
+  try{ state.learnedWords = JSON.parse(localStorage.getItem(LS.LEARNED) || '[]'); }catch(e){ state.learnedWords = []; }
+  const as = localStorage.getItem(LS.AUTOSPEAK);
+  state.autoSpeak = as === null ? true : as === '1';
+}
+function saveVocab(){ localStorage.setItem(LS.VOCAB, JSON.stringify(state.vocabList)); }
+function saveMistakes(){ localStorage.setItem(LS.MISTAKES, JSON.stringify(state.mistakeBank)); }
+function saveHistory(){ localStorage.setItem(LS.HISTORY, JSON.stringify(state.history)); }
+function saveAutoSpeak(){ localStorage.setItem(LS.AUTOSPEAK, state.autoSpeak ? '1':'0'); }
+function saveLearned(){ localStorage.setItem(LS.LEARNED, JSON.stringify(state.learnedWords)); }
+
+function markLearned(id){
+  if(!state.learnedWords.includes(id)){
+    state.learnedWords.push(id);
+    saveLearned();
+  }
+}
+function resetLearned(){
+  state.learnedWords = [];
+  saveLearned();
+}
+function learnedStats(){
+  const total = state.vocabList.length;
+  const learned = state.learnedWords.filter(id => state.vocabList.some(v => v.id === id)).length;
+  const pct = total > 0 ? Math.round((learned/total)*100) : 0;
+  return { total, learned, pct, complete: total > 0 && learned >= total };
+}
+
+/* ============================= UTIL ============================= */
+function esc(s){
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+function toast(msg, type='info'){
+  const el = document.getElementById('toast');
+  const color = type==='error' ? 'bg-rose-500' : type==='ok' ? 'bg-emerald-500' : 'bg-slate-800';
+  el.innerHTML = `<div class="pop ${color} text-white px-4 py-2.5 rounded-xl shadow-lg text-sm font-medium">${esc(msg)}</div>`;
+  el.classList.remove('hidden');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(()=> el.classList.add('hidden'), 2400);
+}
+function speak(text, lang){
+  if(!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang;
+  u.rate = lang === 'zh-CN' ? 0.92 : 0.98;
+  window.speechSynthesis.speak(u);
+}
+function fmtTime(sec){
+  const m = Math.floor(sec/60), s = Math.floor(sec%60);
+  return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+function fmtDate(d){
+  const p = n => String(n).padStart(2,'0');
+  return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+
+/* ============================= PARSE INPUT ============================= */
+function parseVocabText(text){
+  text = text.trim();
+  if(!text) return [];
+  let rawItems = [];
+  // Try JSON array first
+  try{
+    const parsed = JSON.parse(text);
+    if(Array.isArray(parsed)) rawItems = parsed;
+  }catch(e){ /* not a JSON array, fall through to JSONL */ }
+
+  if(rawItems.length === 0){
+    const lines = text.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+    for(const line of lines){
+      try{
+        const obj = JSON.parse(line);
+        rawItems.push(obj);
+      }catch(e){ /* skip malformed line */ }
+    }
+  }
+
+  const out = [];
+  const seen = new Set();
+  for(const item of rawItems){
+    if(!item || typeof item !== 'object') continue;
+    const hanzi = (item.hanzi || item.Hanzi || item.zh || '').toString().trim();
+    const eng = (item.eng || item.Eng || item.en || item.english || '').toString().trim();
+    if(!hanzi || !eng) continue;
+    const key = hanzi+'||'+eng;
+    if(seen.has(key)) continue;
+    seen.add(key);
+    out.push({ hanzi, eng });
+  }
+  return out;
+}
+
+const AUTO_VOCAB_FILE = 'vocab.jsonl';
+
+async function fetchAutoVocabFile(){
+  // Works when the HTML is served via http(s) (e.g. a local server) and vocab.jsonl
+  // sits in the same folder. On file:// this will usually be blocked by the browser
+  // (CORS on local files) and will simply fail silently, falling back to manual upload.
+  try{
+    const res = await fetch(AUTO_VOCAB_FILE, { cache: 'no-store' });
+    if(!res.ok) return null;
+    const text = await res.text();
+    return text;
+  }catch(e){
+    return null;
+  }
+}
+
+function pinyinOf(hanzi){
+  try{
+    if(window.pinyinPro && window.pinyinPro.pinyin){
+      return window.pinyinPro.pinyin(hanzi, { toneType:'symbol', type:'string' });
+    }
+  }catch(e){}
+  return '';
+}
+
+function applyVocabText(text){
+  const rawItems = parseVocabText(text);
+  if(rawItems.length === 0) return 0;
+  state.vocabList = buildVocabList(rawItems);
+  state.mistakeBank = [];
+  state.learnedWords = [];
+  saveVocab(); saveMistakes(); saveLearned();
+  return state.vocabList.length;
+}
+
+function buildVocabList(rawItems){
+  return rawItems.map((it, i) => ({
+    id: 'v'+i,
+    hanzi: it.hanzi,
+    eng: it.eng,
+    pinyin: pinyinOf(it.hanzi)
+  }));
+}
+
+/* ============================= NAV / RENDER ============================= */
+function go(screen){
+  state.screen = screen;
+  render();
+  window.scrollTo({top:0, behavior:'instant' in window ? 'instant':'auto'});
+}
+
+function render(){
+  const app = document.getElementById('app');
+  const hasData = state.vocabList.length > 0;
+
+  let body = '';
+  if(state.screen === 'loading'){
+    body = screenLoading();
+  } else if(!hasData || state.screen === 'setup'){
+    body = screenSetup();
+  } else if(state.screen === 'home'){
+    body = screenHome();
+  } else if(state.screen === 'quiz'){
+    body = screenQuiz();
+  } else if(state.screen === 'result'){
+    body = screenResult();
+  } else if(state.screen === 'dictionary'){
+    body = screenDictionary();
+  } else if(state.screen === 'history'){
+    body = screenHistory();
+  } else {
+    body = screenHome();
+  }
+
+  app.innerHTML = `
+    ${hasData ? headerBar() : ''}
+    <div class="fade-in">${body}</div>
+    ${hasData ? bottomNav() : ''}
+  `;
+  attachGlobalListeners();
+  attachScreenListeners();
+}
+
+function headerBar(){
+  const tabs = [
+    {id:'home', icon:'fa-graduation-cap', label:'Học tập'},
+    {id:'dictionary', icon:'fa-book-open', label:'Từ điển'},
+    {id:'history', icon:'fa-clock-rotate-left', label:'Lịch sử'},
+    {id:'setup', icon:'fa-gear', label:'Cài đặt'},
+  ];
+  const active = ['home','quiz','result'].includes(state.screen) ? 'home' : state.screen;
+  return `
+  <div class="flex items-center justify-between mb-5">
+    <div class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-2xl bg-[var(--indigo)] text-white flex items-center justify-center text-lg shadow-md shadow-indigo-200">
+        <i class="fa-solid fa-language"></i>
+      </div>
+      <div>
+        <div class="font-extrabold text-[15px] leading-tight">词汇通 Vocab</div>
+        <div class="text-[11px] text-[var(--ink-soft)] leading-tight">Kỹ thuật · Dược phẩm</div>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur rounded-2xl p-1 shadow-sm border border-black/5">
+      ${tabs.map(t => `
+        <button data-nav="${t.id}" class="nav-item ${active===t.id?'active':''} flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold text-[var(--ink-soft)] hover:bg-[var(--indigo-soft)] transition">
+          <i class="fa-solid ${t.icon} text-[13px]"></i>${t.label}
+        </button>
+      `).join('')}
+    </nav>
+  </div>`;
+}
+
+function bottomNav(){
+  const tabs = [
+    {id:'home', icon:'fa-graduation-cap', label:'Học'},
+    {id:'dictionary', icon:'fa-book-open', label:'Từ điển'},
+    {id:'history', icon:'fa-clock-rotate-left', label:'Lịch sử'},
+    {id:'setup', icon:'fa-gear', label:'Cài đặt'},
+  ];
+  const active = ['home','quiz','result'].includes(state.screen) ? 'home' : state.screen;
+  return `
+  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur border-t border-black/5 z-40 pb-[env(safe-area-inset-bottom)]">
+    <div class="max-w-3xl mx-auto grid grid-cols-4">
+      ${tabs.map(t => `
+        <button data-nav="${t.id}" class="nav-item ${active===t.id?'active':''} flex flex-col items-center gap-1 py-2.5 text-[var(--ink-soft)]">
+          <i class="fa-solid ${t.icon} text-[17px]"></i>
+          <span class="text-[10px] font-semibold">${t.label}</span>
+          <span class="nav-dot w-1 h-1 rounded-full bg-[var(--indigo)] opacity-0"></span>
+        </button>
+      `).join('')}
+    </div>
+  </div>`;
+}
+
+/* ============================= SCREEN: LOADING ============================= */
+function screenLoading(){
+  return `
+  <div class="flex flex-col items-center justify-center py-24 text-center">
+    <div class="w-14 h-14 rounded-2xl bg-[var(--indigo)] text-white flex items-center justify-center text-xl shadow-lg shadow-indigo-200 mb-4">
+      <i class="fa-solid fa-spinner spin"></i>
+    </div>
+    <div class="font-bold text-sm">Đang tìm ${esc(AUTO_VOCAB_FILE)} trong thư mục ứng dụng...</div>
+    <div class="text-xs text-[var(--ink-soft)] mt-1">Vui lòng chờ trong giây lát</div>
+  </div>`;
+}
+
+/* ============================= SCREEN: SETUP ============================= */
+function screenSetup(){
+  const hasData = state.vocabList.length > 0;
+  return `
+  <div class="max-w-xl mx-auto">
+    ${!hasData ? `
+    <div class="text-center mb-6 mt-4">
+      <div class="w-16 h-16 mx-auto rounded-3xl bg-[var(--indigo)] text-white flex items-center justify-center text-2xl shadow-lg shadow-indigo-200 mb-3">
+        <i class="fa-solid fa-language"></i>
+      </div>
+      <h1 class="text-xl font-extrabold">Chào mừng đến 词汇通</h1>
+      <p class="text-sm text-[var(--ink-soft)] mt-1">Không tìm thấy <code class="bg-black/5 px-1.5 py-0.5 rounded">${esc(AUTO_VOCAB_FILE)}</code> cùng thư mục, hoặc trình duyệt chặn đọc file cục bộ (file://). Bạn có thể nạp dữ liệu thủ công bên dưới.</p>
+    </div>` : `
+    <div class="mb-5">
+      <h1 class="text-lg font-extrabold flex items-center gap-2"><i class="fa-solid fa-gear text-[var(--indigo)]"></i>Cài đặt dữ liệu</h1>
+      <p class="text-sm text-[var(--ink-soft)] mt-1">Thư viện hiện có <b>${state.vocabList.length}</b> từ. Tải dữ liệu mới sẽ thay thế toàn bộ và làm mới Sổ từ sai.</p>
+    </div>`}
+
+    <div class="card p-5 mb-4">
+      <h2 class="text-sm font-bold mb-2 flex items-center gap-2"><i class="fa-solid fa-folder-open text-[var(--indigo)]"></i>Tự động nạp từ <code class="bg-black/5 px-1.5 py-0.5 rounded text-[13px]">${esc(AUTO_VOCAB_FILE)}</code></h2>
+      <p class="text-xs text-[var(--ink-soft)] mb-3">Đặt file <b>${esc(AUTO_VOCAB_FILE)}</b> cùng thư mục với <code class="bg-black/5 px-1 rounded">index.html</code>, sau đó mở trang qua một local server (ví dụ <code class="bg-black/5 px-1 rounded">npx serve</code>, VS Code Live Server, hoặc <code class="bg-black/5 px-1 rounded">python3 -m http.server</code>). Mở trực tiếp bằng cách nhấp đúp file (file://) thường bị trình duyệt chặn không cho đọc file cạnh nó.</p>
+      <button id="autoLoadBtn" class="w-full bg-[var(--indigo-soft)] hover:brightness-95 text-[var(--indigo)] font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+        <i class="fa-solid fa-rotate"></i> Tải lại từ ${esc(AUTO_VOCAB_FILE)}
+      </button>
+      <div id="autoLoadMsg" class="text-xs text-[var(--ink-soft)] mt-2 text-center"></div>
+    </div>
+
+    <div class="card p-5">
+      <label class="text-sm font-bold flex items-center gap-2 mb-2"><i class="fa-solid fa-paste text-[var(--indigo)]"></i>Hoặc dán dữ liệu JSONL / JSON</label>
+      <textarea id="pasteArea" rows="6" placeholder='{"hanzi": "不间断电源", "eng": "Uninterruptible Power Supply", "type": "vocabulary"}'
+        class="w-full text-sm rounded-xl border border-black/10 p-3 focus:outline-none focus:ring-2 focus:ring-[var(--indigo)] font-mono scroll-thin"></textarea>
+
+      <div class="flex items-center gap-3 my-4">
+        <div class="h-px bg-black/10 flex-1"></div>
+        <span class="text-xs text-[var(--ink-soft)] font-semibold">HOẶC</span>
+        <div class="h-px bg-black/10 flex-1"></div>
+      </div>
+
+      <label class="text-sm font-bold flex items-center gap-2 mb-2"><i class="fa-solid fa-file-arrow-up text-[var(--indigo)]"></i>Tải file .json / .jsonl / .txt thủ công</label>
+      <input id="fileInput" type="file" accept=".json,.jsonl,.txt" class="w-full text-sm rounded-xl border border-black/10 p-2.5 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-[var(--indigo-soft)] file:text-[var(--indigo)] file:font-semibold" />
+
+      <div id="setupMsg" class="text-xs text-[var(--ink-soft)] mt-3"></div>
+
+      <button id="processBtn" class="w-full mt-4 bg-[var(--indigo)] hover:brightness-110 text-white font-bold py-3 rounded-xl shadow-md shadow-indigo-200 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-bolt"></i> Xử lý & Lưu thư viện
+      </button>
+      ${hasData ? `<button data-nav="home" class="w-full mt-2 text-sm font-semibold text-[var(--ink-soft)] py-2 rounded-xl hover:bg-black/5">Hủy, quay lại học tập</button>` : ''}
+    </div>
+
+    ${hasData ? `
+    <div class="card p-5 mt-4">
+      <h2 class="text-sm font-bold mb-3 flex items-center gap-2"><i class="fa-solid fa-database text-[var(--indigo)]"></i>Quản lý dữ liệu</h2>
+      <div class="flex flex-col gap-2">
+        <button id="resetProgressBtn2" class="text-sm font-semibold text-left px-3.5 py-2.5 rounded-xl bg-indigo-50 text-[var(--indigo)] hover:brightness-95 flex items-center justify-between">
+          <span><i class="fa-solid fa-chart-line mr-2"></i>Reset tiến độ học tập (${learnedStats().learned}/${learnedStats().total} từ đã học)</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+        <button id="clearMistakesBtn" class="text-sm font-semibold text-left px-3.5 py-2.5 rounded-xl bg-amber-50 text-amber-700 hover:brightness-95 flex items-center justify-between">
+          <span><i class="fa-solid fa-eraser mr-2"></i>Xóa toàn bộ Sổ từ sai (${state.mistakeBank.length} từ)</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+        <button id="clearHistoryBtn" class="text-sm font-semibold text-left px-3.5 py-2.5 rounded-xl bg-slate-50 text-slate-600 hover:brightness-95 flex items-center justify-between">
+          <span><i class="fa-solid fa-clock-rotate-left mr-2"></i>Xóa lịch sử học tập (${state.history.length} lượt)</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+        <button id="clearAllBtn" class="text-sm font-semibold text-left px-3.5 py-2.5 rounded-xl bg-rose-50 text-rose-600 hover:brightness-95 flex items-center justify-between">
+          <span><i class="fa-solid fa-trash mr-2"></i>Xóa toàn bộ dữ liệu ứng dụng</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+      </div>
+    </div>` : ''}
+  </div>`;
+}
+
+/* ============================= SCREEN: HOME (config) ============================= */
+function screenHome(){
+  const wrongCount = state.mistakeBank.length;
+  const prog = learnedStats();
+  const progressCard = prog.complete ? `
+    <div class="card p-5 mb-4 pop" style="background:linear-gradient(135deg,#EEF0FF,#FDEBF1);">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-white flex items-center justify-center text-xl text-amber-500 shrink-0 shadow-sm">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-extrabold text-sm">Bạn đã học hết toàn bộ ${prog.total} từ! 🎉</div>
+          <div class="text-xs text-[var(--ink-soft)] mt-0.5">Reset tiến độ để bắt đầu một vòng học mới từ đầu.</div>
+        </div>
+      </div>
+      <button id="resetProgressBtn" class="w-full mt-3 bg-[var(--indigo)] hover:brightness-110 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 text-sm">
+        <i class="fa-solid fa-rotate-right"></i> Reset tiến độ, học lại từ đầu
+      </button>
+    </div>` : `
+    <div class="card p-5 mb-4">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-sm font-bold flex items-center gap-2"><i class="fa-solid fa-chart-line text-[var(--indigo)]"></i>Tiến độ học tập</h2>
+        <span class="text-sm font-extrabold text-[var(--indigo)]">${prog.pct}%</span>
+      </div>
+      <div class="w-full h-2.5 bg-black/5 rounded-full overflow-hidden">
+        <div class="progress-bar-fill h-full bg-[var(--indigo)] rounded-full" style="width:${prog.pct}%"></div>
+      </div>
+      <div class="text-xs text-[var(--ink-soft)] mt-2">Đã học <b>${prog.learned}</b>/<b>${prog.total}</b> từ (từ đã xuất hiện trong ít nhất một bài trắc nghiệm)</div>
+    </div>`;
+
+  return `
+  <div>
+    <div class="mb-5">
+      <h1 class="text-lg font-extrabold">Bắt đầu bài học</h1>
+      <p class="text-sm text-[var(--ink-soft)]">Thư viện: <b>${state.vocabList.length}</b> từ · Sổ từ sai: <b>${wrongCount}</b> từ</p>
+    </div>
+
+    ${progressCard}
+
+    <div class="card p-5 mb-4">
+      <h2 class="text-sm font-bold mb-3 flex items-center gap-2"><i class="fa-solid fa-database text-[var(--indigo)]"></i>1. Nguồn câu hỏi</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <label class="option-radio flex items-center gap-3 p-3.5 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)]">
+          <input type="radio" name="source" value="all" checked>
+          <span class="text-sm font-semibold">Toàn bộ thư viện <span class="text-[var(--ink-soft)] font-normal">(${state.vocabList.length} từ)</span></span>
+        </label>
+        <label class="option-radio flex items-center gap-3 p-3.5 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)] ${wrongCount===0?'opacity-50':''}">
+          <input type="radio" name="source" value="wrong" ${wrongCount===0?'disabled':''}>
+          <span class="text-sm font-semibold">Ôn từ sai <span class="text-[var(--ink-soft)] font-normal">(${wrongCount} từ)</span></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="card p-5 mb-4">
+      <h2 class="text-sm font-bold mb-3 flex items-center gap-2"><i class="fa-solid fa-shuffle text-[var(--indigo)]"></i>2. Chế độ câu hỏi</h2>
+      <div class="grid grid-cols-1 gap-2.5">
+        <label class="option-radio flex items-center gap-3 p-3.5 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)]">
+          <input type="radio" name="mode" value="1" checked>
+          <span class="text-sm font-semibold">Eng → Hanzi <span class="text-[var(--ink-soft)] font-normal">(Anh → Trung)</span></span>
+        </label>
+        <label class="option-radio flex items-center gap-3 p-3.5 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)]">
+          <input type="radio" name="mode" value="2">
+          <span class="text-sm font-semibold">Hanzi → Eng <span class="text-[var(--ink-soft)] font-normal">(Trung → Anh)</span></span>
+        </label>
+        <label class="option-radio flex items-center gap-3 p-3.5 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)]">
+          <input type="radio" name="mode" value="3">
+          <span class="text-sm font-semibold">Ngẫu nhiên <span class="text-[var(--ink-soft)] font-normal">(kết hợp cả hai)</span></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="card p-5 mb-5">
+      <h2 class="text-sm font-bold mb-3 flex items-center gap-2"><i class="fa-solid fa-list-ol text-[var(--indigo)]"></i>3. Số lượng câu hỏi</h2>
+      <div class="grid grid-cols-3 gap-2.5">
+        <label class="option-radio flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)]">
+          <input type="radio" name="length" value="10" checked class="mb-1">
+          <span class="text-sm font-bold">Easy</span><span class="text-[11px] text-[var(--ink-soft)]">10 câu</span>
+        </label>
+        <label class="option-radio flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)]">
+          <input type="radio" name="length" value="20" class="mb-1">
+          <span class="text-sm font-bold">Medium</span><span class="text-[11px] text-[var(--ink-soft)]">20 câu</span>
+        </label>
+        <label class="option-radio flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-black/10 cursor-pointer has-[:checked]:border-[var(--indigo)] has-[:checked]:bg-[var(--indigo-soft)]">
+          <input type="radio" name="length" value="30" class="mb-1">
+          <span class="text-sm font-bold">Hard</span><span class="text-[11px] text-[var(--ink-soft)]">30 câu</span>
+        </label>
+      </div>
+    </div>
+
+    <button id="startLessonBtn" class="w-full bg-[var(--indigo)] hover:brightness-110 text-white font-bold py-3.5 rounded-2xl shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 text-[15px]">
+      <i class="fa-solid fa-play"></i> Bắt đầu bài học
+    </button>
+  </div>`;
+}
+
+/* ============================= QUIZ LOGIC ============================= */
+function startLesson(source, mode, length){
+  let pool = source === 'wrong'
+    ? state.vocabList.filter(v => state.mistakeBank.includes(v.id))
+    : state.vocabList.slice();
+
+  if(pool.length === 0){ toast('Không có từ nào trong nguồn đã chọn.', 'error'); return; }
+  if(state.vocabList.length < 4){ toast('Cần tối thiểu 4 từ trong thư viện để tạo trắc nghiệm.', 'error'); return; }
+
+  pool = shuffle(pool);
+  const count = Math.min(length, pool.length);
+  const chosen = pool.slice(0, count);
+
+  const questions = chosen.map(v => ({
+    vocab: v,
+    direction: mode === 3 ? (Math.random() < 0.5 ? 1 : 2) : mode
+  }));
+
+  state.lesson = {
+    source, mode, length,
+    questions,
+    index: 0,
+    correctCount: 0,
+    wrongList: [],
+    answered: false,
+    selectedId: null,
+    startTime: Date.now(),
+    finished: false
+  };
+  go('quiz');
+}
+
+function currentOptions(question){
+  const correct = question.vocab;
+  const others = shuffle(state.vocabList.filter(v => v.id !== correct.id)).slice(0,3);
+  return shuffle([correct, ...others]);
+}
+
+function screenQuiz(){
+  const L = state.lesson;
+  if(!L) { return `<div class="text-center py-10">Không có bài học nào đang diễn ra.</div>`; }
+  const q = L.questions[L.index];
+  if(!q._options) q._options = currentOptions(q);
+  const isEngPrompt = q.direction === 1; // Eng -> Hanzi
+  const progressPct = Math.round((L.index / L.questions.length) * 100);
+
+  const promptHtml = isEngPrompt
+    ? `<div class="text-2xl md:text-3xl font-extrabold leading-snug">${esc(q.vocab.eng)}</div>
+       <div class="text-xs text-[var(--ink-soft)] mt-2 font-semibold uppercase tracking-wide">Chọn nghĩa Tiếng Trung đúng</div>`
+    : `<div class="hanzi-font text-[32px] md:text-[38px] font-bold leading-snug">${esc(q.vocab.hanzi)}</div>
+       <div class="text-sm text-[var(--indigo)] font-semibold mt-1">${esc(q.vocab.pinyin)}</div>
+       <div class="text-xs text-[var(--ink-soft)] mt-2 font-semibold uppercase tracking-wide">Chọn nghĩa Tiếng Anh đúng</div>`;
+
+  const optionsHtml = q._options.map((opt, i) => {
+    let cls = 'opt-btn border-2 border-black/10 bg-white hover:border-[var(--indigo)]';
+    if(L.answered){
+      if(opt.id === q.vocab.id) cls = 'opt-btn correct border-2';
+      else if(opt.id === L.selectedId) cls = 'opt-btn wrong border-2';
+      else cls = 'opt-btn border-2 border-black/10 bg-white opacity-50';
+    }
+    const label = isEngPrompt
+      ? `<div class="hanzi-font text-lg font-bold">${esc(opt.hanzi)}</div><div class="text-xs text-[var(--indigo)] font-semibold mt-0.5">${esc(opt.pinyin)}</div>`
+      : `<div class="text-[15px] font-semibold">${esc(opt.eng)}</div>`;
+    return `
+    <button data-opt="${opt.id}" ${L.answered?'disabled':''} class="${cls} w-full text-left rounded-xl p-3.5 flex items-center gap-3">
+      <span class="kbd shrink-0">${i+1}</span>
+      <span class="flex-1">${label}</span>
+      ${L.answered && opt.id===q.vocab.id ? '<i class="fa-solid fa-circle-check text-emerald-500"></i>' : ''}
+      ${L.answered && opt.id===L.selectedId && opt.id!==q.vocab.id ? '<i class="fa-solid fa-circle-xmark text-rose-500"></i>' : ''}
+    </button>`;
+  }).join('');
+
+  const detailHtml = L.answered ? `
+  <div class="card p-5 mt-4 pop">
+    <div class="flex items-start justify-between gap-3 flex-wrap">
+      <div>
+        <div class="hanzi-font text-[30px] font-bold">${esc(q.vocab.hanzi)}</div>
+        <div class="text-[var(--indigo)] font-semibold text-sm mt-0.5">${esc(q.vocab.pinyin)}</div>
+        <div class="text-[var(--ink-soft)] text-sm mt-1">${esc(q.vocab.eng)}</div>
+      </div>
+      <div class="flex gap-2">
+        <button id="speakZh" class="w-10 h-10 rounded-xl bg-[var(--indigo-soft)] text-[var(--indigo)] flex items-center justify-center hover:brightness-95" title="Đọc tiếng Trung">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <button id="speakEn" class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center hover:brightness-95" title="Đọc tiếng Anh">
+          <i class="fa-solid fa-volume-high"></i><span class="text-[9px] font-bold ml-0.5">EN</span>
+        </button>
+      </div>
+    </div>
+    <button id="nextBtn" class="w-full mt-4 bg-[var(--indigo)] hover:brightness-110 text-white font-bold py-3 rounded-xl shadow-md shadow-indigo-200 flex items-center justify-center gap-2">
+      ${L.index+1 >= L.questions.length ? '<i class="fa-solid fa-flag-checkered"></i> Xem kết quả' : '<i class="fa-solid fa-arrow-right"></i> Câu tiếp theo'}
+      <span class="kbd ml-1 hidden md:inline-flex">Enter</span>
+    </button>
+  </div>` : '';
+
+  return `
+  <div>
+    <div class="flex items-center justify-between mb-2">
+      <button data-nav="home" class="text-xs font-semibold text-[var(--ink-soft)] flex items-center gap-1.5 hover:text-[var(--indigo)]"><i class="fa-solid fa-xmark"></i> Thoát</button>
+      <div class="text-xs font-bold text-[var(--ink-soft)]">Câu ${L.index+1}/${L.questions.length}</div>
+    </div>
+    <div class="w-full h-2 bg-black/5 rounded-full overflow-hidden mb-5">
+      <div class="progress-bar-fill h-full bg-[var(--indigo)] rounded-full" style="width:${progressPct}%"></div>
+    </div>
+
+    <div class="card p-6 text-center mb-4">
+      ${promptHtml}
+      <label class="flex items-center justify-center gap-2 mt-3">
+        <button id="speakPrompt" class="text-xs text-[var(--indigo)] font-semibold flex items-center gap-1.5 hover:underline">
+          <i class="fa-solid fa-volume-high"></i> Nghe phát âm <span class="kbd ml-1 hidden md:inline-flex">Space</span>
+        </button>
+      </label>
+    </div>
+
+    <div class="flex flex-col gap-2.5">${optionsHtml}</div>
+
+    ${detailHtml}
+
+    ${!L.answered ? `
+    <label class="flex items-center gap-2 mt-4 text-xs text-[var(--ink-soft)] font-medium justify-center">
+      <input type="checkbox" id="autoSpeakToggle" ${state.autoSpeak?'checked':''}> Tự động phát âm khi qua câu mới
+    </label>` : ''}
+  </div>`;
+}
+
+function handleSelectOption(optId){
+  const L = state.lesson;
+  if(!L || L.answered) return;
+  const q = L.questions[L.index];
+  L.answered = true;
+  L.selectedId = optId;
+
+  const isCorrect = optId === q.vocab.id;
+  markLearned(q.vocab.id);
+  if(isCorrect){
+    L.correctCount++;
+    if(L.source === 'wrong' && state.mistakeBank.includes(q.vocab.id)){
+      state.mistakeBank = state.mistakeBank.filter(id => id !== q.vocab.id);
+      saveMistakes();
+    }
+  } else {
+    L.wrongList.push(q.vocab);
+    if(!state.mistakeBank.includes(q.vocab.id)){
+      state.mistakeBank.push(q.vocab.id);
+      saveMistakes();
+    }
+  }
+  render();
+}
+
+function nextQuestion(){
+  const L = state.lesson;
+  if(!L) return;
+  if(L.index + 1 >= L.questions.length){
+    finishLesson();
+    return;
+  }
+  L.index++;
+  L.answered = false;
+  L.selectedId = null;
+  render();
+  if(state.autoSpeak){
+    const q = L.questions[L.index];
+    setTimeout(()=> speak(q.vocab.hanzi, 'zh-CN'), 250);
+  }
+}
+
+function finishLesson(){
+  const L = state.lesson;
+  L.finished = true;
+  L.endTime = Date.now();
+  const difficultyLabel = L.length===10?'Easy':L.length===20?'Medium':'Hard';
+  const modeLabel = L.mode===1?'Eng→Hanzi':L.mode===2?'Hanzi→Eng':'Ngẫu nhiên';
+  const scorePct = Math.round((L.correctCount / L.questions.length) * 100);
+
+  state.history.unshift({
+    date: fmtDate(new Date()),
+    difficulty: difficultyLabel,
+    mode: modeLabel,
+    source: L.source==='wrong' ? 'Ôn từ sai' : 'Toàn bộ',
+    score: scorePct,
+    correct: L.correctCount,
+    total: L.questions.length,
+    time: Math.round((L.endTime - L.startTime)/1000)
+  });
+  saveHistory();
+  go('result');
+  const prog = learnedStats();
+  if(prog.complete){
+    setTimeout(()=> toast(`🎉 Bạn đã học hết toàn bộ ${prog.total} từ! Xem trang Học tập để reset và học lại.`, 'ok'), 400);
+  }
+}
+
+function screenResult(){
+  const L = state.lesson;
+  if(!L || !L.finished) return `<div class="text-center py-10">Không có kết quả.</div>`;
+  const scorePct = Math.round((L.correctCount / L.questions.length) * 100);
+  const wrongCount = L.questions.length - L.correctCount;
+  const timeSec = Math.round((L.endTime - L.startTime)/1000);
+  const scoreColor = scorePct>=80 ? 'text-emerald-500' : scorePct>=50 ? 'text-amber-500' : 'text-rose-500';
+  const ringColor = scorePct>=80 ? '#22C55E' : scorePct>=50 ? '#F59E0B' : '#F43F5E';
+  const circumference = 2*Math.PI*54;
+  const dash = circumference * (scorePct/100);
+
+  const wrongItemsHtml = L.wrongList.length ? L.wrongList.map(v => `
+    <div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-rose-50/60 border border-rose-100">
+      <div>
+        <div class="hanzi-font font-bold text-[17px]">${esc(v.hanzi)}</div>
+        <div class="text-xs text-[var(--indigo)] font-semibold">${esc(v.pinyin)}</div>
+        <div class="text-xs text-[var(--ink-soft)]">${esc(v.eng)}</div>
+      </div>
+      <button data-speak-hanzi="${esc(v.hanzi)}" class="w-9 h-9 shrink-0 rounded-lg bg-white text-[var(--indigo)] flex items-center justify-center shadow-sm">
+        <i class="fa-solid fa-volume-high text-sm"></i>
+      </button>
+    </div>`).join('') : `<div class="text-sm text-[var(--ink-soft)] text-center py-4"><i class="fa-solid fa-champagne-glasses text-2xl block mb-2 text-emerald-400"></i>Không có từ sai nào — xuất sắc!</div>`;
+
+  return `
+  <div>
+    <div class="card p-6 text-center mb-4">
+      <div class="text-sm font-bold text-[var(--ink-soft)] uppercase tracking-wide mb-3">Hoàn thành bài học</div>
+      <div class="relative w-32 h-32 mx-auto mb-3">
+        <svg width="128" height="128" viewBox="0 0 128 128" class="-rotate-90">
+          <circle cx="64" cy="64" r="54" fill="none" stroke="#EEF0FF" stroke-width="12"/>
+          <circle cx="64" cy="64" r="54" fill="none" stroke="${ringColor}" stroke-width="12" stroke-linecap="round"
+            stroke-dasharray="${dash} ${circumference}"/>
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <div class="text-3xl font-extrabold ${scoreColor}">${scorePct}%</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-4 text-sm">
+        <div class="flex items-center gap-1.5 text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i>${L.correctCount} đúng</div>
+        <div class="flex items-center gap-1.5 text-rose-500 font-bold"><i class="fa-solid fa-circle-xmark"></i>${wrongCount} sai</div>
+        <div class="flex items-center gap-1.5 text-[var(--ink-soft)] font-bold"><i class="fa-solid fa-stopwatch"></i>${fmtTime(timeSec)}</div>
+      </div>
+    </div>
+
+    <div class="card p-5 mb-5">
+      <h2 class="text-sm font-bold mb-3 flex items-center gap-2"><i class="fa-solid fa-list-check text-rose-500"></i>Các từ đã làm sai</h2>
+      <div class="flex flex-col gap-2 max-h-80 overflow-y-auto scroll-thin pr-1">${wrongItemsHtml}</div>
+    </div>
+
+    <div class="flex flex-col gap-2.5">
+      <button data-nav="home" class="w-full bg-[var(--indigo)] hover:brightness-110 text-white font-bold py-3.5 rounded-2xl shadow-lg shadow-indigo-200 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-rotate"></i> Học tiếp bài mới
+      </button>
+      <button id="reviewWrongBtn" ${state.mistakeBank.length===0?'disabled':''} class="w-full bg-white border-2 border-[var(--indigo)] text-[var(--indigo)] font-bold py-3.5 rounded-2xl flex items-center justify-center gap-2 disabled:opacity-40">
+        <i class="fa-solid fa-repeat"></i> Ôn lại các từ vừa sai
+      </button>
+    </div>
+  </div>`;
+}
+
+/* ============================= SCREEN: DICTIONARY ============================= */
+function screenDictionary(){
+  const q = state.dictQuery.trim().toLowerCase();
+  let list = state.dictTab === 'wrong'
+    ? state.vocabList.filter(v => state.mistakeBank.includes(v.id))
+    : state.vocabList;
+
+  if(q){
+    list = list.filter(v =>
+      v.hanzi.toLowerCase().includes(q) ||
+      v.pinyin.toLowerCase().includes(q) ||
+      v.eng.toLowerCase().includes(q)
+    );
+  }
+  const total = list.length;
+  const capped = list.slice(0, 200);
+
+  const itemsHtml = capped.map(v => `
+    <div class="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-white border border-black/5">
+      <div class="min-w-0">
+        <div class="hanzi-font font-bold text-[18px] truncate">${esc(v.hanzi)}</div>
+        <div class="text-xs text-[var(--indigo)] font-semibold">${esc(v.pinyin)}</div>
+        <div class="text-xs text-[var(--ink-soft)] truncate">${esc(v.eng)}</div>
+      </div>
+      <button data-speak-hanzi="${esc(v.hanzi)}" class="w-9 h-9 shrink-0 rounded-lg bg-[var(--indigo-soft)] text-[var(--indigo)] flex items-center justify-center">
+        <i class="fa-solid fa-volume-high text-sm"></i>
+      </button>
+    </div>`).join('');
+
+  return `
+  <div>
+    <h1 class="text-lg font-extrabold mb-3">Tra cứu từ điển</h1>
+    <div class="relative mb-3">
+      <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--ink-soft)] text-sm"></i>
+      <input id="dictSearch" value="${esc(state.dictQuery)}" placeholder="Tìm theo Hanzi, Pinyin hoặc English..."
+        class="w-full pl-10 pr-3.5 py-3 rounded-xl border border-black/10 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[var(--indigo)]">
+    </div>
+    <div class="flex gap-2 mb-4">
+      <button data-dict-tab="all" class="flex-1 py-2 rounded-xl text-sm font-bold ${state.dictTab==='all'?'bg-[var(--indigo)] text-white':'bg-white text-[var(--ink-soft)] border border-black/10'}">
+        Toàn bộ (${state.vocabList.length})
+      </button>
+      <button data-dict-tab="wrong" class="flex-1 py-2 rounded-xl text-sm font-bold ${state.dictTab==='wrong'?'bg-[var(--indigo)] text-white':'bg-white text-[var(--ink-soft)] border border-black/10'}">
+        Sổ từ sai (${state.mistakeBank.length})
+      </button>
+    </div>
+
+    <div class="text-xs text-[var(--ink-soft)] mb-2">${total} kết quả${total>200?' · hiển thị 200 từ đầu, thu hẹp tìm kiếm để xem thêm':''}</div>
+    <div class="flex flex-col gap-2">
+      ${capped.length ? itemsHtml : `<div class="text-center text-sm text-[var(--ink-soft)] py-10"><i class="fa-solid fa-inbox text-2xl block mb-2"></i>Không tìm thấy từ nào.</div>`}
+    </div>
+  </div>`;
+}
+
+/* ============================= SCREEN: HISTORY ============================= */
+function screenHistory(){
+  const rows = state.history.map(h => `
+    <div class="card p-4 flex items-center justify-between gap-3">
+      <div class="min-w-0">
+        <div class="font-bold text-sm">${esc(h.difficulty)} · ${esc(h.mode)} <span class="text-[var(--ink-soft)] font-normal">(${esc(h.source)})</span></div>
+        <div class="text-xs text-[var(--ink-soft)] mt-0.5">${esc(h.date)} · ${fmtTime(h.time)}</div>
+      </div>
+      <div class="text-right shrink-0">
+        <div class="font-extrabold text-lg ${h.score>=80?'text-emerald-500':h.score>=50?'text-amber-500':'text-rose-500'}">${h.score}%</div>
+        <div class="text-[11px] text-[var(--ink-soft)]">${h.correct}/${h.total} đúng</div>
+      </div>
+    </div>`).join('');
+
+  return `
+  <div>
+    <h1 class="text-lg font-extrabold mb-3">Lịch sử học tập</h1>
+    <div class="flex flex-col gap-2.5">
+      ${state.history.length ? rows : `<div class="text-center text-sm text-[var(--ink-soft)] py-16"><i class="fa-solid fa-hourglass-start text-2xl block mb-2"></i>Chưa có lượt học nào. Bắt đầu ngay!</div>`}
+    </div>
+  </div>`;
+}
+
+/* ============================= EVENT WIRING ============================= */
+function attachGlobalListeners(){
+  document.querySelectorAll('[data-nav]').forEach(btn => {
+    btn.onclick = () => go(btn.getAttribute('data-nav'));
+  });
+}
+
+function attachScreenListeners(){
+  // Setup screen
+  const processBtn = document.getElementById('processBtn');
+  if(processBtn){
+    processBtn.onclick = async () => {
+      const pasteVal = document.getElementById('pasteArea').value;
+      const fileInput = document.getElementById('fileInput');
+      const msgEl = document.getElementById('setupMsg');
+      let text = pasteVal;
+      if(fileInput.files && fileInput.files[0]){
+        text = await fileInput.files[0].text();
+      }
+      if(!text || !text.trim()){
+        toast('Vui lòng dán dữ liệu hoặc chọn file.', 'error'); return;
+      }
+      processBtn.disabled = true;
+      processBtn.innerHTML = '<i class="fa-solid fa-spinner spin"></i> Đang xử lý...';
+      msgEl.textContent = 'Đang phân tích dữ liệu và chuyển đổi Pinyin...';
+      setTimeout(() => {
+        const count = applyVocabText(text);
+        if(count === 0){
+          toast('Không đọc được dữ liệu hợp lệ. Kiểm tra định dạng JSON/JSONL.', 'error');
+          processBtn.disabled = false;
+          processBtn.innerHTML = '<i class="fa-solid fa-bolt"></i> Xử lý & Lưu thư viện';
+          msgEl.textContent = '';
+          return;
+        }
+        toast(`Đã nạp ${count} từ vựng thành công!`, 'ok');
+        go('home');
+      }, 50);
+    };
+  }
+
+  const autoLoadBtn = document.getElementById('autoLoadBtn');
+  if(autoLoadBtn){
+    autoLoadBtn.onclick = async () => {
+      const msgEl = document.getElementById('autoLoadMsg');
+      autoLoadBtn.disabled = true;
+      autoLoadBtn.innerHTML = '<i class="fa-solid fa-spinner spin"></i> Đang tải...';
+      msgEl.textContent = '';
+      const text = await fetchAutoVocabFile();
+      if(!text){
+        toast(`Không thể đọc ${AUTO_VOCAB_FILE}. Hãy chạy qua local server hoặc dùng cách nạp thủ công.`, 'error');
+        msgEl.textContent = `Không tìm thấy hoặc không đọc được ${AUTO_VOCAB_FILE}.`;
+        autoLoadBtn.disabled = false;
+        autoLoadBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Tải lại từ ${AUTO_VOCAB_FILE}`;
+        return;
+      }
+      const count = applyVocabText(text);
+      if(count === 0){
+        toast(`${AUTO_VOCAB_FILE} không có dữ liệu hợp lệ.`, 'error');
+        msgEl.textContent = 'Định dạng file không hợp lệ (cần JSONL hoặc mảng JSON).';
+        autoLoadBtn.disabled = false;
+        autoLoadBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Tải lại từ ${AUTO_VOCAB_FILE}`;
+        return;
+      }
+      toast(`Đã nạp ${count} từ vựng từ ${AUTO_VOCAB_FILE}!`, 'ok');
+      go('home');
+    };
+  }
+
+  const resetProgressBtn2 = document.getElementById('resetProgressBtn2');
+  if(resetProgressBtn2) resetProgressBtn2.onclick = () => {
+    if(confirm('Reset tiến độ học tập (đưa số từ đã học về 0)?')){ resetLearned(); toast('Đã reset tiến độ học tập.', 'ok'); render(); }
+  };
+  const clearMistakesBtn = document.getElementById('clearMistakesBtn');
+  if(clearMistakesBtn) clearMistakesBtn.onclick = () => {
+    if(confirm('Xóa toàn bộ Sổ từ sai?')){ state.mistakeBank = []; saveMistakes(); toast('Đã xóa Sổ từ sai.', 'ok'); render(); }
+  };
+  const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+  if(clearHistoryBtn) clearHistoryBtn.onclick = () => {
+    if(confirm('Xóa toàn bộ lịch sử học tập?')){ state.history = []; saveHistory(); toast('Đã xóa lịch sử.', 'ok'); render(); }
+  };
+  const clearAllBtn = document.getElementById('clearAllBtn');
+  if(clearAllBtn) clearAllBtn.onclick = () => {
+    if(confirm('Xóa TOÀN BỘ dữ liệu (thư viện, sổ từ sai, lịch sử, tiến độ)? Hành động này không thể hoàn tác.')){
+      state.vocabList = []; state.mistakeBank = []; state.history = []; state.learnedWords = [];
+      saveVocab(); saveMistakes(); saveHistory(); saveLearned();
+      toast('Đã xóa toàn bộ dữ liệu.', 'ok'); go('setup');
+    }
+  };
+
+  // Home screen
+  const startBtn = document.getElementById('startLessonBtn');
+  if(startBtn){
+    startBtn.onclick = () => {
+      const source = document.querySelector('input[name="source"]:checked').value;
+      const mode = parseInt(document.querySelector('input[name="mode"]:checked').value, 10);
+      const length = parseInt(document.querySelector('input[name="length"]:checked').value, 10);
+      startLesson(source, mode, length);
+    };
+  }
+  const resetProgressBtn = document.getElementById('resetProgressBtn');
+  if(resetProgressBtn){
+    resetProgressBtn.onclick = () => {
+      resetLearned();
+      toast('Đã reset tiến độ học tập. Bắt đầu vòng học mới!', 'ok');
+      render();
+    };
+  }
+
+  // Quiz screen
+  document.querySelectorAll('[data-opt]').forEach(btn => {
+    btn.onclick = () => handleSelectOption(btn.getAttribute('data-opt'));
+  });
+  const nextBtn = document.getElementById('nextBtn');
+  if(nextBtn) nextBtn.onclick = nextQuestion;
+  const speakPrompt = document.getElementById('speakPrompt');
+  if(speakPrompt){
+    speakPrompt.onclick = () => {
+      const L = state.lesson; const q = L.questions[L.index];
+      if(q.direction === 1) speak(q.vocab.eng, 'en-US'); else speak(q.vocab.hanzi, 'zh-CN');
+    };
+  }
+  const speakZh = document.getElementById('speakZh');
+  if(speakZh) speakZh.onclick = () => { const L=state.lesson; speak(L.questions[L.index].vocab.hanzi, 'zh-CN'); };
+  const speakEn = document.getElementById('speakEn');
+  if(speakEn) speakEn.onclick = () => { const L=state.lesson; speak(L.questions[L.index].vocab.eng, 'en-US'); };
+  const autoSpeakToggle = document.getElementById('autoSpeakToggle');
+  if(autoSpeakToggle) autoSpeakToggle.onchange = (e) => { state.autoSpeak = e.target.checked; saveAutoSpeak(); };
+
+  // Result screen
+  const reviewWrongBtn = document.getElementById('reviewWrongBtn');
+  if(reviewWrongBtn) reviewWrongBtn.onclick = () => {
+    const L = state.lesson;
+    startLesson('wrong', L.mode, L.length);
+  };
+  document.querySelectorAll('[data-speak-hanzi]').forEach(btn => {
+    btn.onclick = () => speak(btn.getAttribute('data-speak-hanzi'), 'zh-CN');
+  });
+
+  // Dictionary screen
+  const dictSearch = document.getElementById('dictSearch');
+  if(dictSearch){
+    dictSearch.oninput = (e) => { state.dictQuery = e.target.value; render(); dictSearch_refocus(); };
+  }
+  document.querySelectorAll('[data-dict-tab]').forEach(btn => {
+    btn.onclick = () => { state.dictTab = btn.getAttribute('data-dict-tab'); render(); };
+  });
+}
+
+function dictSearch_refocus(){
+  const el = document.getElementById('dictSearch');
+  if(el){ el.focus(); const v = el.value; el.value=''; el.value=v; }
+}
+
+/* ============================= KEYBOARD SHORTCUTS ============================= */
+document.addEventListener('keydown', (e) => {
+  if(state.screen !== 'quiz' || !state.lesson) return;
+  if(document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+  const L = state.lesson;
+  const q = L.questions[L.index];
+
+  if(['1','2','3','4'].includes(e.key)){
+    if(!L.answered && q._options){
+      const idx = parseInt(e.key,10) - 1;
+      if(q._options[idx]) handleSelectOption(q._options[idx].id);
+    }
+    e.preventDefault();
+  } else if(e.code === 'Space' || e.key === 'Enter'){
+    e.preventDefault();
+    if(!L.answered){
+      if(q.direction === 1) speak(q.vocab.eng, 'en-US'); else speak(q.vocab.hanzi, 'zh-CN');
+    } else {
+      nextQuestion();
+    }
+  }
+});
+
+/* ============================= INIT ============================= */
+async function init(){
+  loadAll();
+  if(state.vocabList.length){
+    state.screen = 'home';
+    render();
+    return;
+  }
+  // No saved data yet: try to auto-load vocab.jsonl from the same folder.
+  state.screen = 'loading';
+  render();
+  const text = await fetchAutoVocabFile();
+  if(text){
+    const count = applyVocabText(text);
+    if(count > 0){
+      toast(`Đã tự động nạp ${count} từ vựng từ ${AUTO_VOCAB_FILE}!`, 'ok');
+      state.screen = 'home';
+      render();
+      return;
+    }
+  }
+  state.screen = 'setup';
+  render();
+}
+init();
+</script>
+</body>
+</html>
